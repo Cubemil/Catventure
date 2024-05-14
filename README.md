@@ -1,4 +1,4 @@
-# Fantastic Catventure 
+# 🐈 Fantastic Catventure 
 
 ## Vision Statement
 A Fantastic Catventure ist ein Abenteuerspiel, indem du als verspielter Kater ein geheimnisvolles Dorf erkundest und 
