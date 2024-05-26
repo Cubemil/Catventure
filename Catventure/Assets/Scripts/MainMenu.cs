@@ -7,16 +7,17 @@ using UnityEngine.UI;
 
 public class MainMenuScript : MonoBehaviour
 {
-    public GameObject MainMenuPanel;
-    public GameObject PlayMenuPanel;
-    public GameObject OptionsMenuPanel;
-    public float MainVolume = 0;
+    public GameObject mainMenu;
+    public GameObject playMenu;
+    public GameObject optionsMenu;
+    public GameObject creditsMenu;
+    private float mainVolume = 0;
 
     private void Start()
     {
-        MainMenuPanel.SetActive(true);
-        PlayMenuPanel.SetActive(false);
-        OptionsMenuPanel.SetActive(false);
+        mainMenu.SetActive(true);
+        playMenu.SetActive(false);
+        optionsMenu.SetActive(false);
     }
 
     // Update is called once per frame
@@ -24,7 +25,7 @@ public class MainMenuScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (MainMenuPanel.activeSelf)
+            if (mainMenu.activeSelf)
             {
                 Quit();
             }
@@ -37,17 +38,16 @@ public class MainMenuScript : MonoBehaviour
 
     public void Play()
     {
-        MainMenuPanel.SetActive(false);
-        PlayMenuPanel.SetActive(true);
-        OptionsMenuPanel.SetActive(false);
-        SceneManager.LoadScene("Game");
+        mainMenu.SetActive(false);
+        playMenu.SetActive(true);
+        optionsMenu.SetActive(false);
+        //SceneManager.LoadScene("Game");
     }
 
     public void Options()
     {
-        MainMenuPanel.SetActive(false);
-        PlayMenuPanel.SetActive(false);
-        OptionsMenuPanel.SetActive(true);
+        optionsMenu.SetActive(true);
+        mainMenu.SetActive(false);
     }
 
     public void Quit()
@@ -55,30 +55,37 @@ public class MainMenuScript : MonoBehaviour
         Debug.Log("Quitting...");
         Application.Quit();
     }
+
+    public void Credits()
+    {
+        mainMenu.SetActive(false);
+        creditsMenu.SetActive(true);
+    }
     
     public void back()
     {
-        MainMenuPanel.SetActive(true);
-        PlayMenuPanel.SetActive(false);
-        OptionsMenuPanel.SetActive(false);
+        mainMenu.SetActive(true);
+        playMenu.SetActive(false);
+        creditsMenu.SetActive(false);
+        optionsMenu.SetActive(false);
     }
 
     public void newGame()
     {
-        SceneManager.LoadScene("Scenes/PauseMenuScene");
+        //newGame();
         //SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
     }
     
     //TODO
     public void continueGame()
     {
-        newGame();
+        SceneManager.LoadScene("Game");
     }
 
     public void adjustMainVolume(Slider slider)
     {
-        MainVolume = slider.value;
-        Debug.Log("MainVolume: " + MainVolume);
+        mainVolume = slider.value;
+        Debug.Log("MainVolume: " + mainVolume);
     }
     
 }
