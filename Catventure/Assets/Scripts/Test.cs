@@ -8,5 +8,6 @@ public class Test : MonoBehaviour
     {
         Debug.Log("Hello World");
         Debug.Log("Test3");
+        Debug.Log("JOJO");
     }
 }

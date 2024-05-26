@@ -40,6 +40,7 @@ public class MainMenuScript : MonoBehaviour
         MainMenuPanel.SetActive(false);
         PlayMenuPanel.SetActive(true);
         OptionsMenuPanel.SetActive(false);
+        SceneManager.LoadScene("Game");
     }
 
     public void Options()
