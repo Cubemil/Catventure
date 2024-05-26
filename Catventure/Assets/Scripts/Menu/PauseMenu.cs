@@ -2,14 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.SceneManagement;
+
 
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused;
     public GameObject pauseMenu;
-
     public GameObject optionsMenu;
+    public PostProcessVolume postProcessVolume;
     
     void Update()
     {
@@ -30,6 +32,7 @@ public class PauseMenu : MonoBehaviour
     {
         GameIsPaused = true;
         pauseMenu.SetActive(true);
+        postProcessVolume.enabled = true;
         Time.timeScale = 0f;
     }
 
@@ -37,12 +40,13 @@ public class PauseMenu : MonoBehaviour
     {
         GameIsPaused = false;
         pauseMenu.SetActive(GameIsPaused);
+        postProcessVolume.enabled = false;
         Time.timeScale = 1f;
     }
 
     public void Quit()
     {
-        Debug.Log("Quitting...");
+        //Debug.Log("Quitting...");
         SceneManager.LoadScene("Menu");
     }
 

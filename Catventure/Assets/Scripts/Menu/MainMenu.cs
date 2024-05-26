@@ -72,6 +72,7 @@ public class MainMenuScript : MonoBehaviour
 
     public void newGame()
     {
+        //Time.timeScale = 1f;
         //newGame();
         //SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
     }
@@ -80,6 +81,7 @@ public class MainMenuScript : MonoBehaviour
     public void continueGame()
     {
         SceneManager.LoadScene("Game");
+        Time.timeScale = 1f;
     }
 
     public void adjustMainVolume(Slider slider)
