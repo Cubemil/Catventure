@@ -40,6 +40,7 @@ public class PauseMenu : MonoBehaviour
     {
         GameIsPaused = false;
         pauseMenu.SetActive(GameIsPaused);
+        optionsMenu.SetActive(GameIsPaused);
         postProcessVolume.enabled = false;
         Time.timeScale = 1f;
     }
