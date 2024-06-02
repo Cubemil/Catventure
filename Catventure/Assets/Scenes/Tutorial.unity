@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571447, b: 0.306923, a: 1}
+  m_IndirectSpecularColor: {r: 0.1802841, g: 0.22571404, b: 0.30692345, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -584,7 +584,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d237f62dff4022e4882370a92f2aef75, type: 2}
+  - {fileID: 2100000, guid: 7c2bdb569f9214f91a0b4fd6084fbcf5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -735,8 +735,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fd0297948c0a60408c53b1477f3bc0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpTut: {fileID: 1656807422}
-  textTut: {fileID: 1973847790}
 --- !u!1 &916760280
 GameObject:
   m_ObjectHideFlags: 0
@@ -1293,7 +1291,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

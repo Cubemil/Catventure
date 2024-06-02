@@ -186,7 +186,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1771,7 +1771,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d237f62dff4022e4882370a92f2aef75, type: 2}
+  - {fileID: 2100000, guid: 7c2bdb569f9214f91a0b4fd6084fbcf5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3050,7 +3050,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.4837, y: 3.4837, z: 3.4837}
+  m_LocalScale: {x: 5.7313833, y: 5.7313833, z: 5.7313833}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1116405244}
