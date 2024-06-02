@@ -7,6 +7,7 @@ public class PlayerControl : MonoBehaviour
 {
     public float speed = 8f;
     public float jumpForce = 5.0f;
+    public float downForce = 5.0f;
     public float rotationSpeed = 0f;
     private Rigidbody rb;
     private bool isOnGround = true;
@@ -62,8 +63,12 @@ public class PlayerControl : MonoBehaviour
             {
                 rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
                 isOnGround = false;
+            } 
+            else if (Input.GetButtonUp("Jump"))
+            {
+                rb.AddForce(Vector3.down * downForce, ForceMode.Impulse);
+                
             }
-        
     }
     
     private void OnCollisionEnter(Collision collision) // check collision of player and ground
