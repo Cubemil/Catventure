@@ -514,8 +514,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  force: 5
+  jumpForce: 5
   rotationSpeed: 1000
+  cat: {fileID: 0}
 --- !u!54 &627583063
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -584,7 +585,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7c2bdb569f9214f91a0b4fd6084fbcf5, type: 2}
+  - {fileID: 2100000, guid: db4925fdeb8198143826652689612cd4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
