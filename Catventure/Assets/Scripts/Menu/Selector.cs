@@ -6,7 +6,8 @@ public class Selector : MonoBehaviour
 {
     public GameObject playSelector;  
     public GameObject optionsSelector;  
-    public GameObject creditsSelector;  
+    public GameObject creditsSelector;
+    public GameObject closeSelector;
     
     public GameObject newGameSelector;  
     
@@ -29,6 +30,7 @@ public class Selector : MonoBehaviour
         playSelector.SetActive(true);
         optionsSelector.SetActive(false);
         creditsSelector.SetActive(false);
+        closeSelector.SetActive(false);
     }
     
     public void selectOptions()
@@ -36,6 +38,7 @@ public class Selector : MonoBehaviour
         playSelector.SetActive(false);
         optionsSelector.SetActive(true);
         creditsSelector.SetActive(false);
+        closeSelector.SetActive(false);
     }
     
     public void selectCredits()
@@ -43,6 +46,15 @@ public class Selector : MonoBehaviour
         playSelector.SetActive(false);
         optionsSelector.SetActive(false);
         creditsSelector.SetActive(true);
+        closeSelector.SetActive(false);
+    }
+    
+    public void selectClose()
+    {
+        playSelector.SetActive(false);
+        optionsSelector.SetActive(false);
+        creditsSelector.SetActive(false);
+        closeSelector.SetActive(true);
     }
     
     public void selectNewGame()
