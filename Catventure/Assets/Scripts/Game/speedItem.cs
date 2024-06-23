@@ -1,42 +1,43 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class speedItem : MonoBehaviour
+namespace Game
 {
-    public GameObject player;
-    public PlayerControl playerController;
-    private bool isSpeedBoostActive = false;
-
-    void Start()
+    public class SpeedItem : MonoBehaviour
     {
-        // Hole die PlayerController-Komponente vom Player-Objekt
-        if (player != null)
-        {
-            playerController = player.GetComponent<PlayerControl>();
-        }
-    }
+        public GameObject player;
+        public PlayerController playerController;
+        private bool _isSpeedBoostActive = false;
 
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject == player && !isSpeedBoostActive)
+        void Start()
         {
-            StartCoroutine(SpeedBoost());
+            // Hole die PlayerController-Komponente vom Player-Objekt
+            if (player != null)
+            {
+                playerController = player.GetComponent<PlayerController>();
+            }
         }
-    }
 
-    IEnumerator SpeedBoost()
-    {
-        isSpeedBoostActive = true;
-        if (playerController != null)
+        void OnTriggerEnter(Collider other)
         {
-            playerController.speed *= 2; // Geschwindigkeit verdoppeln
-            gameObject.SetActive(false); // Das Objekt deaktivieren
-            yield return new WaitForSeconds(5); // 5 Sekunden warten
-            playerController.speed /= 2; // Geschwindigkeit zurücksetzen
+            if (other.gameObject == player && !_isSpeedBoostActive)
+            {
+                StartCoroutine(SpeedBoost());
+            }
         }
-        isSpeedBoostActive = false;
-        Destroy(gameObject); // Das Objekt endgültig entfernen
+
+        private IEnumerator SpeedBoost()
+        {
+            _isSpeedBoostActive = true;
+            if (playerController)
+            {
+                playerController.speed *= 2; // Geschwindigkeit verdoppeln
+                gameObject.SetActive(false); // Das Objekt deaktivieren
+                yield return new WaitForSeconds(5); // 5 Sekunden warten
+                playerController.speed /= 2; // Geschwindigkeit zurücksetzen
+            }
+            _isSpeedBoostActive = false;
+            Destroy(gameObject); // Das Objekt endgültig entfernen
+        }
     }
 }

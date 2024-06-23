@@ -1,81 +1,114 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerControl : MonoBehaviour
+// namespace for consistency and error handling
+namespace Game
 {
-    public float speed = 8f;
-    public float jumpForce = 5.0f;
-    public float downForce = 5.0f;
-    public float rotationSpeed = 0f;
-    private Rigidbody rb;
-    private bool isOnGround = true;
-    public GameObject cat;
-    private Animator animator;
-    
-    private void Start()
+    public class PlayerController : MonoBehaviour
     {
-        rb = GetComponent<Rigidbody>();
-        animator = GetComponent<Animator>();
-    }
+        [SerializeField] private Rigidbody rb;
+        [SerializeField] public float speed = 8f;
+        [SerializeField] private float walkSpeed = 8f;
+        [SerializeField] private float runSpeed = 16f;
+        [SerializeField] private float rotationSpeed = 500;
+        [SerializeField] private float jumpForce = 5.0f;
 
-    void Update()
-    {
-            // get player input
-            float horizontalInput = Input.GetAxis("Horizontal");
-            float verticalInput = Input.GetAxis("Vertical");
+        private Vector3 _input;
+        private bool _isOnGround = true;
+        private Animator _animator;
         
-            // move player horizontally and vertically 
-            Vector3 movementDirection = new Vector3(horizontalInput, 0, verticalInput);
+        /*  basically the same as checking for "isRunning/isWalking"
+            but with readonly properties for consistency */
+        private static readonly int IsRunning = Animator.StringToHash("isRunning");
+        private static readonly int IsWalking = Animator.StringToHash("isWalking");
 
-            if (movementDirection != Vector3.zero) // ensure movement direction is not zero to avoid normalization issues
-            {
-                animator.SetBool("isWalking", true);
+        private void Start()
+        {
+            rb = GetComponent<Rigidbody>();
+            _animator = GetComponent<Animator>();
+
+            // lock rotation
+            rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+        }
+
+        private void Update()
+        {
+            // get horizontal/vertical axis from input => Vec3
+            GatherInput();
+            // change controller look direction and move player after
+            Look();
+            Move();
+        }
+
+        void GatherInput()
+        {
+            var moveHorizontal = Input.GetAxisRaw("Horizontal");
+            var moveVertical = Input.GetAxisRaw("Vertical");
+            _input = new Vector3(moveHorizontal, 0, moveVertical);
+        }
+
+        private void Look()
+        {
+            if (_input == Vector3.zero) return;
+
+            // calc rotation with quaternion, vec3.toIso => translates isometric axes to camera viewpoint 
+            var rot = Quaternion.LookRotation(Helpers.ToIso(_input), Vector3.up);
+            // lock rotation to y-axis only
+            rot = Quaternion.Euler(0, rot.eulerAngles.y, 0);
+            // change player rotation matrix
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, rot, rotationSpeed * Time.deltaTime);
+        }
+
+        void Move()
+        {
+            if (!_animator) return;
+            _animator.SetBool(IsWalking, _input != Vector3.zero);
+            var currentSpeed = walkSpeed;
             
-                movementDirection.Normalize(); // normalize the vector to ensure consistent speed
-                float movementFactor = speed * Time.deltaTime; // combine scalars first
-                transform.Translate(movementDirection * movementFactor, Space.World); // Space.World -> movement is adjusted to game world 
-
-                // rotate player to movementDirection
-                Quaternion toRotation = Quaternion.LookRotation(movementDirection, Vector3.up); // Quaternion = type to store rotations
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+            if (_input != Vector3.zero && Input.GetButton("Run"))
+            {
+                _animator.SetBool(IsRunning, true);
+                currentSpeed = runSpeed;
             }
             else
             {
-                animator.SetBool("isWalking", false);
+                _animator.SetBool(IsRunning, false);
             }
-        
-            // let player run
-            if (movementDirection != Vector3.zero && Input.GetButtonDown("Run"))
-            {
-                animator.SetBool("isRunning", true);
-                speed = 16.0f;
-            }
-            else if (movementDirection != Vector3.zero && Input.GetButtonUp("Run"))
-            {
-                animator.SetBool("isRunning", false);
-                speed = 8.0f;
-            }
-        
-            // let player jump
-            if (Input.GetButtonDown("Jump") && isOnGround)
+            
+            if (Input.GetButtonDown("Jump") && _isOnGround)
             {
                 rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-                isOnGround = false;
-            } 
-            else if (Input.GetButtonUp("Jump"))
-            {
-                rb.AddForce(Vector3.down * downForce, ForceMode.Impulse);
-                
+                _isOnGround = false;
             }
-    }
-    
-    private void OnCollisionEnter(Collision collision) // check collision of player and ground
-    {
-        if (collision.gameObject.CompareTag("Ground"))
+
+            // move player
+            var move = transform.forward * (_input.normalized.magnitude * currentSpeed * Time.deltaTime);
+            rb.MovePosition(rb.position + move);
+        }
+
+        private void OnCollisionEnter(Collision other)
         {
-            isOnGround = true;
+            if (other.gameObject.CompareTag("Ground"))
+            {
+                _isOnGround = true;
+            }
+        }
+
+        private void OnCollisionExit(Collision other)
+        {
+            if (other.gameObject.CompareTag("Ground"))
+            {
+                _isOnGround = false;
+            }
+        }
+        
+        /******************** helper functions ********************/
+        
+        private static class Helpers 
+        {
+            // calculated 4x4 matrix by rotation 45 on the y-axis => for our isometric viewpoint
+            private static Matrix4x4 _isoMatrix = Matrix4x4.Rotate(Quaternion.Euler(0, 45, 0));
+            // multiplies _isoMatrix with our input Vec3
+            public static Vector3 ToIso(Vector3 input) => _isoMatrix.MultiplyPoint3x4(input);
         }
     }
 }
