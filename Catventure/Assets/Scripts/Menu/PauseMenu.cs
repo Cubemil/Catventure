@@ -45,9 +45,9 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-    public void MainMenuQuit()  
+    public void Quit()
     {
-        Time.timeScale = 1f;
+        //Debug.Log("Quitting...");
         SceneManager.LoadScene("Menu");
     }
 
@@ -63,5 +63,10 @@ public class PauseMenu : MonoBehaviour
         optionsMenu.SetActive(false);
     }
     
-
+    public void MainMenu()
+    {
+        //Debug.Log("Main Menu loading...");
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Game");
+    }
 }
