@@ -1,0 +1,10 @@
+using UnityEngine;
+
+public static class Helpers
+{
+    // calculated 4x4 matrix by rotation 45 on the y-axis => for our isometric viewpoint
+    private static Matrix4x4 _isoMatrix = Matrix4x4.Rotate(Quaternion.Euler(0, 45, 0));
+    
+    // multiplies _isoMatrix with our input Vec3
+    public static Vector3 ToIso(this Vector3 input) => _isoMatrix.MultiplyPoint3x4(input);
+}

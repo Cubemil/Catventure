@@ -51,7 +51,7 @@ namespace Game
             if (_input == Vector3.zero) return;
 
             // calc rotation with quaternion, vec3.toIso => translates isometric axes to camera viewpoint 
-            var rot = Quaternion.LookRotation(Helpers.ToIso(_input), Vector3.up);
+            var rot = Quaternion.LookRotation(_input.ToIso(), Vector3.up);
             // lock rotation to y-axis only
             rot = Quaternion.Euler(0, rot.eulerAngles.y, 0);
             // change player rotation matrix
@@ -101,14 +101,5 @@ namespace Game
             }
         }
         
-        /******************** helper functions ********************/
-        
-        private static class Helpers 
-        {
-            // calculated 4x4 matrix by rotation 45 on the y-axis => for our isometric viewpoint
-            private static Matrix4x4 _isoMatrix = Matrix4x4.Rotate(Quaternion.Euler(0, 45, 0));
-            // multiplies _isoMatrix with our input Vec3
-            public static Vector3 ToIso(Vector3 input) => _isoMatrix.MultiplyPoint3x4(input);
-        }
     }
 }
