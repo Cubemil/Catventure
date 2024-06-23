@@ -27,7 +27,7 @@ public class MainMenuScript : MonoBehaviour
         {
             if (mainMenu.activeSelf)
             {
-                CloseGame();
+                Quit();
             }
             else
             {
@@ -49,7 +49,12 @@ public class MainMenuScript : MonoBehaviour
         optionsMenu.SetActive(true);
         mainMenu.SetActive(false);
     }
-    
+
+    public void Quit()
+    {
+        Debug.Log("Quitting...");
+        Application.Quit();
+    }
 
     public void Credits()
     {
@@ -67,8 +72,9 @@ public class MainMenuScript : MonoBehaviour
 
     public void newGame()
     {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("Tutorial");
+        //Time.timeScale = 1f;
+        //newGame();
+        //SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
     }
     
     //TODO
@@ -82,12 +88,6 @@ public class MainMenuScript : MonoBehaviour
     {
         mainVolume = slider.value;
         Debug.Log("MainVolume: " + mainVolume);
-    }
-    
-    public void CloseGame()
-    { 
-        Debug.Log("Quitting...");
-        Application.Quit();
     }
     
 }

@@ -9,8 +9,7 @@ public class TriggerScript : MonoBehaviour
     public GameObject jumpTut;
     public GameObject moveTut;
     public GameObject interactTut;
-    public GameObject npcFriendlyTut;
-    public GameObject npcEvilTut;
+    public GameObject npcTut;
     public GameObject itemTut;
     public TextMeshProUGUI textTut;
     
@@ -20,7 +19,12 @@ public class TriggerScript : MonoBehaviour
     {
         textTut.text = "";
     }
-    
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
     
     // Trigger-Ereignis-Methode
     void OnTriggerEnter(Collider other)
@@ -37,13 +41,9 @@ public class TriggerScript : MonoBehaviour
         {
             ShowTutorial("Press E to Interact and to finish the Tutorial");
         }
-        else if (other.gameObject == npcFriendlyTut)
+        else if (other.gameObject == npcTut)
         {
             ShowTutorial("go near an NPC and *meow* to talk to them");
-            
-        }else if (other.gameObject == npcEvilTut)
-        {
-            ShowTutorial("go near an evil NPC and *meow* to scare them");
         }else if(other.gameObject == itemTut)
         {
             ShowTutorial("walk into the item to get it");
