@@ -1,0 +1,338 @@
+Using pre-set license
+Built from '2022.3/staging' branch; Version is '2022.3.24f1 (334eb2a0b267) revision 3362482'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19045) 64bit Core' Language: 'en' Physical Memory: 32677 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2022.3.24f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker4
+-projectPath
+E:/UnityProjects/Catventure/catventure/Catventure
+-logFile
+Logs/AssetImportWorker4.log
+-srvPort
+50377
+Successfully changed project path to: E:/UnityProjects/Catventure/catventure/Catventure
+E:/UnityProjects/Catventure/catventure/Catventure
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [23148] Host "[IP] 192.168.1.178 [Port] 0 [Flags] 2 [Guid] 1252948873 [EditorId] 1252948873 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-R8MS14Q) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [23148] Host "[IP] 192.168.1.178 [Port] 0 [Flags] 2 [Guid] 1252948873 [EditorId] 1252948873 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-R8MS14Q) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+[Physics::Module] Initialized MultithreadedJobDispatcher with 23 workers.
+Refreshing native plugins compatible for Editor in 7.83 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2022.3.24f1 (334eb2a0b267)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.24f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path E:/UnityProjects/Catventure/catventure/Catventure/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 3070 (ID=0x2488)
+    Vendor:   NVIDIA
+    VRAM:     8018 MB
+    Driver:   32.0.15.5599
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.24f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.24f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.24f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56308
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.24f1/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.24f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.018030 seconds.
+- Loaded All Assemblies, in  0.414 seconds
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.270 seconds
+Domain Reload Profiling: 681ms
+	BeginReloadAssembly (136ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (36ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (75ms)
+	LoadAllAssembliesAndSetupDomain (151ms)
+		LoadAssemblies (133ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (149ms)
+			TypeCache.Refresh (147ms)
+				TypeCache.ScanAssembly (134ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (271ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (214ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (18ms)
+			SetLoadedEditorAssemblies (7ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (2ms)
+			ProcessInitializeOnLoadAttributes (143ms)
+			ProcessInitializeOnLoadMethodAttributes (43ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.639 seconds
+Refreshing native plugins compatible for Editor in 2.75 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Package Manager log level set to [2]
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.597 seconds
+Domain Reload Profiling: 1233ms
+	BeginReloadAssembly (153ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (5ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (20ms)
+	RebuildCommonClasses (36ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (45ms)
+	LoadAllAssembliesAndSetupDomain (391ms)
+		LoadAssemblies (310ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (174ms)
+			TypeCache.Refresh (152ms)
+				TypeCache.ScanAssembly (138ms)
+			ScanForSourceGeneratedMonoScriptInfo (14ms)
+			ResolveRequiredComponents (6ms)
+	FinalizeReload (598ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (453ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (13ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (60ms)
+			ProcessInitializeOnLoadAttributes (345ms)
+			ProcessInitializeOnLoadMethodAttributes (19ms)
+			AfterProcessingInitializeOnLoad (13ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (6ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 4.78 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3416 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 57 unused Assets / (1.9 MB). Loaded Objects now: 3871.
+Memory consumption went from 146.1 MB to 144.3 MB.
+Total: 6.972000 ms (FindLiveObjects: 0.625100 ms CreateObjectMapping: 0.126000 ms MarkObjects: 5.037300 ms  DeleteObjects: 1.182100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 32569.969162 seconds.
+  path: Assets/Imported Assets/Quirky Series Ultimate/FREE/Models/Squid_LOD1.fbx
+  artifactKey: Guid(675de00265353434bbdced96003a6fc0) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/Imported Assets/Quirky Series Ultimate/FREE/Models/Squid_LOD1.fbx using Guid(675de00265353434bbdced96003a6fc0) Importer(-1,00000000000000000000000000000000) Split Animation Take Not Found 'Attack'
+Split Animation Take Not Found 'Bounce'
+Split Animation Take Not Found 'Clicked'
+Split Animation Take Not Found 'Death'
+Split Animation Take Not Found 'Eat'
+Split Animation Take Not Found 'Fear'
+Split Animation Take Not Found 'Fly'
+Split Animation Take Not Found 'Hit'
+Split Animation Take Not Found 'Idle_A'
+Split Animation Take Not Found 'Idle_B'
+Split Animation Take Not Found 'Idle_C'
+Split Animation Take Not Found 'Jump'
+Split Animation Take Not Found 'Roll'
+Split Animation Take Not Found 'Run'
+Split Animation Take Not Found 'Sit'
+Split Animation Take Not Found 'Spin'
+Split Animation Take Not Found 'Swim'
+Split Animation Take Not Found 'Walk'
+ -> (artifact id: 'bf09ed91b62b76ee095957efff0497f6') in 0.117950 seconds
+  ERROR: Import of 'Assets/Imported Assets/Quirky Series Ultimate/FREE/Models/Squid_LOD1.fbx' had errors: 
+ Split Animation Take Not Found 'Attack'
+ Split Animation Take Not Found 'Bounce'
+ Split Animation Take Not Found 'Clicked'
+ Split Animation Take Not Found 'Death'
+ Split Animation Take Not Found 'Eat'
+ Split Animation Take Not Found 'Fear'
+ Split Animation Take Not Found 'Fly'
+ Split Animation Take Not Found 'Hit'
+ Split Animation Take Not Found 'Idle_A'
+ Split Animation Take Not Found 'Idle_B'
+ Split Animation Take Not Found 'Idle_C'
+ Split Animation Take Not Found 'Jump'
+ Split Animation Take Not Found 'Roll'
+ Split Animation Take Not Found 'Run'
+ Split Animation Take Not Found 'Sit'
+ Split Animation Take Not Found 'Spin'
+ Split Animation Take Not Found 'Swim'
+ Split Animation Take Not Found 'Walk'
+
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000079 seconds.
+  path: Assets/Imported Assets/GardenSceneAssets/Tree 2/source/Tree03.obj
+  artifactKey: Guid(d4f2a1b4d95a2ab468fd1aea03625fdd) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/Imported Assets/GardenSceneAssets/Tree 2/source/Tree03.obj using Guid(d4f2a1b4d95a2ab468fd1aea03625fdd) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '92df34b0419eddea9feb157cbc50ce53') in 0.034231 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000057 seconds.
+  path: Assets/Imported Assets/Quirky Series Ultimate/FREE/Models/Taipan_LOD1.fbx
+  artifactKey: Guid(d9c32f14f96588d448c55ad66809316f) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/Imported Assets/Quirky Series Ultimate/FREE/Models/Taipan_LOD1.fbx using Guid(d9c32f14f96588d448c55ad66809316f) Importer(-1,00000000000000000000000000000000) Split Animation Take Not Found 'Attack'
+Split Animation Take Not Found 'Bounce'
+Split Animation Take Not Found 'Clicked'
+Split Animation Take Not Found 'Death'
+Split Animation Take Not Found 'Eat'
+Split Animation Take Not Found 'Fear'
+Split Animation Take Not Found 'Fly'
+Split Animation Take Not Found 'Hit'
+Split Animation Take Not Found 'Idle_A'
+Split Animation Take Not Found 'Idle_B'
+Split Animation Take Not Found 'Idle_C'
+Split Animation Take Not Found 'Jump'
+Split Animation Take Not Found 'Roll'
+Split Animation Take Not Found 'Run'
+Split Animation Take Not Found 'Sit'
+Split Animation Take Not Found 'Spin'
+Split Animation Take Not Found 'Swim'
+Split Animation Take Not Found 'Walk'
+ -> (artifact id: 'c19ef211c3dc0d83d3e8df0fd394fb28') in 0.041415 seconds
+  ERROR: Import of 'Assets/Imported Assets/Quirky Series Ultimate/FREE/Models/Taipan_LOD1.fbx' had errors: 
+ Split Animation Take Not Found 'Attack'
+ Split Animation Take Not Found 'Bounce'
+ Split Animation Take Not Found 'Clicked'
+ Split Animation Take Not Found 'Death'
+ Split Animation Take Not Found 'Eat'
+ Split Animation Take Not Found 'Fear'
+ Split Animation Take Not Found 'Fly'
+ Split Animation Take Not Found 'Hit'
+ Split Animation Take Not Found 'Idle_A'
+ Split Animation Take Not Found 'Idle_B'
+ Split Animation Take Not Found 'Idle_C'
+ Split Animation Take Not Found 'Jump'
+ Split Animation Take Not Found 'Roll'
+ Split Animation Take Not Found 'Run'
+ Split Animation Take Not Found 'Sit'
+ Split Animation Take Not Found 'Spin'
+ Split Animation Take Not Found 'Swim'
+ Split Animation Take Not Found 'Walk'
+
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 4.34 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 13 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 14 unused Assets / (1.8 MB). Loaded Objects now: 3871.
+Memory consumption went from 125.1 MB to 123.3 MB.
+Total: 8.558300 ms (FindLiveObjects: 0.649600 ms CreateObjectMapping: 0.118600 ms MarkObjects: 6.976100 ms  DeleteObjects: 0.812100 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 30.504410 seconds.
+  path: Assets
+  artifactKey: Guid(00000000000000001000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets using Guid(00000000000000001000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a4fe85251aa2e89732c359432baa2c3') in 0.003503 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 24.012502 seconds.
+  path: Assets/Scenes
+  artifactKey: Guid(5efa628d84290475b8595813914a4287) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes using Guid(5efa628d84290475b8595813914a4287) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc11d7b7f81ed7b79fa785f721c5d0c8') in 0.000405 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.232581 seconds.
+  path: Assets/Scenes/Game.unity
+  artifactKey: Guid(92b7b7b08cfc7e64f8d0d7ded70326e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Game.unity using Guid(92b7b7b08cfc7e64f8d0d7ded70326e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '577b741dbdeede5a3fccbed0d1733b0c') in 0.000412 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.324342 seconds.
+  path: Assets/Scenes/Garden.unity
+  artifactKey: Guid(47eeeb510d54ee64286b030aa7480a47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Garden.unity using Guid(47eeeb510d54ee64286b030aa7480a47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be7d69c558f02f231cfa832df7429de7') in 0.000481 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
