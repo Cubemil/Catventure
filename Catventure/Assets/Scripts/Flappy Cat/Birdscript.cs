@@ -11,7 +11,8 @@ public class BirdScript : MonoBehaviour
     public LogicSkript logic;
     public bool birdIsAlive = true;
     public float rotationSpeed = -0.1F;
-
+    
+    
     // Start is called before the first frame update
     void Start()
     { 
