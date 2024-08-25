@@ -1,6 +1,6 @@
 Using pre-set license
 Built from '2022.3/staging' branch; Version is '2022.3.24f1 (334eb2a0b267) revision 3362482'; Using compiler version '192829333'; Build Type 'Release'
-OS: 'Windows 10  (10.0.19045) 64bit Professional' Language: 'de' Physical Memory: 32688 MB
+OS: 'Windows 11  (10.0.22631) 64bit Professional' Language: 'de' Physical Memory: 16222 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
@@ -11,13 +11,13 @@ C:\Program Files\Unity\Hub\Editor\2022.3.24f1\Editor\Unity.exe
 -name
 AssetImportWorker2
 -projectPath
-C:/Users/ricar/MyGames/Catventure/catventure/Catventure
+D:/Hochschule Anhalt/Inhalte/4. Semester/Catventure/Catventure
 -logFile
 Logs/AssetImportWorker2.log
 -srvPort
-62241
-Successfully changed project path to: C:/Users/ricar/MyGames/Catventure/catventure/Catventure
-C:/Users/ricar/MyGames/Catventure/catventure/Catventure
+50346
+Successfully changed project path to: D:/Hochschule Anhalt/Inhalte/4. Semester/Catventure/Catventure
+D:/Hochschule Anhalt/Inhalte/4. Semester/Catventure/Catventure
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -49,67 +49,83 @@ C:/Users/ricar/MyGames/Catventure/catventure/Catventure
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [9748] Host "[IP] 192.168.178.36 [Port] 0 [Flags] 2 [Guid] 3834059105 [EditorId] 3834059105 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-RGT5KB1) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [7776] Host "[IP] 192.168.178.30 [Port] 0 [Flags] 2 [Guid] 542172022 [EditorId] 542172022 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-VQ9VGUV) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [9748] Host "[IP] 192.168.178.36 [Port] 0 [Flags] 2 [Guid] 3834059105 [EditorId] 3834059105 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-RGT5KB1) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [7776] Host "[IP] 192.168.178.30 [Port] 0 [Flags] 2 [Guid] 542172022 [EditorId] 542172022 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-VQ9VGUV) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-[Physics::Module] Initialized MultithreadedJobDispatcher with 11 workers.
-Refreshing native plugins compatible for Editor in 11.70 ms, found 3 plugins.
+[Physics::Module] Initialized MultithreadedJobDispatcher with 15 workers.
+Refreshing native plugins compatible for Editor in 6.96 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.24f1 (334eb2a0b267)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.24f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/ricar/MyGames/Catventure/catventure/Catventure/Assets
+[Subsystems] Discovering subsystems at path D:/Hochschule Anhalt/Inhalte/4. Semester/Catventure/Catventure/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: AMD Radeon RX 5700 XT 50th Anniversary (ID=0x731f)
+    Renderer: AMD Radeon RX 6900 XT (ID=0x73bf)
     Vendor:   ATI
-    VRAM:     8151 MB
-    Driver:   31.0.21018.6011
+    VRAM:     16338 MB
+    Driver:   31.0.24027.1012
 Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.24f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.24f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.24f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56040
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56140
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.24f1/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.24f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.24f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.24f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.24f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.015258 seconds.
-- Loaded All Assemblies, in  0.432 seconds
+Registered in 0.009024 seconds.
+- Loaded All Assemblies, in  0.317 seconds
 Native extension for WindowsStandalone target not found
-Native extension for OSXStandalone target not found
+[usbmuxd] Start listen thread
+[usbmuxd] Listen thread started
+Native extension for iOS target not found
+Native extension for Android target not found
+InvalidOperationException: Cannot process request because the process (16488) has exited.
+  at System.Diagnostics.Process.GetProcessHandle (System.Int32 access, System.Boolean throwIfExited) [0x0004e] in <fbf3bef999a04908bac2dd07829c8508>:0 
+  at System.Diagnostics.Process.GetProcessHandle (System.Int32 access) [0x00000] in <fbf3bef999a04908bac2dd07829c8508>:0 
+  at System.Diagnostics.Process.Kill () [0x00002] in <fbf3bef999a04908bac2dd07829c8508>:0 
+  at (wrapper remoting-invoke-with-check) System.Diagnostics.Process.Kill()
+  at UnityEditor.Android.AndroidDeploymentTargetsExtension.GetKnownTargets (UnityEditor.DeploymentTargets.IDeploymentTargetsMainThreadContext context, UnityEditor.ProgressHandler progressHandler) [0x00174] in <74587da87ecb464b9d2f2d3f5a32368e>:0 
+  at UnityEditor.Android.TargetScanWorker.ScanSync () [0x00039] in <74587da87ecb464b9d2f2d3f5a32368e>:0 
+  at UnityEditor.Android.TargetExtension.OnUsbDevicesChanged (UnityEditor.Hardware.UsbDevice[] usbDevices) [0x00081] in <74587da87ecb464b9d2f2d3f5a32368e>:0 
+  at UnityEditor.Android.TargetExtension.OnLoad () [0x000ad] in <74587da87ecb464b9d2f2d3f5a32368e>:0 
+  at UnityEditor.Modules.ModuleManager.InitializePlatformSupportModules () [0x0009d] in <fa3f61a6dce8479c85ca5d90a86ee19e>:0 
+
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.318 seconds
-Domain Reload Profiling: 747ms
-	BeginReloadAssembly (139ms)
+- Finished resetting the current domain, in  2.432 seconds
+Domain Reload Profiling: 2748ms
+	BeginReloadAssembly (105ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (40ms)
-	RebuildNativeTypeToScriptingClass (13ms)
-	initialDomainReloadingComplete (75ms)
-	LoadAllAssembliesAndSetupDomain (161ms)
-		LoadAssemblies (135ms)
+	RebuildCommonClasses (27ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (49ms)
+	LoadAllAssembliesAndSetupDomain (126ms)
+		LoadAssemblies (104ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (159ms)
-			TypeCache.Refresh (157ms)
-				TypeCache.ScanAssembly (142ms)
+		AnalyzeDomain (124ms)
+			TypeCache.Refresh (123ms)
+				TypeCache.ScanAssembly (111ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
 			ResolveRequiredComponents (0ms)
-	FinalizeReload (318ms)
+	FinalizeReload (2432ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (252ms)
+		SetupLoadedEditorAssemblies (2389ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (20ms)
-			SetLoadedEditorAssemblies (8ms)
+			InitializePlatformSupportModulesInManaged (2271ms)
+			SetLoadedEditorAssemblies (3ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (2ms)
-			ProcessInitializeOnLoadAttributes (170ms)
-			ProcessInitializeOnLoadMethodAttributes (52ms)
+			BeforeProcessingInitializeOnLoad (1ms)
+			ProcessInitializeOnLoadAttributes (85ms)
+			ProcessInitializeOnLoadMethodAttributes (29ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -117,125 +133,64 @@ Domain Reload Profiling: 747ms
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.805 seconds
-Refreshing native plugins compatible for Editor in 3.98 ms, found 3 plugins.
+- Loaded All Assemblies, in  0.508 seconds
+Refreshing native plugins compatible for Editor in 1.23 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
-Native extension for OSXStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
 Package Manager log level set to [2]
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.629 seconds
-Domain Reload Profiling: 1429ms
-	BeginReloadAssembly (232ms)
+- Finished resetting the current domain, in  0.573 seconds
+Domain Reload Profiling: 1079ms
+	BeginReloadAssembly (109ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (6ms)
+		DisableScriptedObjects (3ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (32ms)
-	RebuildCommonClasses (56ms)
-	RebuildNativeTypeToScriptingClass (16ms)
-	initialDomainReloadingComplete (53ms)
-	LoadAllAssembliesAndSetupDomain (443ms)
-		LoadAssemblies (388ms)
+		CreateAndSetChildDomain (14ms)
+	RebuildCommonClasses (29ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (33ms)
+	LoadAllAssembliesAndSetupDomain (327ms)
+		LoadAssemblies (243ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (201ms)
-			TypeCache.Refresh (177ms)
-				TypeCache.ScanAssembly (163ms)
-			ScanForSourceGeneratedMonoScriptInfo (16ms)
-			ResolveRequiredComponents (7ms)
-	FinalizeReload (629ms)
+		AnalyzeDomain (151ms)
+			TypeCache.Refresh (129ms)
+				TypeCache.ScanAssembly (116ms)
+			ScanForSourceGeneratedMonoScriptInfo (12ms)
+			ResolveRequiredComponents (8ms)
+	FinalizeReload (573ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (473ms)
+		SetupLoadedEditorAssemblies (450ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (15ms)
+			InitializePlatformSupportModulesInManaged (41ms)
 			SetLoadedEditorAssemblies (3ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (69ms)
-			ProcessInitializeOnLoadAttributes (355ms)
-			ProcessInitializeOnLoadMethodAttributes (20ms)
-			AfterProcessingInitializeOnLoad (12ms)
+			BeforeProcessingInitializeOnLoad (43ms)
+			ProcessInitializeOnLoadAttributes (345ms)
+			ProcessInitializeOnLoadMethodAttributes (14ms)
+			AfterProcessingInitializeOnLoad (5ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (6ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 6.68 ms, found 3 plugins.
+Shader 'TextMeshPro/Distance Field SSD': fallback shader 'TextMeshPro/Mobile/Distance Field' not found
+Shader 'TextMeshPro/Distance Field SSD': fallback shader 'TextMeshPro/Mobile/Distance Field' not found
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 1.18 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3425 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 57 unused Assets / (1.9 MB). Loaded Objects now: 3886.
-Memory consumption went from 149.4 MB to 147.5 MB.
-Total: 3.570600 ms (FindLiveObjects: 0.344000 ms CreateObjectMapping: 0.087300 ms MarkObjects: 2.572700 ms  DeleteObjects: 0.565500 ms)
+Unloading 3426 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 68 unused Assets / (2.6 MB). Loaded Objects now: 3869.
+Memory consumption went from 139.1 MB to 136.5 MB.
+Total: 2.807900 ms (FindLiveObjects: 0.162800 ms CreateObjectMapping: 0.075800 ms MarkObjects: 2.080700 ms  DeleteObjects: 0.487600 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.827 seconds
-Refreshing native plugins compatible for Editor in 6.11 ms, found 3 plugins.
-Native extension for WindowsStandalone target not found
-Native extension for OSXStandalone target not found
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.361 seconds
-Domain Reload Profiling: 2180ms
-	BeginReloadAssembly (242ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (10ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (47ms)
-	RebuildCommonClasses (62ms)
-	RebuildNativeTypeToScriptingClass (17ms)
-	initialDomainReloadingComplete (88ms)
-	LoadAllAssembliesAndSetupDomain (409ms)
-		LoadAssemblies (495ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (45ms)
-			TypeCache.Refresh (13ms)
-				TypeCache.ScanAssembly (2ms)
-			ScanForSourceGeneratedMonoScriptInfo (12ms)
-			ResolveRequiredComponents (18ms)
-	FinalizeReload (1362ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (584ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (21ms)
-			SetLoadedEditorAssemblies (6ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (112ms)
-			ProcessInitializeOnLoadAttributes (404ms)
-			ProcessInitializeOnLoadMethodAttributes (26ms)
-			AfterProcessingInitializeOnLoad (14ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (7ms)
-Refreshing native plugins compatible for Editor in 5.03 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3411 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 36 unused Assets / (1.8 MB). Loaded Objects now: 3937.
-Memory consumption went from 140.9 MB to 139.0 MB.
-Total: 4.040500 ms (FindLiveObjects: 0.336700 ms CreateObjectMapping: 0.085800 ms MarkObjects: 3.186700 ms  DeleteObjects: 0.430200 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
   custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
@@ -249,87 +204,724 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 13097.749830 seconds.
-  path: Packages/com.unity.2d.sprite/Editor/ObjectMenuCreation/DefaultAssets/Textures/Circle.png
-  artifactKey: Guid(ebe73ca9363db456bacf42c025bb4847) Importer(-1,00000000000000000000000000000000)
-Start importing Packages/com.unity.2d.sprite/Editor/ObjectMenuCreation/DefaultAssets/Textures/Circle.png using Guid(ebe73ca9363db456bacf42c025bb4847) Importer(-1,00000000000000000000000000000000)  -> (artifact id: 'a72a70f92b18ce7019fa626e4eeac8a3') in 0.037705 seconds
+  Time since last request: 558810.085456 seconds.
+  path: Assets/Imported Assets/SimpleNaturePack/Models/Flowers_01.fbx
+  artifactKey: Guid(b5a80b3e2a089b841b155d7c7f461e7c) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/Imported Assets/SimpleNaturePack/Models/Flowers_01.fbx using Guid(b5a80b3e2a089b841b155d7c7f461e7c) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '40e32a4bdfa7e20a56b6b2872a2ab897') in 0.061406 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000033 seconds.
-  path: Packages/com.unity.2d.sprite/Editor/ObjectMenuCreation/DefaultAssets/Textures/IsometricDiamondWithBorder.png
-  artifactKey: Guid(0d267bc78a0864eb48358689b29ed20a) Importer(-1,00000000000000000000000000000000)
-Start importing Packages/com.unity.2d.sprite/Editor/ObjectMenuCreation/DefaultAssets/Textures/IsometricDiamondWithBorder.png using Guid(0d267bc78a0864eb48358689b29ed20a) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '59da3dc550275a71b2a18919253de905') in 0.006863 seconds
+  Time since last request: 0.000014 seconds.
+  path: Assets/Imported Assets/Low Poly Environment Park/Models/Environment/trash can 1.fbx
+  artifactKey: Guid(95644c8c819323d429fc5f07e225e781) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/Imported Assets/Low Poly Environment Park/Models/Environment/trash can 1.fbx using Guid(95644c8c819323d429fc5f07e225e781) Importer(-1,00000000000000000000000000000000)  -> (artifact id: 'da8944ca1d3dfd2a69355ab537ddbdfc') in 0.033837 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Imported Assets/SimpleNaturePack/Models/Grass_02.fbx
+  artifactKey: Guid(638dc165572d2a84081d13ce1afb4d52) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/Imported Assets/SimpleNaturePack/Models/Grass_02.fbx using Guid(638dc165572d2a84081d13ce1afb4d52) Importer(-1,00000000000000000000000000000000)  -> (artifact id: 'fe01a1ef6bec9121c95e38244271c23b') in 0.035886 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Packages/com.unity.2d.sprite/Editor/Assets/SpriteEditorOn@2x.png
-  artifactKey: Guid(1fb0e05a5ca5a42ba8ffafe439520b8e) Importer(-1,00000000000000000000000000000000)
-Start importing Packages/com.unity.2d.sprite/Editor/Assets/SpriteEditorOn@2x.png using Guid(1fb0e05a5ca5a42ba8ffafe439520b8e) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '076bdf8aa10839126df1b5bcaffb7dab') in 0.004397 seconds
+  Time since last request: 0.000215 seconds.
+  path: Assets/Imported Assets/Quirky Series Ultimate/FREE/Models/Colobus_LOD3.fbx
+  artifactKey: Guid(00c41b3ac9b4bac45acf9cbda3ad3d7c) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/Imported Assets/Quirky Series Ultimate/FREE/Models/Colobus_LOD3.fbx using Guid(00c41b3ac9b4bac45acf9cbda3ad3d7c) Importer(-1,00000000000000000000000000000000) Split Animation Take Not Found 'Attack'
+Split Animation Take Not Found 'Bounce'
+Split Animation Take Not Found 'Clicked'
+Split Animation Take Not Found 'Death'
+Split Animation Take Not Found 'Eat'
+Split Animation Take Not Found 'Fear'
+Split Animation Take Not Found 'Fly'
+Split Animation Take Not Found 'Hit'
+Split Animation Take Not Found 'Idle_A'
+Split Animation Take Not Found 'Idle_B'
+Split Animation Take Not Found 'Idle_C'
+Split Animation Take Not Found 'Jump'
+Split Animation Take Not Found 'Roll'
+Split Animation Take Not Found 'Run'
+Split Animation Take Not Found 'Sit'
+Split Animation Take Not Found 'Spin'
+Split Animation Take Not Found 'Swim'
+Split Animation Take Not Found 'Walk'
+ -> (artifact id: 'a45718ea7f71935791fe220e024a1bac') in 0.061531 seconds
+  ERROR: Import of 'Assets/Imported Assets/Quirky Series Ultimate/FREE/Models/Colobus_LOD3.fbx' had errors: 
+ Split Animation Take Not Found 'Attack'
+ Split Animation Take Not Found 'Bounce'
+ Split Animation Take Not Found 'Clicked'
+ Split Animation Take Not Found 'Death'
+ Split Animation Take Not Found 'Eat'
+ Split Animation Take Not Found 'Fear'
+ Split Animation Take Not Found 'Fly'
+ Split Animation Take Not Found 'Hit'
+ Split Animation Take Not Found 'Idle_A'
+ Split Animation Take Not Found 'Idle_B'
+ Split Animation Take Not Found 'Idle_C'
+ Split Animation Take Not Found 'Jump'
+ Split Animation Take Not Found 'Roll'
+ Split Animation Take Not Found 'Run'
+ Split Animation Take Not Found 'Sit'
+ Split Animation Take Not Found 'Spin'
+ Split Animation Take Not Found 'Swim'
+ Split Animation Take Not Found 'Walk'
+
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Imported Assets/Low Poly Environment Park/Models/Trees/birch tree.fbx
+  artifactKey: Guid(a9aed04247f22704d9a0d33686def64f) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/Imported Assets/Low Poly Environment Park/Models/Trees/birch tree.fbx using Guid(a9aed04247f22704d9a0d33686def64f) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '5508ec7b47ac1103251ec90c1b3c9b90') in 0.019984 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000061 seconds.
+  path: Assets/Imported Assets/Quirky Series Ultimate/FREE/Animations/Sparrow_Animations.fbx
+  artifactKey: Guid(34f30712d30697648b80843f9e09934c) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/Imported Assets/Quirky Series Ultimate/FREE/Animations/Sparrow_Animations.fbx using Guid(34f30712d30697648b80843f9e09934c) Importer(-1,00000000000000000000000000000000) Keyframe reduction: Ratio: 45.730034%;
+Keyframe reduction: Ratio: 33.333332%;
+ -> (artifact id: '247ed7769b955abf3db34ae365d16250') in 0.247317 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Imported Assets/Low Poly Environment Park/Models/Park grounds/ground park 1.fbx
+  artifactKey: Guid(8933367ee3eaf634a89e79d8ee03c3fa) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/Imported Assets/Low Poly Environment Park/Models/Park grounds/ground park 1.fbx using Guid(8933367ee3eaf634a89e79d8ee03c3fa) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '84e712a633830f3d77a749ed46920cec') in 0.014491 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000055 seconds.
+  path: Assets/Imported Assets/Pure Poly/Free Low Poly Nature Pack/Meshes/PP_Grass_11.fbx
+  artifactKey: Guid(b50dd34feb8fa1b4fa5aa0a7d2271066) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/Imported Assets/Pure Poly/Free Low Poly Nature Pack/Meshes/PP_Grass_11.fbx using Guid(b50dd34feb8fa1b4fa5aa0a7d2271066) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '5b244e993be991010063695a73dbd44a') in 0.015470 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Packages/com.unity.2d.sprite/Editor/Assets/d_SpriteEditor.png
-  artifactKey: Guid(b7784190913354d4fb9b7f77888f915f) Importer(-1,00000000000000000000000000000000)
-Start importing Packages/com.unity.2d.sprite/Editor/Assets/d_SpriteEditor.png using Guid(b7784190913354d4fb9b7f77888f915f) Importer(-1,00000000000000000000000000000000)  -> (artifact id: 'cdbc43385b9221308adb7c7d16a59c70') in 0.004050 seconds
+  Time since last request: 0.000019 seconds.
+  path: Assets/Imported Assets/Pure Poly/Free Low Poly Nature Pack/Meshes/PP_Daffodil_03.fbx
+  artifactKey: Guid(4e40842238bcca046a7c50ffff32b019) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/Imported Assets/Pure Poly/Free Low Poly Nature Pack/Meshes/PP_Daffodil_03.fbx using Guid(4e40842238bcca046a7c50ffff32b019) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '5492896ae1f5eea15b6f61cd77d8472b') in 0.016870 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000285 seconds.
-  path: Packages/com.unity.2d.sprite/Editor/ObjectMenuCreation/DefaultAssets/Textures/9-SlicedWithBorder.png
-  artifactKey: Guid(cc35afd292fc349128b36a291fb3a165) Importer(-1,00000000000000000000000000000000)
-Start importing Packages/com.unity.2d.sprite/Editor/ObjectMenuCreation/DefaultAssets/Textures/9-SlicedWithBorder.png using Guid(cc35afd292fc349128b36a291fb3a165) Importer(-1,00000000000000000000000000000000)  -> (artifact id: 'b84c61dc8bc330e5c8527b118ebd8633') in 0.008264 seconds
+  Time since last request: 0.000065 seconds.
+  path: Assets/Imported Assets/Quirky Series Ultimate/FREE/Models/Pudu_LOD3.fbx
+  artifactKey: Guid(4b60f39d1f696dd4db7bd987f185e074) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/Imported Assets/Quirky Series Ultimate/FREE/Models/Pudu_LOD3.fbx using Guid(4b60f39d1f696dd4db7bd987f185e074) Importer(-1,00000000000000000000000000000000) Split Animation Take Not Found 'Attack'
+Split Animation Take Not Found 'Bounce'
+Split Animation Take Not Found 'Clicked'
+Split Animation Take Not Found 'Death'
+Split Animation Take Not Found 'Eat'
+Split Animation Take Not Found 'Fear'
+Split Animation Take Not Found 'Fly'
+Split Animation Take Not Found 'Hit'
+Split Animation Take Not Found 'Idle_A'
+Split Animation Take Not Found 'Idle_B'
+Split Animation Take Not Found 'Idle_C'
+Split Animation Take Not Found 'Jump'
+Split Animation Take Not Found 'Roll'
+Split Animation Take Not Found 'Run'
+Split Animation Take Not Found 'Sit'
+Split Animation Take Not Found 'Spin'
+Split Animation Take Not Found 'Swim'
+Split Animation Take Not Found 'Walk'
+ -> (artifact id: '65d241eb86fa372576378321b64fec6e') in 0.027844 seconds
+  ERROR: Import of 'Assets/Imported Assets/Quirky Series Ultimate/FREE/Models/Pudu_LOD3.fbx' had errors: 
+ Split Animation Take Not Found 'Attack'
+ Split Animation Take Not Found 'Bounce'
+ Split Animation Take Not Found 'Clicked'
+ Split Animation Take Not Found 'Death'
+ Split Animation Take Not Found 'Eat'
+ Split Animation Take Not Found 'Fear'
+ Split Animation Take Not Found 'Fly'
+ Split Animation Take Not Found 'Hit'
+ Split Animation Take Not Found 'Idle_A'
+ Split Animation Take Not Found 'Idle_B'
+ Split Animation Take Not Found 'Idle_C'
+ Split Animation Take Not Found 'Jump'
+ Split Animation Take Not Found 'Roll'
+ Split Animation Take Not Found 'Run'
+ Split Animation Take Not Found 'Sit'
+ Split Animation Take Not Found 'Spin'
+ Split Animation Take Not Found 'Swim'
+ Split Animation Take Not Found 'Walk'
+
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Imported Assets/Quirky Series Ultimate/FREE/Models/Pudu_LOD2.fbx
+  artifactKey: Guid(eeec9aefda18e254f80205676019e1cc) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/Imported Assets/Quirky Series Ultimate/FREE/Models/Pudu_LOD2.fbx using Guid(eeec9aefda18e254f80205676019e1cc) Importer(-1,00000000000000000000000000000000) Split Animation Take Not Found 'Attack'
+Split Animation Take Not Found 'Bounce'
+Split Animation Take Not Found 'Clicked'
+Split Animation Take Not Found 'Death'
+Split Animation Take Not Found 'Eat'
+Split Animation Take Not Found 'Fear'
+Split Animation Take Not Found 'Fly'
+Split Animation Take Not Found 'Hit'
+Split Animation Take Not Found 'Idle_A'
+Split Animation Take Not Found 'Idle_B'
+Split Animation Take Not Found 'Idle_C'
+Split Animation Take Not Found 'Jump'
+Split Animation Take Not Found 'Roll'
+Split Animation Take Not Found 'Run'
+Split Animation Take Not Found 'Sit'
+Split Animation Take Not Found 'Spin'
+Split Animation Take Not Found 'Swim'
+Split Animation Take Not Found 'Walk'
+ -> (artifact id: '3cd1a288e09934e5663088b342d299dd') in 0.030782 seconds
+  ERROR: Import of 'Assets/Imported Assets/Quirky Series Ultimate/FREE/Models/Pudu_LOD2.fbx' had errors: 
+ Split Animation Take Not Found 'Attack'
+ Split Animation Take Not Found 'Bounce'
+ Split Animation Take Not Found 'Clicked'
+ Split Animation Take Not Found 'Death'
+ Split Animation Take Not Found 'Eat'
+ Split Animation Take Not Found 'Fear'
+ Split Animation Take Not Found 'Fly'
+ Split Animation Take Not Found 'Hit'
+ Split Animation Take Not Found 'Idle_A'
+ Split Animation Take Not Found 'Idle_B'
+ Split Animation Take Not Found 'Idle_C'
+ Split Animation Take Not Found 'Jump'
+ Split Animation Take Not Found 'Roll'
+ Split Animation Take Not Found 'Run'
+ Split Animation Take Not Found 'Sit'
+ Split Animation Take Not Found 'Spin'
+ Split Animation Take Not Found 'Swim'
+ Split Animation Take Not Found 'Walk'
+
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Imported Assets/GardenSceneAssets/Firewood Pile/source/firewood01.obj
+  artifactKey: Guid(3cc0756c6d5327a459d72d9eb48d115a) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/Imported Assets/GardenSceneAssets/Firewood Pile/source/firewood01.obj using Guid(3cc0756c6d5327a459d72d9eb48d115a) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '62feae3f00408b5282a208164563fbbd') in 0.048496 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Imported Assets/Pure Poly/Free Low Poly Nature Pack/Meshes/PP_Tree_02.fbx
+  artifactKey: Guid(c6b568bf9e55de141add501b8cd2a0e9) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/Imported Assets/Pure Poly/Free Low Poly Nature Pack/Meshes/PP_Tree_02.fbx using Guid(c6b568bf9e55de141add501b8cd2a0e9) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '0c543dbd1107b3f1c3baf6fd0cdef01c') in 0.018633 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Imported Assets/Low Poly Environment Park/Models/Stones/stone 4.fbx
+  artifactKey: Guid(f60eff158ba294b488ac5001df5115d3) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/Imported Assets/Low Poly Environment Park/Models/Stones/stone 4.fbx using Guid(f60eff158ba294b488ac5001df5115d3) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '2a85210bf12c66e6d5dc6f01a4e5d809') in 0.013933 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Imported Assets/SimpleNaturePack/Models/Tree_05.fbx
+  artifactKey: Guid(603970f97e50c56488ec3c5a6febd940) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/Imported Assets/SimpleNaturePack/Models/Tree_05.fbx using Guid(603970f97e50c56488ec3c5a6febd940) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '269bb09927e808e6f194992ba7efe7fd') in 0.014651 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Imported Assets/Pure Poly/Free Low Poly Nature Pack/Meshes/PP_Rock_Pile_Forest_Moss_10.fbx
+  artifactKey: Guid(7ea25f0f06a711d48a2bd754e29ecb0e) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/Imported Assets/Pure Poly/Free Low Poly Nature Pack/Meshes/PP_Rock_Pile_Forest_Moss_10.fbx using Guid(7ea25f0f06a711d48a2bd754e29ecb0e) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '507bdf94d077cd26e93214a3415a635c') in 0.016173 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000061 seconds.
+  path: Assets/Imported Assets/Quirky Series Ultimate/FREE/Models/Sparrow_LOD1.fbx
+  artifactKey: Guid(9679f1fea2a0be24aac869c621837d6a) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/Imported Assets/Quirky Series Ultimate/FREE/Models/Sparrow_LOD1.fbx using Guid(9679f1fea2a0be24aac869c621837d6a) Importer(-1,00000000000000000000000000000000)  -> (artifact id: 'a5d5e67ff4feb13584f9113b455ba3d4') in 0.042059 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Imported Assets/SimpleNaturePack/Models/Ground_03.fbx
+  artifactKey: Guid(661464e19c087564badb2bf5230c842c) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/Imported Assets/SimpleNaturePack/Models/Ground_03.fbx using Guid(661464e19c087564badb2bf5230c842c) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '210be25a7bc17c5095e1ee4538a5e65c') in 0.029503 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Imported Assets/SimpleNaturePack/Models/Mushroom_01.fbx
+  artifactKey: Guid(d062f5c56ffb55c4f832432ada269abe) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/Imported Assets/SimpleNaturePack/Models/Mushroom_01.fbx using Guid(d062f5c56ffb55c4f832432ada269abe) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '71fdea4a71931e3d918634f347dc9dcb') in 0.014503 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Imported Assets/SimpleNaturePack/Models/Grass_01.fbx
+  artifactKey: Guid(ad3119cbd6dce024e8460ef32dec49df) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/Imported Assets/SimpleNaturePack/Models/Grass_01.fbx using Guid(ad3119cbd6dce024e8460ef32dec49df) Importer(-1,00000000000000000000000000000000)  -> (artifact id: 'f2feb775cd66416b150b8a4d4741b9ac') in 0.015018 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Imported Assets/SimpleNaturePack/Models/Stump_01.fbx
+  artifactKey: Guid(768be665aba8b4e4aae7a973ae9616cf) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/Imported Assets/SimpleNaturePack/Models/Stump_01.fbx using Guid(768be665aba8b4e4aae7a973ae9616cf) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '769374bc35fb5445125901e94b316740') in 0.016539 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
   Time since last request: 0.000085 seconds.
-  path: Packages/com.unity.2d.sprite/Editor/ObjectMenuCreation/DefaultAssets/Textures/HexagonPointed-Top.png
-  artifactKey: Guid(eed45a33cd08446c8b88325cf82fc52f) Importer(-1,00000000000000000000000000000000)
-Start importing Packages/com.unity.2d.sprite/Editor/ObjectMenuCreation/DefaultAssets/Textures/HexagonPointed-Top.png using Guid(eed45a33cd08446c8b88325cf82fc52f) Importer(-1,00000000000000000000000000000000)  -> (artifact id: 'e470b5f944802eb325a124d07972a20e') in 0.010785 seconds
+  path: Assets/Imported Assets/Low Poly Environment Park/Models/Grass/grass 1.fbx
+  artifactKey: Guid(05cee6315ff403c47b560042975f1dc7) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/Imported Assets/Low Poly Environment Park/Models/Grass/grass 1.fbx using Guid(05cee6315ff403c47b560042975f1dc7) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '26e3cb54f3840944597a99a14680e428') in 0.016663 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Imported Assets/Quirky Series Ultimate/FREE/Models/Muskrat_LOD3.fbx
+  artifactKey: Guid(ecd5f26877b05f24b8929db54ddf9e71) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/Imported Assets/Quirky Series Ultimate/FREE/Models/Muskrat_LOD3.fbx using Guid(ecd5f26877b05f24b8929db54ddf9e71) Importer(-1,00000000000000000000000000000000) Split Animation Take Not Found 'Attack'
+Split Animation Take Not Found 'Bounce'
+Split Animation Take Not Found 'Clicked'
+Split Animation Take Not Found 'Death'
+Split Animation Take Not Found 'Eat'
+Split Animation Take Not Found 'Fear'
+Split Animation Take Not Found 'Fly'
+Split Animation Take Not Found 'Hit'
+Split Animation Take Not Found 'Idle_A'
+Split Animation Take Not Found 'Idle_B'
+Split Animation Take Not Found 'Idle_C'
+Split Animation Take Not Found 'Jump'
+Split Animation Take Not Found 'Roll'
+Split Animation Take Not Found 'Run'
+Split Animation Take Not Found 'Sit'
+Split Animation Take Not Found 'Spin'
+Split Animation Take Not Found 'Swim'
+Split Animation Take Not Found 'Walk'
+ -> (artifact id: '422f9241823521b271f207084798b5db') in 0.024669 seconds
+  ERROR: Import of 'Assets/Imported Assets/Quirky Series Ultimate/FREE/Models/Muskrat_LOD3.fbx' had errors: 
+ Split Animation Take Not Found 'Attack'
+ Split Animation Take Not Found 'Bounce'
+ Split Animation Take Not Found 'Clicked'
+ Split Animation Take Not Found 'Death'
+ Split Animation Take Not Found 'Eat'
+ Split Animation Take Not Found 'Fear'
+ Split Animation Take Not Found 'Fly'
+ Split Animation Take Not Found 'Hit'
+ Split Animation Take Not Found 'Idle_A'
+ Split Animation Take Not Found 'Idle_B'
+ Split Animation Take Not Found 'Idle_C'
+ Split Animation Take Not Found 'Jump'
+ Split Animation Take Not Found 'Roll'
+ Split Animation Take Not Found 'Run'
+ Split Animation Take Not Found 'Sit'
+ Split Animation Take Not Found 'Spin'
+ Split Animation Take Not Found 'Swim'
+ Split Animation Take Not Found 'Walk'
+
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Imported Assets/Quirky Series Ultimate/FREE/Models/Herring_LOD2.fbx
+  artifactKey: Guid(c9684499ad5cbd446a7e986398d6f70d) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/Imported Assets/Quirky Series Ultimate/FREE/Models/Herring_LOD2.fbx using Guid(c9684499ad5cbd446a7e986398d6f70d) Importer(-1,00000000000000000000000000000000) Split Animation Take Not Found 'Attack'
+Split Animation Take Not Found 'Bounce'
+Split Animation Take Not Found 'Clicked'
+Split Animation Take Not Found 'Death'
+Split Animation Take Not Found 'Eat'
+Split Animation Take Not Found 'Fear'
+Split Animation Take Not Found 'Fly'
+Split Animation Take Not Found 'Hit'
+Split Animation Take Not Found 'Idle_A'
+Split Animation Take Not Found 'Idle_B'
+Split Animation Take Not Found 'Idle_C'
+Split Animation Take Not Found 'Jump'
+Split Animation Take Not Found 'Roll'
+Split Animation Take Not Found 'Run'
+Split Animation Take Not Found 'Sit'
+Split Animation Take Not Found 'Spin'
+Split Animation Take Not Found 'Swim'
+Split Animation Take Not Found 'Walk'
+ -> (artifact id: '7aed07454d88a87b975431f60316fa22') in 0.032709 seconds
+  ERROR: Import of 'Assets/Imported Assets/Quirky Series Ultimate/FREE/Models/Herring_LOD2.fbx' had errors: 
+ Split Animation Take Not Found 'Attack'
+ Split Animation Take Not Found 'Bounce'
+ Split Animation Take Not Found 'Clicked'
+ Split Animation Take Not Found 'Death'
+ Split Animation Take Not Found 'Eat'
+ Split Animation Take Not Found 'Fear'
+ Split Animation Take Not Found 'Fly'
+ Split Animation Take Not Found 'Hit'
+ Split Animation Take Not Found 'Idle_A'
+ Split Animation Take Not Found 'Idle_B'
+ Split Animation Take Not Found 'Idle_C'
+ Split Animation Take Not Found 'Jump'
+ Split Animation Take Not Found 'Roll'
+ Split Animation Take Not Found 'Run'
+ Split Animation Take Not Found 'Sit'
+ Split Animation Take Not Found 'Spin'
+ Split Animation Take Not Found 'Swim'
+ Split Animation Take Not Found 'Walk'
+
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Imported Assets/Quirky Series Ultimate/FREE/Models/Taipan_LOD2.fbx
+  artifactKey: Guid(c39757cfd1c959d43b3cef4252fef0d0) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/Imported Assets/Quirky Series Ultimate/FREE/Models/Taipan_LOD2.fbx using Guid(c39757cfd1c959d43b3cef4252fef0d0) Importer(-1,00000000000000000000000000000000) Split Animation Take Not Found 'Attack'
+Split Animation Take Not Found 'Bounce'
+Split Animation Take Not Found 'Clicked'
+Split Animation Take Not Found 'Death'
+Split Animation Take Not Found 'Eat'
+Split Animation Take Not Found 'Fear'
+Split Animation Take Not Found 'Fly'
+Split Animation Take Not Found 'Hit'
+Split Animation Take Not Found 'Idle_A'
+Split Animation Take Not Found 'Idle_B'
+Split Animation Take Not Found 'Idle_C'
+Split Animation Take Not Found 'Jump'
+Split Animation Take Not Found 'Roll'
+Split Animation Take Not Found 'Run'
+Split Animation Take Not Found 'Sit'
+Split Animation Take Not Found 'Spin'
+Split Animation Take Not Found 'Swim'
+Split Animation Take Not Found 'Walk'
+ -> (artifact id: '5a34d7eba305325e0900ff31264ba529') in 0.038154 seconds
+  ERROR: Import of 'Assets/Imported Assets/Quirky Series Ultimate/FREE/Models/Taipan_LOD2.fbx' had errors: 
+ Split Animation Take Not Found 'Attack'
+ Split Animation Take Not Found 'Bounce'
+ Split Animation Take Not Found 'Clicked'
+ Split Animation Take Not Found 'Death'
+ Split Animation Take Not Found 'Eat'
+ Split Animation Take Not Found 'Fear'
+ Split Animation Take Not Found 'Fly'
+ Split Animation Take Not Found 'Hit'
+ Split Animation Take Not Found 'Idle_A'
+ Split Animation Take Not Found 'Idle_B'
+ Split Animation Take Not Found 'Idle_C'
+ Split Animation Take Not Found 'Jump'
+ Split Animation Take Not Found 'Roll'
+ Split Animation Take Not Found 'Run'
+ Split Animation Take Not Found 'Sit'
+ Split Animation Take Not Found 'Spin'
+ Split Animation Take Not Found 'Swim'
+ Split Animation Take Not Found 'Walk'
+
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Imported Assets/Low Poly Environment Park/Models/Grass/grass 3.fbx
+  artifactKey: Guid(6b7d8ff71597e884f92dee7df1d4572b) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/Imported Assets/Low Poly Environment Park/Models/Grass/grass 3.fbx using Guid(6b7d8ff71597e884f92dee7df1d4572b) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '036d866a17369b3205a89ba1a7577c84') in 0.021912 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Imported Assets/Quirky Series Ultimate/FREE/Models/Squid_LOD2.fbx
+  artifactKey: Guid(12a19f46ffb36374e8da9b6a6faeeb5d) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/Imported Assets/Quirky Series Ultimate/FREE/Models/Squid_LOD2.fbx using Guid(12a19f46ffb36374e8da9b6a6faeeb5d) Importer(-1,00000000000000000000000000000000) Split Animation Take Not Found 'Attack'
+Split Animation Take Not Found 'Bounce'
+Split Animation Take Not Found 'Clicked'
+Split Animation Take Not Found 'Death'
+Split Animation Take Not Found 'Eat'
+Split Animation Take Not Found 'Fear'
+Split Animation Take Not Found 'Fly'
+Split Animation Take Not Found 'Hit'
+Split Animation Take Not Found 'Idle_A'
+Split Animation Take Not Found 'Idle_B'
+Split Animation Take Not Found 'Idle_C'
+Split Animation Take Not Found 'Jump'
+Split Animation Take Not Found 'Roll'
+Split Animation Take Not Found 'Run'
+Split Animation Take Not Found 'Sit'
+Split Animation Take Not Found 'Spin'
+Split Animation Take Not Found 'Swim'
+Split Animation Take Not Found 'Walk'
+ -> (artifact id: 'd7caff3204af8094953d0e0c686470a5') in 0.235130 seconds
+  ERROR: Import of 'Assets/Imported Assets/Quirky Series Ultimate/FREE/Models/Squid_LOD2.fbx' had errors: 
+ Split Animation Take Not Found 'Attack'
+ Split Animation Take Not Found 'Bounce'
+ Split Animation Take Not Found 'Clicked'
+ Split Animation Take Not Found 'Death'
+ Split Animation Take Not Found 'Eat'
+ Split Animation Take Not Found 'Fear'
+ Split Animation Take Not Found 'Fly'
+ Split Animation Take Not Found 'Hit'
+ Split Animation Take Not Found 'Idle_A'
+ Split Animation Take Not Found 'Idle_B'
+ Split Animation Take Not Found 'Idle_C'
+ Split Animation Take Not Found 'Jump'
+ Split Animation Take Not Found 'Roll'
+ Split Animation Take Not Found 'Run'
+ Split Animation Take Not Found 'Sit'
+ Split Animation Take Not Found 'Spin'
+ Split Animation Take Not Found 'Swim'
+ Split Animation Take Not Found 'Walk'
+
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Imported Assets/Quirky Series Ultimate/FREE/Animations/Taipan_Animations.fbx
+  artifactKey: Guid(1c77555fce85aa74da16fd6cadfac6b8) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/Imported Assets/Quirky Series Ultimate/FREE/Animations/Taipan_Animations.fbx using Guid(1c77555fce85aa74da16fd6cadfac6b8) Importer(-1,00000000000000000000000000000000) Keyframe reduction: Ratio: 30.303032%;
+Keyframe reduction: Ratio: 22.222225%;
+Keyframe reduction: Ratio: 31.313135%;
+Keyframe reduction: Ratio: 31.313135%;
+Keyframe reduction: Ratio: 38.720539%;
+ -> (artifact id: '44e3322305cc3f2ff3dfc02812289d4d') in 0.108978 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000076 seconds.
+  path: Assets/Imported Assets/Pure Poly/Free Low Poly Nature Pack/Meshes/PP_Mushroom_Fantasy_Purple_08.fbx
+  artifactKey: Guid(6aac2ae04e9a93646918391471e1a564) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/Imported Assets/Pure Poly/Free Low Poly Nature Pack/Meshes/PP_Mushroom_Fantasy_Purple_08.fbx using Guid(6aac2ae04e9a93646918391471e1a564) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '322090410f0db7be2bf4bd37c4666b11') in 0.040189 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000106 seconds.
-  path: Packages/com.unity.2d.sprite/Editor/ObjectMenuCreation/DefaultAssets/Textures/9-Sliced.png
-  artifactKey: Guid(71ebafeef3c03457483266a33ab2b270) Importer(-1,00000000000000000000000000000000)
-Start importing Packages/com.unity.2d.sprite/Editor/ObjectMenuCreation/DefaultAssets/Textures/9-Sliced.png using Guid(71ebafeef3c03457483266a33ab2b270) Importer(-1,00000000000000000000000000000000)  -> (artifact id: 'd926046cb0e932c2dac4b2c4ad2bae13') in 0.007753 seconds
+  Time since last request: 0.000021 seconds.
+  path: Assets/Imported Assets/SimpleNaturePack/Models/Ground_02.fbx
+  artifactKey: Guid(57d3eed6d2253d24994d5ad37e00aedc) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/Imported Assets/SimpleNaturePack/Models/Ground_02.fbx using Guid(57d3eed6d2253d24994d5ad37e00aedc) Importer(-1,00000000000000000000000000000000)  -> (artifact id: 'a7cbf32877f9295104c37bece8320cd2') in 0.078390 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000132 seconds.
-  path: Packages/com.unity.2d.sprite/Editor/ObjectMenuCreation/DefaultAssets/Textures/v2/IsometricDiamond.png
-  artifactKey: Guid(19fb86013d8c24d6cb8410c0aadf30fa) Importer(-1,00000000000000000000000000000000)
-Start importing Packages/com.unity.2d.sprite/Editor/ObjectMenuCreation/DefaultAssets/Textures/v2/IsometricDiamond.png using Guid(19fb86013d8c24d6cb8410c0aadf30fa) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '2db7c71370f2d154b451359f4b2614f0') in 0.005566 seconds
+  Time since last request: 0.000014 seconds.
+  path: Assets/Imported Assets/GardenSceneAssets/Tree 2/source/Tree03.obj
+  artifactKey: Guid(d4f2a1b4d95a2ab468fd1aea03625fdd) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/Imported Assets/GardenSceneAssets/Tree 2/source/Tree03.obj using Guid(d4f2a1b4d95a2ab468fd1aea03625fdd) Importer(-1,00000000000000000000000000000000)  -> (artifact id: 'fe6f61ae41b16dca27771667f99a2d6c') in 0.045155 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Packages/com.unity.2d.sprite/Editor/Assets/d_SpriteEditor@2x.png
-  artifactKey: Guid(74d9036aa1bb14ccfafb89d639870288) Importer(-1,00000000000000000000000000000000)
-Start importing Packages/com.unity.2d.sprite/Editor/Assets/d_SpriteEditor@2x.png using Guid(74d9036aa1bb14ccfafb89d639870288) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '5fa31e97d2a88999b4facf6941bcfbc9') in 0.005751 seconds
+  Time since last request: 0.000023 seconds.
+  path: Assets/Imported Assets/Low Poly Environment Park/Models/Grass/grass 2.fbx
+  artifactKey: Guid(8253ca105f4ae554994c59ec48e47051) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/Imported Assets/Low Poly Environment Park/Models/Grass/grass 2.fbx using Guid(8253ca105f4ae554994c59ec48e47051) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '9e514a61f02736135156763c28e62a3c') in 0.026874 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000083 seconds.
+  path: Assets/Imported Assets/Low Poly Environment Park/Models/Park grounds/ground park 5.fbx
+  artifactKey: Guid(6e537d94e608ecc46ab41e300d07df53) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/Imported Assets/Low Poly Environment Park/Models/Park grounds/ground park 5.fbx using Guid(6e537d94e608ecc46ab41e300d07df53) Importer(-1,00000000000000000000000000000000)  -> (artifact id: 'b852572ca5930e3c722b443fe4fc11ce') in 0.084497 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000066 seconds.
+  path: Assets/Imported Assets/Low Poly Environment Park/Models/Environment/trash can 2.fbx
+  artifactKey: Guid(9f831af1ed754924cadcbb0daf93635c) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/Imported Assets/Low Poly Environment Park/Models/Environment/trash can 2.fbx using Guid(9f831af1ed754924cadcbb0daf93635c) Importer(-1,00000000000000000000000000000000)  -> (artifact id: 'e1a8bf4af563d1bcc3738f1e02f2ba79') in 0.016558 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Imported Assets/Pure Poly/Free Low Poly Nature Pack/Meshes/PP_Forest_Mountain_Moss_01.fbx
+  artifactKey: Guid(d818648c1b009ab48a03dbcc4ae09583) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/Imported Assets/Pure Poly/Free Low Poly Nature Pack/Meshes/PP_Forest_Mountain_Moss_01.fbx using Guid(d818648c1b009ab48a03dbcc4ae09583) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '50c93fb0cc50a2c139d81b1d67e6cccd') in 0.017144 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000426 seconds.
-  path: Packages/com.unity.2d.sprite/Editor/ObjectMenuCreation/DefaultAssets/Textures/Square.png
-  artifactKey: Guid(48e93eef0688c4a259cb0eddcd8661f7) Importer(-1,00000000000000000000000000000000)
-Start importing Packages/com.unity.2d.sprite/Editor/ObjectMenuCreation/DefaultAssets/Textures/Square.png using Guid(48e93eef0688c4a259cb0eddcd8661f7) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '68a21e152b3cf9b93b40828e1e5617b1') in 0.012422 seconds
+  Time since last request: 0.000042 seconds.
+  path: Assets/Imported Assets/Pure Poly/Free Low Poly Nature Pack/Meshes/PP_Tree_10.fbx
+  artifactKey: Guid(a3ccb41ae53c6bf4bb0a5bfc470bf069) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/Imported Assets/Pure Poly/Free Low Poly Nature Pack/Meshes/PP_Tree_10.fbx using Guid(a3ccb41ae53c6bf4bb0a5bfc470bf069) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '51067bc1cd443ee43b9557073aa53a11') in 0.021602 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
-Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
-TcpMessagingSession - receive error
-AssetImportWorkerClient::OnTransportError - code=2 error=End of file
-AssetImportWorker is now disconnected from the server
-Process exiting
-Exiting without the bug reporter. Application will terminate with return code 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000795 seconds.
+  path: Assets/Imported Assets/Quirky Series Ultimate/FREE/Models/Sparrow_LOD2.fbx
+  artifactKey: Guid(5d65f55b81ed9e94d9c9a41ecae53f32) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/Imported Assets/Quirky Series Ultimate/FREE/Models/Sparrow_LOD2.fbx using Guid(5d65f55b81ed9e94d9c9a41ecae53f32) Importer(-1,00000000000000000000000000000000)  -> (artifact id: 'c363e90172dd407c9d71cccf96586544') in 0.035247 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Imported Assets/Low Poly Environment Park/Models/Environment/picnic bag.fbx
+  artifactKey: Guid(a590a80bad6af8a4eaa19194133619d0) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/Imported Assets/Low Poly Environment Park/Models/Environment/picnic bag.fbx using Guid(a590a80bad6af8a4eaa19194133619d0) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '496ca63f4b194e0b450a9b173d913f0f') in 0.013452 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Imported Assets/Pure Poly/Free Low Poly Nature Pack/Meshes/PP_Meadow_08.fbx
+  artifactKey: Guid(08eefc2f613faa34fbb717ac2142af0a) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/Imported Assets/Pure Poly/Free Low Poly Nature Pack/Meshes/PP_Meadow_08.fbx using Guid(08eefc2f613faa34fbb717ac2142af0a) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '0abd4e82940a58938e0565998672804b') in 0.018256 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000098 seconds.
+  path: Assets/Imported Assets/Low Poly Environment Park/Models/Environment/bridge.fbx
+  artifactKey: Guid(02a2f7ba4ef86f44fb59e378f566e68f) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/Imported Assets/Low Poly Environment Park/Models/Environment/bridge.fbx using Guid(02a2f7ba4ef86f44fb59e378f566e68f) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '0012634c2d3182a838156277227d6cd8') in 0.023452 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000081 seconds.
+  path: Assets/Imported Assets/Low Poly Environment Park/Models/Trees/spherical tree.fbx
+  artifactKey: Guid(4525472cbde143643bf81ab9935ad1bd) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/Imported Assets/Low Poly Environment Park/Models/Trees/spherical tree.fbx using Guid(4525472cbde143643bf81ab9935ad1bd) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '2106cb9af056d020e25c24e0382c5bcb') in 0.015504 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 2.25 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 58 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 59 unused Assets / (5.4 MB). Loaded Objects now: 3869.
+Memory consumption went from 123.3 MB to 117.9 MB.
+Total: 4.751000 ms (FindLiveObjects: 0.210500 ms CreateObjectMapping: 0.142500 ms MarkObjects: 2.837400 ms  DeleteObjects: 1.559000 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 7.547445 seconds.
+  path: Assets/New Terrain.asset
+  artifactKey: Guid(cae400c9ecf8f3a418b7e0bb0ed96e2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/New Terrain.asset using Guid(cae400c9ecf8f3a418b7e0bb0ed96e2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) The tree deciduous tree must use the Nature/Soft Occlusion shader. Otherwise billboarding/lighting will not work correctly.
+The tree birch tree must use the Nature/Soft Occlusion shader. Otherwise billboarding/lighting will not work correctly.
+ -> (artifact id: '9b68a09dd1f47cf0a93eb49462899e2f') in 0.012821 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 29.089388 seconds.
+  path: Assets/Scenes
+  artifactKey: Guid(5efa628d84290475b8595813914a4287) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes using Guid(5efa628d84290475b8595813914a4287) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc11d7b7f81ed7b79fa785f721c5d0c8') in 0.000369 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 2.201646 seconds.
+  path: Assets/Scenes/Flappy Cat.unity
+  artifactKey: Guid(285b7abf0f0e39b4584c84104a70b16b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Flappy Cat.unity using Guid(285b7abf0f0e39b4584c84104a70b16b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '11a3754042205f80e1b4c7fde121afc8') in 0.000378 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.251590 seconds.
+  path: Assets/Scenes/Game.unity
+  artifactKey: Guid(92b7b7b08cfc7e64f8d0d7ded70326e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Game.unity using Guid(92b7b7b08cfc7e64f8d0d7ded70326e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '577b741dbdeede5a3fccbed0d1733b0c') in 0.000350 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 196.667226 seconds.
+  path: Assets/Sprites/25668223_kl16_vgl7_220303.png
+  artifactKey: Guid(e29696d3ad3041743a669f13b2ed1da4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/25668223_kl16_vgl7_220303.png using Guid(e29696d3ad3041743a669f13b2ed1da4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b81de04a3b6177b75c7fde7ffe068cf7') in 0.157368 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Sprites/unitytut-birdwingdown.png
+  artifactKey: Guid(4dab83dbaa580cf44b1db29716731a7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/unitytut-birdwingdown.png using Guid(4dab83dbaa580cf44b1db29716731a7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8fc297731e8386cf57e77982941f49e7') in 0.029536 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Sprites/unitytut-birdwingmid.png
+  artifactKey: Guid(bf231ea84733c8c4e82070724c80f839) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/unitytut-birdwingmid.png using Guid(bf231ea84733c8c4e82070724c80f839) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'abc09a26132af9bb4a2bb4cedea0db30') in 0.022856 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000368 seconds.
+  path: Assets/Sprites/Paw.png
+  artifactKey: Guid(deb039a2762a0de48a490be13c4f90b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Paw.png using Guid(deb039a2762a0de48a490be13c4f90b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a9847a41e78eac7bdfcd9d274ee94ba') in 0.010911 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Sprites/wool-ball.png
+  artifactKey: Guid(75e3bde7587993e449cf3765711f9ff9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/wool-ball.png using Guid(75e3bde7587993e449cf3765711f9ff9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'badc4436d09adf2ae22959aeb303ca18') in 0.012706 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 10.268383 seconds.
+  path: Assets/Prefabs/Cloud.prefab
+  artifactKey: Guid(92b9d9d6662bf8f4e9d0eedf0f2ceba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Cloud.prefab using Guid(92b9d9d6662bf8f4e9d0eedf0f2ceba3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98a8fae0134bc8cf693544179c6ecb48') in 0.046054 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 4.703003 seconds.
+  path: Assets/Materials/Ground.mat
+  artifactKey: Guid(856632592dcc7334c924279c6c1a9104) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Ground.mat using Guid(856632592dcc7334c924279c6c1a9104) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f703fd31ae98d388b1056b5626a724fd') in 0.157149 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 5.868057 seconds.
+  path: Assets/Fonts/Roboto-Bold SDF.asset
+  artifactKey: Guid(74dab48296076944bbd854b103781f32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Roboto-Bold SDF.asset using Guid(74dab48296076944bbd854b103781f32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5877d4c380e4272a162c376140612bb9') in 0.165800 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
