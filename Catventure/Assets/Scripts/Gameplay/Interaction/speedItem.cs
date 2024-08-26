@@ -1,8 +1,9 @@
 using System.Collections;
+using Gameplay.Movement;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace Gameplay
+namespace Gameplay.Interaction
 {
     public class SpeedItem : MonoBehaviour
     {

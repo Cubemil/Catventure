@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Gameplay
+namespace Gameplay.Movement
 {
     public class IsometricPlayerController : MonoBehaviour
     {
@@ -8,7 +8,7 @@ namespace Gameplay
         [SerializeField] public float speed = 8f;
         [SerializeField] private float walkSpeed = 8f;
         [SerializeField] private float runSpeed = 16f;
-        [SerializeField] private float rotationSpeed = 500;
+        [SerializeField] private float rotationSpeed;
         [SerializeField] private float jumpForce = 5.0f;
 
         private Vector3 _input;

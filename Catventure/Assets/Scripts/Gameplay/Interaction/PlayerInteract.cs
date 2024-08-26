@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Gameplay
+namespace Gameplay.Interaction
 {
     public class PlayerInteract : MonoBehaviour
     {

@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-namespace Gameplay
+namespace Gameplay.Interaction
 {
     public class TriggerScript : MonoBehaviour
     {
