@@ -1,13 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Flappy_Cat;
 using UnityEngine;
 
 public class OutOfBounds : MonoBehaviour
 {
     public LogicSkript logic;
 
-    public BirdScript bird;
+    public Birdscript bird;
     // Start is called before the first frame update
     void Start()
     {

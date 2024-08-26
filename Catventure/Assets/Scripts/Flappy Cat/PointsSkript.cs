@@ -1,26 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class PointsSkript : MonoBehaviour
+namespace Flappy_Cat
 {
-    public GameObject gameOverScreen;
-    public LogicSkript logic;
-
-
-    // Start is called before the first frame update
-    void Start()
+    public class PointsSkript : MonoBehaviour
     {
-        logic= GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicSkript>();
-    }
+        public GameObject gameOverScreen;
+        public LogicSkript logic;
+
+
+        // Start is called before the first frame update
+        void Start()
+        {
+            logic= GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicSkript>();
+        }
     
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.layer == 3)
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            logic.AddScore(1);
+            if (collision.gameObject.layer == 3)
+            {
+                logic.AddScore(1);
+            }
         }
     }
 }
