@@ -1,0 +1,662 @@
+Using pre-set license
+Built from '2022.3/staging' branch; Version is '2022.3.24f1 (334eb2a0b267) revision 3362482'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 11  (10.0.22631) 64bit Professional' Language: 'de' Physical Memory: 16222 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2022.3.24f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker1
+-projectPath
+D:/Hochschule Anhalt/Inhalte/4. Semester/Catventure/Catventure
+-logFile
+Logs/AssetImportWorker1.log
+-srvPort
+57132
+Successfully changed project path to: D:/Hochschule Anhalt/Inhalte/4. Semester/Catventure/Catventure
+D:/Hochschule Anhalt/Inhalte/4. Semester/Catventure/Catventure
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [6360] Host "[IP] 192.168.178.30 [Port] 0 [Flags] 2 [Guid] 2965603267 [EditorId] 2965603267 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-VQ9VGUV) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [6360] Host "[IP] 192.168.178.30 [Port] 0 [Flags] 2 [Guid] 2965603267 [EditorId] 2965603267 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-VQ9VGUV) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+[Physics::Module] Initialized MultithreadedJobDispatcher with 15 workers.
+Refreshing native plugins compatible for Editor in 6.61 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2022.3.24f1 (334eb2a0b267)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.24f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Hochschule Anhalt/Inhalte/4. Semester/Catventure/Catventure/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: AMD Radeon RX 6900 XT (ID=0x73bf)
+    Vendor:   ATI
+    VRAM:     16338 MB
+    Driver:   31.0.24027.1012
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.24f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.24f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.24f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56108
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.24f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.24f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.24f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.24f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.007741 seconds.
+- Loaded All Assemblies, in  0.259 seconds
+Native extension for WindowsStandalone target not found
+[usbmuxd] Start listen thread
+[usbmuxd] Listen thread started
+Native extension for iOS target not found
+Native extension for Android target not found
+Android Extension - Scanning For ADB Devices 172 ms
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.428 seconds
+Domain Reload Profiling: 685ms
+	BeginReloadAssembly (75ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (22ms)
+	RebuildNativeTypeToScriptingClass (7ms)
+	initialDomainReloadingComplete (44ms)
+	LoadAllAssembliesAndSetupDomain (110ms)
+		LoadAssemblies (74ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (108ms)
+			TypeCache.Refresh (107ms)
+				TypeCache.ScanAssembly (97ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (428ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (387ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (272ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (1ms)
+			ProcessInitializeOnLoadAttributes (78ms)
+			ProcessInitializeOnLoadMethodAttributes (32ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.472 seconds
+Refreshing native plugins compatible for Editor in 1.41 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Package Manager log level set to [2]
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.610 seconds
+Domain Reload Profiling: 1081ms
+	BeginReloadAssembly (109ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (16ms)
+	RebuildCommonClasses (23ms)
+	RebuildNativeTypeToScriptingClass (7ms)
+	initialDomainReloadingComplete (30ms)
+	LoadAllAssembliesAndSetupDomain (302ms)
+		LoadAssemblies (225ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (143ms)
+			TypeCache.Refresh (125ms)
+				TypeCache.ScanAssembly (113ms)
+			ScanForSourceGeneratedMonoScriptInfo (12ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (611ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (477ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (27ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (44ms)
+			ProcessInitializeOnLoadAttributes (382ms)
+			ProcessInitializeOnLoadMethodAttributes (16ms)
+			AfterProcessingInitializeOnLoad (5ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 1.78 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3463 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 60 unused Assets / (45.0 MB). Loaded Objects now: 3917.
+Memory consumption went from 151.3 MB to 106.3 MB.
+Total: 4.372400 ms (FindLiveObjects: 0.184400 ms CreateObjectMapping: 0.079900 ms MarkObjects: 3.837000 ms  DeleteObjects: 0.270000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 611643.482494 seconds.
+  path: Assets/Prefabs/PauseAndMainMenus/PauseMenu.prefab
+  artifactKey: Guid(433e75872c3fd7548a714bf7da47b774) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/PauseAndMainMenus/PauseMenu.prefab using Guid(433e75872c3fd7548a714bf7da47b774) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da42e2c1ad6d7507611887445aa4eadb') in 0.037114 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 52
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.389 seconds
+Refreshing native plugins compatible for Editor in 1.34 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  7.280 seconds
+Domain Reload Profiling: 7667ms
+	BeginReloadAssembly (112ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (3ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (26ms)
+	RebuildCommonClasses (23ms)
+	RebuildNativeTypeToScriptingClass (7ms)
+	initialDomainReloadingComplete (21ms)
+	LoadAllAssembliesAndSetupDomain (223ms)
+		LoadAssemblies (216ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (65ms)
+			TypeCache.Refresh (53ms)
+				TypeCache.ScanAssembly (45ms)
+			ScanForSourceGeneratedMonoScriptInfo (7ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (7280ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (412ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (28ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (45ms)
+			ProcessInitializeOnLoadAttributes (319ms)
+			ProcessInitializeOnLoadMethodAttributes (13ms)
+			AfterProcessingInitializeOnLoad (4ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+Refreshing native plugins compatible for Editor in 1.61 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3421 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 43 unused Assets / (1.8 MB). Loaded Objects now: 3973.
+Memory consumption went from 144.0 MB to 142.2 MB.
+Total: 2.791900 ms (FindLiveObjects: 0.181700 ms CreateObjectMapping: 0.084700 ms MarkObjects: 2.232500 ms  DeleteObjects: 0.291000 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 1682.729812 seconds.
+  path: Assets/UMotionEditor/Manual/images/ExportClipSize.png
+  artifactKey: Guid(1b4cd6ae99262c14dad642012772685e) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/UMotionEditor/Manual/images/ExportClipSize.png using Guid(1b4cd6ae99262c14dad642012772685e) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '538b7cadc3025be0d9dd9829ff194220') in 0.012729 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/UMotionEditor/Manual/images/ClipEditorTimeRuler.png
+  artifactKey: Guid(265f3a1321681e24db75052f3ca37099) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/UMotionEditor/Manual/images/ClipEditorTimeRuler.png using Guid(265f3a1321681e24db75052f3ca37099) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '833e38a629065c88d1003901ae9a1960') in 0.004755 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/UMotionEditor/Manual/images/PoseEditorMirrorMappingDelete.png
+  artifactKey: Guid(cab1dd28dda88bf41b753c010135b1f5) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/UMotionEditor/Manual/images/PoseEditorMirrorMappingDelete.png using Guid(cab1dd28dda88bf41b753c010135b1f5) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '7dee22ab399c78f07c4486510c98f05a') in 0.003920 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/UMotionEditor/Manual/images/ClipEditorDeleteAllClips.png
+  artifactKey: Guid(6d006ec4b7aedd84dbbb3c61c092f8a5) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/UMotionEditor/Manual/images/ClipEditorDeleteAllClips.png using Guid(6d006ec4b7aedd84dbbb3c61c092f8a5) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '12b7c05588d8d6edf8dca811c296902e') in 0.004043 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/UMotionEditor/Manual/images/PoseEditorRigHierarchy.png
+  artifactKey: Guid(852a9661951ea814d85d380d34784174) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/UMotionEditor/Manual/images/PoseEditorRigHierarchy.png using Guid(852a9661951ea814d85d380d34784174) Importer(-1,00000000000000000000000000000000)  -> (artifact id: 'c9d187cc1d51cd7c7544d5c076dca4c1') in 0.005602 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000057 seconds.
+  path: Assets/UMotionEditor/Manual/images/JointBoneNamingDefinition.png
+  artifactKey: Guid(24246dae3c57e3445a387b9c9697444f) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/UMotionEditor/Manual/images/JointBoneNamingDefinition.png using Guid(24246dae3c57e3445a387b9c9697444f) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '8a8517a2943cf302ab5a2fa95479b2fd') in 0.013299 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/UMotionEditor/Manual/images/ClipEditorSyncTimeline.png
+  artifactKey: Guid(4cc86724ea3edae42b38f8a90c69a019) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/UMotionEditor/Manual/images/ClipEditorSyncTimeline.png using Guid(4cc86724ea3edae42b38f8a90c69a019) Importer(-1,00000000000000000000000000000000)  -> (artifact id: 'e3c284b3a9246e2ae6ba0282e9b3a0cd') in 0.017280 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000049 seconds.
+  path: Assets/UMotionEditor/Manual/images/AnimationEventWarningIcon.png
+  artifactKey: Guid(3c7d4e8f248a3e945882ef5600a1072c) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/UMotionEditor/Manual/images/AnimationEventWarningIcon.png using Guid(3c7d4e8f248a3e945882ef5600a1072c) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '69f1a3a3e9692a0ae2797e90ce493595') in 0.003409 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/UMotionEditor/Manual/images/IKNamingDefinitions.png
+  artifactKey: Guid(cca2815f9cac91741b705f09b49954ce) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/UMotionEditor/Manual/images/IKNamingDefinitions.png using Guid(cca2815f9cac91741b705f09b49954ce) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '4e18a8a119a5404ccb52a70289599b12') in 0.010039 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000060 seconds.
+  path: Assets/UMotionEditor/Manual/images/ClipEditorMenuBar.png
+  artifactKey: Guid(053d6d729c0720645bccfdc4859c5c7f) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/UMotionEditor/Manual/images/ClipEditorMenuBar.png using Guid(053d6d729c0720645bccfdc4859c5c7f) Importer(-1,00000000000000000000000000000000)  -> (artifact id: 'f3ffa8ec0236f3dca8e1b0b67d32e97d') in 0.004324 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/UMotionEditor/Manual/images/LayersBlendWeightBar.png
+  artifactKey: Guid(27354a1e0b8f50e44accdb49109dfa77) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/UMotionEditor/Manual/images/LayersBlendWeightBar.png using Guid(27354a1e0b8f50e44accdb49109dfa77) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '38ba94b389d1e7c27624f8d0f787376c') in 0.003626 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000050 seconds.
+  path: Assets/UMotionEditor/Manual/images/IKSetupWizardGeneral.png
+  artifactKey: Guid(63b1f9a2947319e4ab91bb6235881ee2) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/UMotionEditor/Manual/images/IKSetupWizardGeneral.png using Guid(63b1f9a2947319e4ab91bb6235881ee2) Importer(-1,00000000000000000000000000000000)  -> (artifact id: 'b2031ec6ebec8bd4df371f5825472adf') in 0.005818 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000057 seconds.
+  path: Assets/UMotionEditor/Manual/images/MissingAnimatedProperty.png
+  artifactKey: Guid(faeb64ccea29ab2439073b7737a14b3d) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/UMotionEditor/Manual/images/MissingAnimatedProperty.png using Guid(faeb64ccea29ab2439073b7737a14b3d) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '688d447aa895fd45047742bcd5519e90') in 0.004608 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000047 seconds.
+  path: Assets/UMotionEditor/Manual/images/ImportClipsDialog.png
+  artifactKey: Guid(6eec5a7503802354f86cca1239a27a89) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/UMotionEditor/Manual/images/ImportClipsDialog.png using Guid(6eec5a7503802354f86cca1239a27a89) Importer(-1,00000000000000000000000000000000)  -> (artifact id: 'c5b63380f2f93151e86d3ed14cdf7042') in 0.006831 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/UMotionEditor/Manual/images/ClipEditorDuplicateClipButton.png
+  artifactKey: Guid(264f78e4c642a4347ad9a83b77720be5) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/UMotionEditor/Manual/images/ClipEditorDuplicateClipButton.png using Guid(264f78e4c642a4347ad9a83b77720be5) Importer(-1,00000000000000000000000000000000)  -> (artifact id: 'df0cf7b87031aa2fd46926d785e14c89') in 0.003856 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/UMotionEditor/Manual/images/ClipSettings.png
+  artifactKey: Guid(47e00a5b983b8914fb75b565e8e00481) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/UMotionEditor/Manual/images/ClipSettings.png using Guid(47e00a5b983b8914fb75b565e8e00481) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '00ab7aef9fbcac209e7aa3f68822f89b') in 0.007173 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000049 seconds.
+  path: Assets/UMotionEditor/Manual/images/RotateToolAssistantRelative.png
+  artifactKey: Guid(d4eb550196a90ec46ac7a93e03d130b6) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/UMotionEditor/Manual/images/RotateToolAssistantRelative.png using Guid(d4eb550196a90ec46ac7a93e03d130b6) Importer(-1,00000000000000000000000000000000)  -> (artifact id: 'cb75d0794bcdbbcb58de202886e20887') in 0.004961 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000061 seconds.
+  path: Assets/UMotionEditor/Manual/images/ClipEditorDeleteClip.png
+  artifactKey: Guid(9b2db4189b1cbc04e99b67f39d5bf3e2) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/UMotionEditor/Manual/images/ClipEditorDeleteClip.png using Guid(9b2db4189b1cbc04e99b67f39d5bf3e2) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '35a6e323167971dce192e3e1722d199a') in 0.004619 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000077 seconds.
+  path: Assets/UMotionEditor/Manual/images/ClipEditorPopup.png
+  artifactKey: Guid(d84f4ef5844eaa34480a30b678d2fc20) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/UMotionEditor/Manual/images/ClipEditorPopup.png using Guid(d84f4ef5844eaa34480a30b678d2fc20) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '3e2746d002eb58f757e9a99f88dcdc39') in 0.005358 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/UMotionEditor/InternalResources/Textures/UMotionTabLogoDark.png
+  artifactKey: Guid(19b7e0552df01a54282aced29a68d756) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/UMotionEditor/InternalResources/Textures/UMotionTabLogoDark.png using Guid(19b7e0552df01a54282aced29a68d756) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '84f0e79ef12bb8e21da0db2c4194d64d') in 0.004509 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000061 seconds.
+  path: Assets/UMotionEditor/Manual/styles/UMotionFavicon.png
+  artifactKey: Guid(419cb938471e1af409bca7414004c594) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/UMotionEditor/Manual/styles/UMotionFavicon.png using Guid(419cb938471e1af409bca7414004c594) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '40e23afd27e58f1e80128334e4f0a64e') in 0.003832 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/UMotionEditor/Manual/images/PoseEditorChannelsContext.png
+  artifactKey: Guid(20395ab206b6eac4e970fe17567096d3) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/UMotionEditor/Manual/images/PoseEditorChannelsContext.png using Guid(20395ab206b6eac4e970fe17567096d3) Importer(-1,00000000000000000000000000000000)  -> (artifact id: 'db58fc0ab42493f21b9ec025a578f081') in 0.005588 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000060 seconds.
+  path: Assets/UMotionEditor/Manual/images/ClipEditorPlaybackPlayForward.png
+  artifactKey: Guid(34e71885282880941b27deba6fee9e72) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/UMotionEditor/Manual/images/ClipEditorPlaybackPlayForward.png using Guid(34e71885282880941b27deba6fee9e72) Importer(-1,00000000000000000000000000000000)  -> (artifact id: 'a55fd0c0f5376794eb00f94f68da11c1') in 0.004969 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/UMotionEditor/Manual/images/MuscleGroupsLowerBody.png
+  artifactKey: Guid(ff0396b48e0de1744aa0230580b44a5c) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/UMotionEditor/Manual/images/MuscleGroupsLowerBody.png using Guid(ff0396b48e0de1744aa0230580b44a5c) Importer(-1,00000000000000000000000000000000)  -> (artifact id: 'd6d0bed9582e866fb79b2ea6b8b413c3') in 0.006339 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/UMotionEditor/Manual/images/TransformIcon.png
+  artifactKey: Guid(4653ac173599ec54999cf2c8c15abbed) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/UMotionEditor/Manual/images/TransformIcon.png using Guid(4653ac173599ec54999cf2c8c15abbed) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '5f5f4165051ee41eb6ec8cb1734521ec') in 0.006260 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/UMotionEditor/Manual/images/MuscleGroupsHands.png
+  artifactKey: Guid(d0ae482fe608b194187d16b960e3d14a) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/UMotionEditor/Manual/images/MuscleGroupsHands.png using Guid(d0ae482fe608b194187d16b960e3d14a) Importer(-1,00000000000000000000000000000000)  -> (artifact id: 'c25b6f9001515679b6a2655a2c73d595') in 0.005941 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/UMotionEditor/Manual/images/LayersDeleteAllButton.png
+  artifactKey: Guid(284503034dcf8814993ee6199cff7d4e) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/UMotionEditor/Manual/images/LayersDeleteAllButton.png using Guid(284503034dcf8814993ee6199cff7d4e) Importer(-1,00000000000000000000000000000000)  -> (artifact id: 'aa619f930e747b67d7bd05843db9b776') in 0.004068 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/UMotionEditor/Manual/images/UMotionDefaultLayout.png
+  artifactKey: Guid(ed1b7893d94924e47b5453250efebf19) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/UMotionEditor/Manual/images/UMotionDefaultLayout.png using Guid(ed1b7893d94924e47b5453250efebf19) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '861578722aaacce2927b488aa3befbcc') in 0.031220 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/UMotionEditor/Manual/images/UMotionSetupFinished.png
+  artifactKey: Guid(2bf5b105cf202f6449f6950210660c58) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/UMotionEditor/Manual/images/UMotionSetupFinished.png using Guid(2bf5b105cf202f6449f6950210660c58) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '98c2008d9ce0030ec3a7299a36cf5b16') in 0.030611 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000057 seconds.
+  path: Assets/UMotionEditor/Manual/images/ClipEditorMenuBarFile.png
+  artifactKey: Guid(2bb81c9776fa20842861616d9d3de799) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/UMotionEditor/Manual/images/ClipEditorMenuBarFile.png using Guid(2bb81c9776fa20842861616d9d3de799) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '932977f7d0c741eeb78e3b07d8f15559') in 0.015538 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000049 seconds.
+  path: Assets/UMotionEditor/Manual/images/ExportFbxCommonIssue.png
+  artifactKey: Guid(c13f6124c2e32ef4987d72c0c9dbecd8) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/UMotionEditor/Manual/images/ExportFbxCommonIssue.png using Guid(c13f6124c2e32ef4987d72c0c9dbecd8) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '21ceba783b4f2e11378520f649bb1a6a') in 0.010470 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/UMotionEditor/Manual/images/ClipEditorSyncAnimWindow.png
+  artifactKey: Guid(2a0a5db363a8813489cfb4a715b69ef8) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/UMotionEditor/Manual/images/ClipEditorSyncAnimWindow.png using Guid(2a0a5db363a8813489cfb4a715b69ef8) Importer(-1,00000000000000000000000000000000)  -> (artifact id: 'cacf6818b6e437ce65b27f9772a746e6') in 0.006937 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000067 seconds.
+  path: Assets/UMotionEditor/Manual/images/PoseEditorConfigurationRefPose.png
+  artifactKey: Guid(2ff2de85daeb5eb4d89018b2d9ae3b31) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/UMotionEditor/Manual/images/PoseEditorConfigurationRefPose.png using Guid(2ff2de85daeb5eb4d89018b2d9ae3b31) Importer(-1,00000000000000000000000000000000)  -> (artifact id: 'cd8d44d29561992d92102b67e9026a8e') in 0.008323 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/UMotionEditor/Manual/images/PoseEditorDisplay.png
+  artifactKey: Guid(e2d97822d8b0e8f4b970ae7085917064) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/UMotionEditor/Manual/images/PoseEditorDisplay.png using Guid(e2d97822d8b0e8f4b970ae7085917064) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '273abebf6c9f2f366d7424e75cda42d5') in 0.007662 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/UMotionEditor/Manual/images/HumanoidIcon.png
+  artifactKey: Guid(e07c1f0451ca7c74f8be26581d4b697f) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/UMotionEditor/Manual/images/HumanoidIcon.png using Guid(e07c1f0451ca7c74f8be26581d4b697f) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '1fa02697b7e671bad4e54c47ab94f45a') in 0.005927 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/UMotionEditor/Manual/images/UMotionMultipleSceneViews.png
+  artifactKey: Guid(c4124d58192987b4eaf4fd60dd6f7789) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/UMotionEditor/Manual/images/UMotionMultipleSceneViews.png using Guid(c4124d58192987b4eaf4fd60dd6f7789) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '23e1218e123e78f932c8757c90c9ca79') in 0.032195 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000126 seconds.
+  path: Assets/UMotionEditor/Manual/images/CustomPropertyConstraintControllerSetup.png
+  artifactKey: Guid(dda4cd5af4ab9d044b1b528d70e03461) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/UMotionEditor/Manual/images/CustomPropertyConstraintControllerSetup.png using Guid(dda4cd5af4ab9d044b1b528d70e03461) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '23c32ca833b7f975293531d2ec5d1f64') in 0.082811 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000167 seconds.
+  path: Assets/UMotionEditor/Manual/styles/TreeViewItem.png
+  artifactKey: Guid(fffa73b7de367464b897a3e1cc339ed4) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/UMotionEditor/Manual/styles/TreeViewItem.png using Guid(fffa73b7de367464b897a3e1cc339ed4) Importer(-1,00000000000000000000000000000000)  -> (artifact id: 'cb00f88286d14b0da85a879d41843c2a') in 0.004925 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000105 seconds.
+  path: Assets/UMotionEditor/Manual/images/ClipEditorInputField.png
+  artifactKey: Guid(2b233594ea2709d4198098553f664c5c) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/UMotionEditor/Manual/images/ClipEditorInputField.png using Guid(2b233594ea2709d4198098553f664c5c) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '46016d876ced66d2bd6c23d7323dc13a') in 0.006532 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000065 seconds.
+  path: Assets/UMotionEditor/Manual/images/ExportClipInspector.png
+  artifactKey: Guid(90e846e179b03b84fb4f06f9a361c820) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/UMotionEditor/Manual/images/ExportClipInspector.png using Guid(90e846e179b03b84fb4f06f9a361c820) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '557aad3f534c38fd24771661453577cc') in 0.008647 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/UMotionEditor/Manual/images/LayersAdditiveLabel.png
+  artifactKey: Guid(4486c8fafd690224c916681461010067) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/UMotionEditor/Manual/images/LayersAdditiveLabel.png using Guid(4486c8fafd690224c916681461010067) Importer(-1,00000000000000000000000000000000)  -> (artifact id: 'd7f676a123099a35f38fea9abd97af63') in 0.005606 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000055 seconds.
+  path: Assets/UMotionEditor/Manual/images/ExportFbxIssueAvatarConfiguration.png
+  artifactKey: Guid(ea6fb698b63701548a3f85997f7334c7) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/UMotionEditor/Manual/images/ExportFbxIssueAvatarConfiguration.png using Guid(ea6fb698b63701548a3f85997f7334c7) Importer(-1,00000000000000000000000000000000)  -> (artifact id: 'eb2f4bd1b6ce541c52a7fe44bcac8fd0') in 0.025971 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000540 seconds.
+  path: Assets/UMotionEditor/Manual/images/LayersUpButton.png
+  artifactKey: Guid(b544755ebe420ba46b691b7834d6be04) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/UMotionEditor/Manual/images/LayersUpButton.png using Guid(b544755ebe420ba46b691b7834d6be04) Importer(-1,00000000000000000000000000000000)  -> (artifact id: 'df651757e7a6634e76ab3ca0acfed433') in 0.006950 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000076 seconds.
+  path: Assets/UMotionEditor/Manual/images/CustomPropertyConstraintMassApply.png
+  artifactKey: Guid(9f867ffdff3ae264b96353b0719df9c5) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/UMotionEditor/Manual/images/CustomPropertyConstraintMassApply.png using Guid(9f867ffdff3ae264b96353b0719df9c5) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '6646db445d53d63cf4ec9d86260efaf2') in 0.007180 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000080 seconds.
+  path: Assets/UMotionEditor/Manual/images/IKSetupWizardMenuBar.png
+  artifactKey: Guid(99de4b5a7b2eedb4bb35f2b0b821b383) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/UMotionEditor/Manual/images/IKSetupWizardMenuBar.png using Guid(99de4b5a7b2eedb4bb35f2b0b821b383) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '1739707fad265546c2a92b4fe758c67e') in 0.009422 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000073 seconds.
+  path: Assets/UMotionEditor/Manual/images/PoseEditorConfigurationProperties.png
+  artifactKey: Guid(91e698db3a2a1324ba95a43dc4aaf9c4) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/UMotionEditor/Manual/images/PoseEditorConfigurationProperties.png using Guid(91e698db3a2a1324ba95a43dc4aaf9c4) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '241ef73ad50de51897b11426d7c1670d') in 0.007602 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/UMotionEditor/Manual/images/AnimationEventMinus.png
+  artifactKey: Guid(4394cef785f95cf4eafc40098921380c) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/UMotionEditor/Manual/images/AnimationEventMinus.png using Guid(4394cef785f95cf4eafc40098921380c) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '0324cd10d87490e87dee10042a46bc20') in 0.005446 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000059 seconds.
+  path: Assets/UMotionEditor/Manual/images/ClipEditorCleanup.png
+  artifactKey: Guid(379a3c5069b04a3468ed6837029bc961) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/UMotionEditor/Manual/images/ClipEditorCleanup.png using Guid(379a3c5069b04a3468ed6837029bc961) Importer(-1,00000000000000000000000000000000)  -> (artifact id: '05e33d407f00cf4c9f54971e893915cb') in 0.005635 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000249 seconds.
+  path: Assets/UMotionEditor/Manual/images/KnownIssue07.png
+  artifactKey: Guid(d58630063939a6e41b11f8cbc686b95a) Importer(-1,00000000000000000000000000000000)
+Start importing Assets/UMotionEditor/Manual/images/KnownIssue07.png using Guid(d58630063939a6e41b11f8cbc686b95a) Importer(-1,00000000000000000000000000000000)  -> (artifact id: 'c52cdfd376ec1bd9d01e5b83fa07b0df') in 0.017999 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
