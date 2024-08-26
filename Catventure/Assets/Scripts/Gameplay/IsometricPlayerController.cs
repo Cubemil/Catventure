@@ -1,9 +1,8 @@
 using UnityEngine;
 
-// namespace for consistency and error handling
-namespace Game
+namespace Gameplay
 {
-    public class PlayerController : MonoBehaviour
+    public class IsometricPlayerController : MonoBehaviour
     {
         [SerializeField] private Rigidbody rb;
         [SerializeField] public float speed = 8f;

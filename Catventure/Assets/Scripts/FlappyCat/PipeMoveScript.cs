@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Flappy_Cat
+namespace FlappyCat
 {
     public class PipeMoveScript : MonoBehaviour
     {

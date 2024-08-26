@@ -1,13 +1,13 @@
 using UnityEngine;
 
-namespace Flappy_Cat
+namespace FlappyCat
 {
-    public class Birdscript : MonoBehaviour
+    public class BirdScript : MonoBehaviour
     {
         public Rigidbody2D myRigidbody2D;
         public BoxCollider2D myCircleCollider2D;
         public float flapStrength =6;
-        public LogicSkript logic;
+        public LogicScript logic;
         public bool birdIsAlive = true;
         public float rotationSpeed = -0.1F;
     
@@ -16,7 +16,7 @@ namespace Flappy_Cat
         void Start()
         { 
             gameObject.name = "Kafka";
-            logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicSkript>();
+            logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
             transform.rotation.Set(0, 0, 0, 0);
             gameObject.name = "Kafka";
         }

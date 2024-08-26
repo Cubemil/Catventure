@@ -1,17 +1,17 @@
 using UnityEngine;
 
-namespace Flappy_Cat
+namespace FlappyCat
 {
-    public class PointsSkript : MonoBehaviour
+    public class PointsScript : MonoBehaviour
     {
         public GameObject gameOverScreen;
-        public LogicSkript logic;
+        public LogicScript logic;
 
 
         // Start is called before the first frame update
         void Start()
         {
-            logic= GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicSkript>();
+            logic= GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
         }
     
 

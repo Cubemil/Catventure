@@ -1772,7 +1772,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4458388166866852778}
         m_TargetAssemblyTypeName: MainMenuScript, Assembly-CSharp
-        m_MethodName: back
+        m_MethodName: Back
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1865,7 +1865,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 4014622514229255847}
           m_TargetAssemblyTypeName: Selector, Assembly-CSharp
-          m_MethodName: selectOptions
+          m_MethodName: SelectOptions
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2559,7 +2559,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4458388166866852778}
         m_TargetAssemblyTypeName: MainMenuScript, Assembly-CSharp
-        m_MethodName: back
+        m_MethodName: Back
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2634,7 +2634,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4458388166866852778}
         m_TargetAssemblyTypeName: MainMenuScript, Assembly-CSharp
-        m_MethodName: newGame
+        m_MethodName: NewGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2758,7 +2758,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 4014622514229255847}
           m_TargetAssemblyTypeName: Selector, Assembly-CSharp
-          m_MethodName: selectOptions
+          m_MethodName: SelectOptions
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -3240,7 +3240,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 4014622514229255847}
           m_TargetAssemblyTypeName: Selector, Assembly-CSharp
-          m_MethodName: selectBack
+          m_MethodName: SelectBack
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -3269,7 +3269,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 4014622514229255847}
           m_TargetAssemblyTypeName: Selector, Assembly-CSharp
-          m_MethodName: selectNewGame
+          m_MethodName: SelectNewGame
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -3872,7 +3872,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4458388166866852778}
         m_TargetAssemblyTypeName: MainMenuScript, Assembly-CSharp
-        m_MethodName: back
+        m_MethodName: Back
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3953,7 +3953,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4458388166866852778}
         m_TargetAssemblyTypeName: MainMenuScript, Assembly-CSharp
-        m_MethodName: adjustMainVolume
+        m_MethodName: AdjustMainVolume
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 5488471015243980590}
@@ -4938,7 +4938,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 4014622514229255847}
           m_TargetAssemblyTypeName: Selector, Assembly-CSharp
-          m_MethodName: selectContinue
+          m_MethodName: SelectContinue
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -5289,7 +5289,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4458388166866852778}
         m_TargetAssemblyTypeName: MainMenuScript, Assembly-CSharp
-        m_MethodName: continueGame
+        m_MethodName: ContinueGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5587,7 +5587,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 4014622514229255847}
           m_TargetAssemblyTypeName: Selector, Assembly-CSharp
-          m_MethodName: selectCredits
+          m_MethodName: SelectCredits
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -5803,7 +5803,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 4014622514229255847}
           m_TargetAssemblyTypeName: Selector, Assembly-CSharp
-          m_MethodName: selectPlay
+          m_MethodName: SelectPlay
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

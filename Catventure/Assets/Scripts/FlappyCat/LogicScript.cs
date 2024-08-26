@@ -2,9 +2,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-namespace Flappy_Cat
+namespace FlappyCat
 {
-    public class LogicSkript : MonoBehaviour
+    public class LogicScript : MonoBehaviour
     {
 
         public int playerScore=0;

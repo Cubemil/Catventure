@@ -1,12 +1,13 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-namespace Game
+namespace Gameplay
 {
     public class SpeedItem : MonoBehaviour
     {
         public GameObject player;
-        public PlayerController playerController;
+        [FormerlySerializedAs("playerController")] public IsometricPlayerController isometricPlayerController;
         private bool _isSpeedBoostActive = false;
 
         void Start()
@@ -14,7 +15,7 @@ namespace Game
             // Hole die PlayerController-Komponente vom Player-Objekt
             if (player != null)
             {
-                playerController = player.GetComponent<PlayerController>();
+                isometricPlayerController = player.GetComponent<IsometricPlayerController>();
             }
         }
 
@@ -29,12 +30,12 @@ namespace Game
         private IEnumerator SpeedBoost()
         {
             _isSpeedBoostActive = true;
-            if (playerController)
+            if (isometricPlayerController)
             {
-                playerController.speed *= 2; // Geschwindigkeit verdoppeln
+                isometricPlayerController.speed *= 2; // Geschwindigkeit verdoppeln
                 gameObject.SetActive(false); // Das Objekt deaktivieren
                 yield return new WaitForSeconds(5); // 5 Sekunden warten
-                playerController.speed /= 2; // Geschwindigkeit zurücksetzen
+                isometricPlayerController.speed /= 2; // Geschwindigkeit zurücksetzen
             }
             _isSpeedBoostActive = false;
             Destroy(gameObject); // Das Objekt endgültig entfernen
