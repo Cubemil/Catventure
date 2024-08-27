@@ -8,6 +8,9 @@ public class SpeechBubble : MonoBehaviour
     public Animator animator;
     public TMP_Text textInput;
 
+    private float sleepTimer = 0f;
+    private int sleepState = 0; // 0: "Zzzz.", 1: "Zzzz..", 2: "Zzzz..."
+    
     void Update()
     {
         RotateCamera();
@@ -39,7 +42,25 @@ public class SpeechBubble : MonoBehaviour
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("CatSleeping"))
         {
             // Debug.Log("Cat is sleeping.");
-            textInput.text = "Zzzz...";
+            sleepTimer += Time.deltaTime;
+
+            if (sleepTimer >= 0.5f) // Change text every 0.5 seconds
+            {
+                sleepTimer = 0f;
+                sleepState = (sleepState + 1) % 3; // Cycle through 0, 1, 2
+                switch (sleepState)
+                {
+                    case 0:
+                        textInput.text = "Zzzz.";
+                        break;
+                    case 1:
+                        textInput.text = "Zzzz..";
+                        break;
+                    case 2:
+                        textInput.text = "Zzzz...";
+                        break;
+                }
+            }
         }
         else
         {
