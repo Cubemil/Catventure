@@ -1,11 +1,20 @@
 using UnityEngine;
+using TMPro;
 
 public class SpeechBubble : MonoBehaviour
 {
     public Camera camera;
     public Transform objectToRotate;
+    public Animator animator;
+    public TMP_Text textInput;
 
     void Update()
+    {
+        RotateCamera();
+        Sleep();
+    }
+
+    private void RotateCamera()
     {
         // Check if camera and objectToRotate are assigned
         if (camera != null && objectToRotate != null)
@@ -22,6 +31,20 @@ public class SpeechBubble : MonoBehaviour
             // eulerRotation.x = 0; // Lock X axis
             // eulerRotation.z = 0; // Lock Z axis
             // objectToRotate.rotation = Quaternion.Euler(eulerRotation);
+        }
+    }
+
+    private void Sleep()
+    {
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("CatSleeping"))
+        {
+            // Debug.Log("Cat is sleeping.");
+            textInput.text = "Zzzz...";
+        }
+        else
+        {
+            // Debug.Log("Cat is active.");
+            textInput.text = "";
         }
     }
 }
