@@ -22,6 +22,7 @@ namespace Fishing
 
         //Starten und beenden des Minispiels
         public GameObject fishingUI;
+        public Inventory inventory;
 
         private void Start()
         {
@@ -110,7 +111,7 @@ namespace Fishing
         {
             if (progressBar.value.Equals(1f))
             {
-                //TODO Funktion für Inventar Fisch hinzugeben aktivieren
+                inventory.setItemToSlot(new ItemStack(Items.getItem(2),1));
                 fishingUI.SetActive(false);
             }
         }
