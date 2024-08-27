@@ -5913,6 +5913,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1188841966176111, guid: fb4263dc5759aa44d9bec73fc02ce680, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 57897388816997074, guid: fb4263dc5759aa44d9bec73fc02ce680, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 57897388816997074, guid: fb4263dc5759aa44d9bec73fc02ce680, type: 3}
       propertyPath: m_MatchWidthOrHeight
       value: 1
@@ -5925,9 +5933,21 @@ PrefabInstance:
       propertyPath: m_ReferenceResolution.y
       value: 720
       objectReference: {fileID: 0}
+    - target: {fileID: 334819866195186611, guid: fb4263dc5759aa44d9bec73fc02ce680, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3330796927968343388, guid: fb4263dc5759aa44d9bec73fc02ce680, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3385322462228587486, guid: fb4263dc5759aa44d9bec73fc02ce680, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4479765634620329954, guid: fb4263dc5759aa44d9bec73fc02ce680, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
-      value: 8
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 5113092151867816521, guid: fb4263dc5759aa44d9bec73fc02ce680, type: 3}
       propertyPath: m_Name
