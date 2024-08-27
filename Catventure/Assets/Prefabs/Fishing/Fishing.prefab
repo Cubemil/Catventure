@@ -857,13 +857,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishTransform: {fileID: 2372877538108065593}
   moveSpeed: 100
-  FishingSlider: {fileID: 1181242601470798406}
+  fishingSlider: {fileID: 1181242601470798406}
   hookTransform: {fileID: 2077998997950003776}
-  progressbar: {fileID: 8350283654862385817}
+  progressBar: {fileID: 8350283654862385817}
   fillSpeed: 0.1
   fallSpeed: 0.7
   raiseSpeed: 1.5
-  FishingUI: {fileID: 94567903072820318}
+  fishingUI: {fileID: 94567903072820318}
+  inventory: {fileID: 0}
 --- !u!1 &8276470429189904402
 GameObject:
   m_ObjectHideFlags: 0
