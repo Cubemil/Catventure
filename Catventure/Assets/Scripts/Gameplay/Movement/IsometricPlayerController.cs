@@ -19,6 +19,7 @@ namespace Gameplay.Movement
             but with readonly properties for consistency */
         private static readonly int IsRunning = Animator.StringToHash("isRunning");
         private static readonly int IsWalking = Animator.StringToHash("isWalking");
+        private static readonly int IsJumping = Animator.StringToHash("isJumping");
 
         private void Start()
         {
@@ -73,10 +74,11 @@ namespace Gameplay.Movement
                 _animator.SetBool(IsRunning, false);
             }
             
-            if (Input.GetButtonDown("Jump") && _isOnGround)
+            if (Input.GetButtonDown("Jump") && _isOnGround && !_animator.GetCurrentAnimatorStateInfo(0).IsName("CatSleeping"))
             {
                 rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
                 _isOnGround = false;
+                _animator.SetBool(IsJumping, true);
             }
 
             // move player
@@ -89,6 +91,7 @@ namespace Gameplay.Movement
             if (other.gameObject.CompareTag("Ground"))
             {
                 _isOnGround = true;
+                _animator.SetBool(IsJumping, false);
             }
         }
 
