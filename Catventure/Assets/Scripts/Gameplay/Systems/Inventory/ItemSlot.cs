@@ -14,21 +14,25 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public Image icone;
     public Text valueText;
     private bool isSlot, setted;
+    private Inventory inventory; // Referenz zu deinem Inventory-Script
 
     private void Start()
     {
         icone = GetComponent<Image>();
         valueText = transform.GetComponentInChildren<Text>();
+        inventory = FindObjectOfType<Inventory>(); // Finden des Inventory-Scripts
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
         isSlot = true;
+        inventory.ShowTooltip(this); // Zeigt den Tooltip an, wenn die Maus darüber schwebt
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         isSlot = false;
+        inventory.HideTooltip(); // Versteckt den Tooltip, wenn die Maus das Item verlässt
     }
 
     private void Update()
@@ -42,9 +46,10 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
                     Inventory.dragStack = iStack;
                     iStack = null;
                 }
-            }else if (Input.GetButtonUp("Fire1"))
+            }
+            else if (Input.GetButtonUp("Fire1"))
             {
-                var iDrag= Inventory.dragStack;
+                var iDrag = Inventory.dragStack;
                 if (iDrag != null)
                 {
                     if (iStack == null)
@@ -93,5 +98,3 @@ public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         }
     }
 }
-
-

@@ -440,6 +440,8 @@ MonoBehaviour:
   - {fileID: 6241156754393052886}
   - {fileID: 87691497141496511}
   drag: {fileID: 2400500758644071901}
+  itemNameTooltip: {fileID: 6418819555965336215}
+  itemDescriptionTooltip: {fileID: 768063921017205852}
 --- !u!1001 &1876526017152008977
 PrefabInstance:
   m_ObjectHideFlags: 0
