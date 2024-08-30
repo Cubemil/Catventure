@@ -4302,8 +4302,20 @@ PrefabInstance:
       value: -9.997439
       objectReference: {fileID: 0}
     - target: {fileID: 6984516279952440120, guid: 29b85590b56cd4e94a32a9c7ea4410d9, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6984516279952440120, guid: 29b85590b56cd4e94a32a9c7ea4410d9, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6984516279952440120, guid: 29b85590b56cd4e94a32a9c7ea4410d9, type: 3}
       propertyPath: m_AngularDrag
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6984516279952440120, guid: 29b85590b56cd4e94a32a9c7ea4410d9, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7481030344779697462, guid: 29b85590b56cd4e94a32a9c7ea4410d9, type: 3}
       propertyPath: m_LocalPosition.x
