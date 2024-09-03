@@ -1330,7 +1330,7 @@ PrefabInstance:
     - target: {fileID: 4595485609575323220, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
       propertyPath: inv
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1076440172}
     - target: {fileID: 8292600945184373571, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
       propertyPath: m_Name
       value: Apple  (3)
@@ -2635,7 +2635,7 @@ PrefabInstance:
     - target: {fileID: 4595485609575323220, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
       propertyPath: inv
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1076440172}
     - target: {fileID: 8292600945184373571, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
       propertyPath: m_Name
       value: Apple  (6)
@@ -5829,7 +5829,7 @@ PrefabInstance:
     - target: {fileID: 4595485609575323220, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
       propertyPath: inv
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1076440172}
     - target: {fileID: 8292600945184373571, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
       propertyPath: m_Name
       value: Apple  (2)
@@ -6108,7 +6108,7 @@ PrefabInstance:
     - target: {fileID: 4595485609575323220, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
       propertyPath: inv
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1076440172}
     - target: {fileID: 8292600945184373571, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
       propertyPath: m_Name
       value: Apple  (9)
@@ -7753,6 +7753,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aeaaad63c0b38e94ebf6505153b574e7, type: 3}
+--- !u!114 &1076440172 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5863297182632776925, guid: aeaaad63c0b38e94ebf6505153b574e7, type: 3}
+  m_PrefabInstance: {fileID: 1076440171}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e8c97a54c1921e49ae47692b2cda49f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1086159037 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7f6df81a26d849b4ba627f59a1391286, type: 3}
@@ -7909,7 +7920,7 @@ PrefabInstance:
     - target: {fileID: 4595485609575323220, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
       propertyPath: inv
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1076440172}
     - target: {fileID: 8292600945184373571, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
       propertyPath: m_Name
       value: Apple  (4)
@@ -7975,7 +7986,7 @@ PrefabInstance:
     - target: {fileID: 4595485609575323220, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
       propertyPath: inv
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1076440172}
     - target: {fileID: 8292600945184373571, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
       propertyPath: m_Name
       value: Apple  (8)
@@ -8041,7 +8052,7 @@ PrefabInstance:
     - target: {fileID: 4595485609575323220, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
       propertyPath: inv
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1076440172}
     - target: {fileID: 8292600945184373571, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
       propertyPath: m_Name
       value: Apple  (1)
@@ -8802,7 +8813,7 @@ PrefabInstance:
     - target: {fileID: 4595485609575323220, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
       propertyPath: inv
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1076440172}
     - target: {fileID: 8292600945184373571, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
       propertyPath: m_Name
       value: Apple  (7)
@@ -9351,7 +9362,7 @@ PrefabInstance:
     - target: {fileID: 4595485609575323220, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
       propertyPath: inv
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1076440172}
     - target: {fileID: 8292600945184373571, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
       propertyPath: m_Name
       value: Apple  (10)
@@ -9574,7 +9585,7 @@ PrefabInstance:
     - target: {fileID: 4595485609575323220, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
       propertyPath: inv
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1076440172}
     - target: {fileID: 8292600945184373571, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
       propertyPath: m_Name
       value: Apple  (5)
@@ -10243,7 +10254,7 @@ PrefabInstance:
     - target: {fileID: 4595485609575323220, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
       propertyPath: inv
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1076440172}
     - target: {fileID: 8292600945184373571, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
       propertyPath: m_Name
       value: 'Apple '
