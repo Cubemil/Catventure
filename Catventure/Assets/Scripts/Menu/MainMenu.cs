@@ -10,7 +10,7 @@ namespace Menu
         public GameObject playMenu;
         public GameObject optionsMenu;
         public GameObject creditsMenu;
-        private float _mainVolume = 0;
+        public float _mainVolume = 0; //Todo Sound
 
         private void Start()
         {
@@ -18,8 +18,7 @@ namespace Menu
             playMenu.SetActive(false);
             optionsMenu.SetActive(false);
         }
-
-        // Update is called once per frame
+        
         void Update()
         {
             if (!Input.GetKeyDown(KeyCode.Escape)) return;
@@ -70,22 +69,20 @@ namespace Menu
 
         public void NewGame()
         {
-            //Time.timeScale = 1f;
-            //newGame();
-            //SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+            Time.timeScale = 1f;
+            SceneManager.LoadScene("Garden");
         }
     
         //TODO
         public void ContinueGame()
         {
-            SceneManager.LoadScene("Game");
             Time.timeScale = 1f;
+            SceneManager.LoadScene("Flappy Cat");
         }
 
         public void AdjustMainVolume(Slider slider)
         {
-            _mainVolume = slider.value;
-            Debug.Log("MainVolume: " + _mainVolume);
+            _mainVolume = slider.value; //Todo Sound
         }
     
     }

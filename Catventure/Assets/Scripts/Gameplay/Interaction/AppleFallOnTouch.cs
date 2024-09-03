@@ -1,4 +1,5 @@
 using System;
+using Gameplay.Systems.Inventory;
 using UnityEngine;
 
 namespace Gameplay.Interaction
@@ -7,7 +8,9 @@ namespace Gameplay.Interaction
     {
         public KeyCode interactKey = KeyCode.E;
         private Rigidbody _rb;
+        private bool _iscollectable;
         private bool _hasFallen = false;
+        public Inventory inv;
         
         private void Start()
         {
@@ -18,15 +21,49 @@ namespace Gameplay.Interaction
             _rb.isKinematic = true;
         }
 
-        private void OnTriggerStay(Collider other)
+        private void Update()
         {
+            if (_iscollectable && Input.GetKey(interactKey) && _hasFallen)
+            {
+                collectApple();
+            }
+        }
+
+        /* private void OnTriggerStay(Collider other)
+        {
+            if (other.CompareTag("Player"))
+            {
+                Debug.Log("Collectable");
+            }
+            
             if (other.CompareTag("Player") && Input.GetKeyDown(interactKey))
             {
                 DropApple();
             }
-        }
+            
+            if (other.CompareTag("Player") && _hasFallen)
+            {
+                collectApple();
+            }
+        }*/
 
-        private void DropApple()
+       private void OnTriggerEnter(Collider other)
+       {
+           if (other.CompareTag("Player"))
+           {
+               _iscollectable = true;
+           }
+       }
+
+       private void OnTriggerExit(Collider other)
+       {
+           if (other.CompareTag("Player"))
+           {
+               _iscollectable = false;
+           }
+       }
+
+       private void DropApple()
         {
             // allows apple to be affected by gravity -> fall
             _rb.isKinematic = false;
@@ -40,6 +77,19 @@ namespace Gameplay.Interaction
             {
                 _hasFallen = true;
             }
+
+            if (other.collider.CompareTag("Player") && !_hasFallen)
+            {
+                DropApple();
+            }
+        }
+
+        //todo
+        private void collectApple()
+        {
+           Debug.Log("collected");
+           inv.SetItemToSlot(new ItemStack(Items.GetItem(3), 1));
+           gameObject.SetActive(false);
         }
     }
 }

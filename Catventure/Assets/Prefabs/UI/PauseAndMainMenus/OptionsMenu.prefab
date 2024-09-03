@@ -193,7 +193,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6471764889995459441}
-  - {fileID: 25021288466789661}
   - {fileID: 8074488154542605833}
   - {fileID: 475937909874289287}
   m_Father: {fileID: 0}
@@ -888,7 +887,7 @@ GameObject:
   - component: {fileID: 6871574229942942892}
   - component: {fileID: 6716873350524520920}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: Volume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -906,6 +905,7 @@ RectTransform:
   m_LocalScale: {x: 1.2965498, y: 1.2965498, z: 1.2965498}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 25021288466789661}
   - {fileID: 6561343284783612868}
   - {fileID: 8608147818882894153}
   - {fileID: 5775773432864362597}
@@ -1060,14 +1060,14 @@ RectTransform:
   m_GameObject: {fileID: 8898898477615728821}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.76514393, y: 0.76514393, z: 0.76514393}
+  m_LocalScale: {x: 0.5901385, y: 0.5901385, z: 0.5901385}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4691491167338000045}
+  m_Father: {fileID: 8074488154542605833}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -54, y: 15}
+  m_AnchoredPosition: {x: -41.967613, y: 13.478534}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &3492305496340338307

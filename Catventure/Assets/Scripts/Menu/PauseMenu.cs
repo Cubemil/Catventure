@@ -1,6 +1,6 @@
 using UnityEngine;
-using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace Menu
 {
@@ -9,7 +9,7 @@ namespace Menu
         private static bool _gameIsPaused;
         public GameObject pauseMenu;
         public GameObject optionsMenu;
-        public PostProcessVolume postProcessVolume;
+        public float _mainVolume = 0; //Todo Sound
     
         void Update()
         {
@@ -30,22 +30,20 @@ namespace Menu
         {
             _gameIsPaused = true;
             pauseMenu.SetActive(true);
-            postProcessVolume.enabled = true;
             Time.timeScale = 0f;
         }
 
-        private void Resume()
+        public void Resume()
         {
             _gameIsPaused = false;
             pauseMenu.SetActive(_gameIsPaused);
             optionsMenu.SetActive(_gameIsPaused);
-            postProcessVolume.enabled = false;
             Time.timeScale = 1f;
         }
 
-        public void Quit()
+        public void MainMenu()
         {
-            //Debug.Log("Quitting...");
+            Time.timeScale = 1f;
             SceneManager.LoadScene("Menu");
         }
 
@@ -61,11 +59,10 @@ namespace Menu
             optionsMenu.SetActive(false);
         }
     
-        public void MainMenu()
+        public void AdjustMainVolume(Slider slider)
         {
-            //Debug.Log("Main Menu loading...");
-            Time.timeScale = 1f;
-            SceneManager.LoadScene("Game");
+            _mainVolume = slider.value; //Todo Sound
         }
+
     }
 }

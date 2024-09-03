@@ -114,6 +114,7 @@ namespace Fishing
             {
                 inventory.SetItemToSlot(new ItemStack(Items.GetItem(2),1));
                 fishingUI.SetActive(false);
+                progressBar.value = 0f;
             }
         }
     }

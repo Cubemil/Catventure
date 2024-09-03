@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ddc80ab2722325d41837e5dd8ce5d9ae, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 44e280a9cdc82a644aa6340f544d13be, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -89,17 +89,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c70a42f9d6528c4e899d197663b273c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iStack:
-    item:
-      name: 
-      description: 
-      icon: {fileID: 0}
-      stackSize: 0
-      id: 0
-    stacksize: 0
+  itemStack:
     count: 0
-  defaultImage: {fileID: 21300000, guid: ddc80ab2722325d41837e5dd8ce5d9ae, type: 3}
-  icone: {fileID: 0}
+  defaultImage: {fileID: 21300000, guid: 44e280a9cdc82a644aa6340f544d13be, type: 3}
+  icon: {fileID: 0}
   valueText: {fileID: 6373089301935983365}
 --- !u!1 &6285186835194614780
 GameObject:
@@ -135,8 +128,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 36.98497, y: -33.246326}
-  m_SizeDelta: {x: 150.5296, y: 33.5073}
+  m_AnchoredPosition: {x: 87.3, y: -40.6}
+  m_SizeDelta: {x: 159.0722, y: 52.0781}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3237792200687073224
 CanvasRenderer:
@@ -169,7 +162,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 30
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
