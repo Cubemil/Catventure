@@ -1,3 +1,4 @@
+using Gameplay.Systems.Inventory;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -111,7 +112,7 @@ namespace Fishing
         {
             if (progressBar.value.Equals(1f))
             {
-                inventory.setItemToSlot(new ItemStack(Items.getItem(2),1));
+                inventory.SetItemToSlot(new ItemStack(Items.GetItem(2),1));
                 fishingUI.SetActive(false);
             }
         }

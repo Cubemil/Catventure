@@ -1,20 +1,21 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Gameplay.Systems
 {
     public class GameManager : MonoBehaviour
     {
-        private static GameManager Instance;
-        public GameState State;
+        private static GameManager _instance;
+        public GameState state;
 
         private void Awake()
         {
             // Ensure this is a singleton instance
-            if (Instance == null)
+            if (_instance == null)
             {
-                Instance = this;
-                DontDestroyOnLoad(gameObject);
+                _instance = this;
+                //DontDestroyOnLoad(gameObject);
             }
             else
             {
@@ -24,7 +25,7 @@ namespace Gameplay.Systems
 
         public void UpdateGameState(GameState newState)
         {
-            State = newState;
+            state = newState;
 
             switch (newState)
             {

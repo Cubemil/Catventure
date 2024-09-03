@@ -1,150 +1,145 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Inventory : MonoBehaviour
+namespace Gameplay.Systems.Inventory
 {
-    public ItemSlot[] slots;
-    public Image drag;
-    public static ItemStack dragStack;
+    public class Inventory : MonoBehaviour
+    {
+        public ItemSlot[] slots;
+        public Image drag;
+        public static ItemStack dragStack;
     
-    public Text itemNameTooltip; // Text UI Element für den Item-Namen
-    public Text itemDescriptionTooltip; // Text UI Element für die Item-Beschreibung
+        public Text itemNameTooltip; // text UI-element for item name
+        public Text itemDescriptionTooltip; // text UI-element for item description
     
-    private bool dragset;
+        private bool _dragSet;
 
-    private void Update()
-    {
-        if (dragStack != null)
+        private void Update()
         {
-            if (!dragset)
+            if (dragStack != null)
             {
-                drag.color = Color.white;
-                drag.sprite = dragStack.item.icon;
-                dragset = true;
-            }
-            drag.transform.position = Input.mousePosition;
-        }
-        else
-        {
-            if (dragset)
-            {
-                drag.color = new Color(0, 0, 0, 0);
-                dragset = false;
-            }
-        }
-
-        //Todo vorübergehend zur Veranschaulichung und zum Testen
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            setItemToSlot(new ItemStack(Items.getItem(1), 1));
-        }
-
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            Debug.Log((DeleteItem(1, 3)));
-        }
-
-    }
-
-    public void setItemToSlot(ItemStack stack)
-    {
-        if (stack == null || stack.item == null)
-        {
-            Debug.LogError("Stack or Item in stack is null.");
-            return;
-        }
-
-        ItemStack s = stack;
-
-        for (int i = 0; i < slots.Length; i++)
-        {
-            var sI = slots[i];
-
-            if (sI == null)
-            {
-                Debug.LogError("ItemSlot at index " + i + " is null.");
-                continue;
-            }
-
-            if (sI.iStack == null || sI.iStack.count <= 0)
-            {
-                slots[i].iStack = s;
-                break;
-            }
-            else if (sI.iStack.item != null && sI.iStack.item.id == stack.item.id)
-            {
-                if (!sI.iStack.stackFull())
+                if (!_dragSet)
                 {
-                    int c = s.count;
-                    s = slots[i].iStack.addValue(c);
+                    drag.color = Color.white;
+                    drag.sprite = dragStack.GetItem().icon;
+                    _dragSet = true;
                 }
-            }
-        }
-    }
-
-    public bool DeleteItem(int id, int amount)
-    {
-        int totalAvailable = 0;
-        List<int> slotsToUse = new List<int>();
-
-        for (int i = 0; i < slots.Length; i++)
-        {
-            var sI = slots[i];
-            if (sI != null && sI.iStack != null && sI.iStack.item != null && sI.iStack.item.id == id)
-            {
-                totalAvailable += sI.iStack.count;
-                slotsToUse.Add(i);
-                if (totalAvailable >= amount)
-                {
-                    break;
-                }
-            }
-        }
-
-        if (totalAvailable < amount)
-        {
-            return false;
-        }
-
-        int remainingAmount = amount;
-        foreach (int slotIndex in slotsToUse)
-        {
-            var sI = slots[slotIndex];
-            if (sI.iStack.count <= remainingAmount)
-            {
-                remainingAmount -= sI.iStack.count;
-                sI.iStack = null;
+                drag.transform.position = Input.mousePosition;
             }
             else
             {
-                sI.iStack.deleteValue(remainingAmount);
-                remainingAmount = 0;
-                break;
+                if (_dragSet)
+                {
+                    drag.color = new Color(0, 0, 0, 0);
+                    _dragSet = false;
+                }
+            }
+
+            //TODO temporarily implemented for testing
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                SetItemToSlot(new ItemStack(Items.GetItem(1), 1));
+            }
+
+            if (Input.GetKeyDown(KeyCode.O))
+            {
+                Debug.Log((DeleteItem(1, 3)));
+            }
+
+        }
+
+        // ReSharper disable Unity.PerformanceAnalysis
+        public void SetItemToSlot(ItemStack stack)
+        {
+            if (stack?.GetItem() == null)
+            {
+                Debug.LogError("Stack or Item in stack is null.");
+                return;
+            }
+
+            var s = stack;
+
+            for (var i = 0; i < slots.Length; i++)
+            {
+                var sI = slots[i];
+
+                if (sI == null)
+                {
+                    Debug.LogError("ItemSlot at index " + i + " is null.");
+                    continue;
+                }
+
+                if (sI.itemStack is not { count: > 0 })
+                {
+                    slots[i].itemStack = s;
+                    break;
+                }
+                else if (sI.itemStack.GetItem() != null && sI.itemStack.GetItem().id == stack.GetItem().id)
+                {
+                    if (sI.itemStack.IsStackFull()) continue;
+                    var c = s.count;
+                    s = slots[i].itemStack.AddValue(c);
+                }
             }
         }
 
-        return true;
-    }
-
-    // Funktion zum Anzeigen des Tooltips
-    public void ShowTooltip(ItemSlot slot)
-    {
-        if (slot.iStack != null && slot.iStack.item != null)
+        private bool DeleteItem(int id, int amount)
         {
-            itemNameTooltip.text = slot.iStack.item.name; // Setze den Namen des Items
-            itemDescriptionTooltip.text = slot.iStack.item.description; // Setze die Beschreibung des Items
+            var totalSlotsAvailable = 0;
+            var slotsToUse = new List<int>();
+
+            for (var i = 0; i < slots.Length; i++)
+            {
+                var itemSlot = slots[i];
+                var slotItem = itemSlot.itemStack.GetItem();
+                
+                if (!itemSlot || itemSlot.itemStack == null || slotItem == null || slotItem.id != id) continue;
+                
+                totalSlotsAvailable += itemSlot.itemStack.count;
+                slotsToUse.Add(i);
+                if (totalSlotsAvailable >= amount) break;
+            }
+
+            if (totalSlotsAvailable < amount) return false;
+
+            var remainingAmount = amount;
+            foreach (var itemSlot in slotsToUse.Select(slotIndex => slots[slotIndex]))
+            {
+                if (itemSlot.itemStack.count <= remainingAmount)
+                {
+                    remainingAmount -= itemSlot.itemStack.count;
+                    itemSlot.itemStack = null;
+                }
+                else
+                {
+                    itemSlot.itemStack.DeleteValue(remainingAmount);
+                    remainingAmount = 0;
+                    break;
+                }
+            }
+
+            return true;
+        }
+
+        // displays tooltip text on respective slot
+        public void ShowTooltip(ItemSlot slot)
+        {
+            var slotItem = slot.itemStack.GetItem();
+            if (slot.itemStack == null || slotItem == null) return;
+
+            itemNameTooltip.text = slotItem.name; // set text to item name
+            itemDescriptionTooltip.text = slotItem.description; // set text to item description
             itemNameTooltip.gameObject.SetActive(true);
             itemDescriptionTooltip.gameObject.SetActive(true);
         }
-    }
 
-    // Funktion zum Verstecken des Tooltips
-    public void HideTooltip()
-    {
-        itemNameTooltip.gameObject.SetActive(false);
-        itemDescriptionTooltip.gameObject.SetActive(false);
+        // hides tooltip
+        public void HideTooltip()
+        {
+            itemNameTooltip.gameObject.SetActive(false);
+            itemDescriptionTooltip.gameObject.SetActive(false);
+        }
     }
 }
