@@ -13,7 +13,7 @@ namespace Gameplay.Movement
         [SerializeField] private Transform cameraTransform;
         [SerializeField] private LayerMask groundLayer;
 
-        private Rigidbody _rigidbody;
+        private Rigidbody _rigidBody;
         private Animator _animator;
         private Vector3 _inputDirection;
         private bool _isGrounded;
@@ -23,22 +23,17 @@ namespace Gameplay.Movement
 
         private void Start()
         {
-            _rigidbody = GetComponent<Rigidbody>();
+            _rigidBody = GetComponent<Rigidbody>();
             _animator = GetComponent<Animator>();
 
             // Lock only the X and Z rotations
-            _rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+            _rigidBody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
 
-            if (cameraTransform == null)
-            {
-                cameraTransform = Camera.main?.transform;
-                if (cameraTransform == null)
-                {
-                    Debug.LogError("Camera Transform is not assigned and no Main Camera found in the scene.");
-                    enabled = false;
-                    return;
-                }
-            }
+            cameraTransform = Camera.main?.transform;
+            if (cameraTransform != null) return;
+            
+            Debug.LogError("Camera Transform is not assigned and no Main Camera found in the scene.");
+            enabled = false;
         }
 
         private void Update()
@@ -52,43 +47,42 @@ namespace Gameplay.Movement
 
         private void GatherInput()
         {
-            float moveHorizontal = Input.GetAxis("Horizontal");
-            float moveVertical = Input.GetAxis("Vertical");
+            var moveHorizontal = Input.GetAxis("Horizontal");
+            var moveVertical = Input.GetAxis("Vertical");
             _inputDirection = new Vector3(moveHorizontal, 0, moveVertical).normalized;
         }
 
         private void HandleMovement()
         {
-            float currentSpeed = Input.GetButton("Run") ? runSpeed : walkSpeed;
+            var currentSpeed = Input.GetButton("Run") ? runSpeed : walkSpeed;
 
-            Vector3 movement = GetCameraRelativeDirection(_inputDirection) * (currentSpeed * Time.deltaTime);
-            _rigidbody.MovePosition(transform.position + movement);
+            var movement = GetCameraRelativeDirection(_inputDirection) * (currentSpeed * Time.deltaTime);
+            _rigidBody.MovePosition(transform.position + movement);
         }
 
         private void HandleRotation()
         {
-            if (_inputDirection.magnitude > 0)
-            {
-                Vector3 targetDirection = GetCameraRelativeDirection(_inputDirection);
-                Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-            }
+            if (!(_inputDirection.magnitude > 0)) return;
+
+            var targetDirection = GetCameraRelativeDirection(_inputDirection);
+            var targetRotation = Quaternion.LookRotation(targetDirection);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
         }
 
         private void HandleJump()
         {
-            // Perform a raycast slightly below the player's position to check if grounded
+            // Perform a ray cast slightly below the player's position to check if grounded
             _isGrounded = Physics.Raycast(transform.position + Vector3.up * 0.1f, Vector3.down, 0.2f, groundLayer);
 
             if (_isGrounded && Input.GetButtonDown("Jump"))
             {
-                _rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+                _rigidBody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             }
         }
 
         private void UpdateAnimator()
         {
-            bool isWalking = _inputDirection.magnitude > 0;
+            var isWalking = _inputDirection.magnitude > 0;
             _animator.SetBool(IsWalking, isWalking);
             _animator.SetBool(IsRunning, isWalking && Input.GetButton("Run"));
         }
