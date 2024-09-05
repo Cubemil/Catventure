@@ -39,7 +39,7 @@ namespace Gameplay.Movement
             Move();
         }
 
-        void GatherInput()
+        private void GatherInput()
         {
             var moveHorizontal = Input.GetAxisRaw("Horizontal");
             var moveVertical = Input.GetAxisRaw("Vertical");

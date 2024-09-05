@@ -7,8 +7,9 @@ namespace Gameplay.Movement
     public class ThirdPersonPlayerController : MonoBehaviour
     {
         [SerializeField] private float walkSpeed = 2.5f;
+        [SerializeField] public float speed = 2.5f;
         [SerializeField] private float runSpeed = 5f;
-        [SerializeField] private float rotationSpeed = 720f;  // Degrees per second
+        [SerializeField] private float rotationSpeed = 720f; // Degrees per second
         [SerializeField] private float jumpForce = 7f;
         [SerializeField] private Transform cameraTransform;
         [SerializeField] private LayerMask groundLayer;
@@ -16,7 +17,7 @@ namespace Gameplay.Movement
         private Rigidbody _rigidBody;
         private Animator _animator;
         private Vector3 _inputDirection;
-        private bool _isGrounded;
+        private bool _isGrounded = true;
 
         private static readonly int IsRunning = Animator.StringToHash("isRunning");
         private static readonly int IsWalking = Animator.StringToHash("isWalking");
@@ -29,10 +30,16 @@ namespace Gameplay.Movement
             // Lock only the X and Z rotations
             _rigidBody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
 
-            cameraTransform = Camera.main?.transform;
-            if (cameraTransform != null) return;
+            if (!cameraTransform)
+            {
+                cameraTransform = Camera.main?.transform;
+                if (!cameraTransform)
+                {
+                    Debug.LogError("Camera Transform is not assigned and no Main Camera found in the scene.");
+                    return;
+                }
+            }
             
-            Debug.LogError("Camera Transform is not assigned and no Main Camera found in the scene.");
             enabled = false;
         }
 
@@ -72,7 +79,8 @@ namespace Gameplay.Movement
         private void HandleJump()
         {
             // Perform a ray cast slightly below the player's position to check if grounded
-            _isGrounded = Physics.Raycast(transform.position + Vector3.up * 0.1f, Vector3.down, 0.2f, groundLayer);
+            //_isGrounded = Physics.Raycast(transform.position + Vector3.up * 0.1f, Vector3.down, 0.2f, groundLayer);
+            _isGrounded = Physics.CheckSphere(transform.position + Vector3.up * 0.1f, 0.2f, groundLayer);
 
             if (_isGrounded && Input.GetButtonDown("Jump"))
             {
