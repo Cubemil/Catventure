@@ -1,10 +1,13 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InteractableUI : MonoBehaviour
 {
     public Camera mainCamera;  // Referenz zur Kamera
     public Transform parentObject;  // Referenz zum Parent-Objekt, zu dem es immer ein Stück daneben bleibt
     public Vector3 worldOffset = new Vector3(2, 2, 0);  // Fester Offset in Weltkoordinaten
+    public string displayString = "E";
+    public Text textDisplay;
 
     private Vector3 initialParentPosition;  // Anfangsposition des Parent-Objekts
 
@@ -41,6 +44,9 @@ public class InteractableUI : MonoBehaviour
 
         // Setze die initiale Position des UI-Objekts basierend auf dem Offset
         transform.position = parentObject.position + worldOffset;
+        
+        //Schreibe den richtigen Text in das Feld
+        textDisplay.text = displayString;
     }
 
     void Update()
