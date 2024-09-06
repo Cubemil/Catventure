@@ -1,5 +1,6 @@
 using System;
 using Gameplay.Systems.Inventory;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Gameplay.Interaction
@@ -8,13 +9,15 @@ namespace Gameplay.Interaction
     {
         public KeyCode interactKey = KeyCode.E;
         private Rigidbody _rb;
-        private bool _iscollectable;
+        private bool _iscollectable = false;
         private bool _hasFallen = false;
         public Inventory inv;
+        public GameObject interactable;
         
         private void Start()
         {
             _rb = GetComponent<Rigidbody>();
+            interactable.SetActive(false);
 
             // adds rigid body if object doesn't have one
             if (!_rb) _rb = gameObject.AddComponent<Rigidbody>();
@@ -23,29 +26,21 @@ namespace Gameplay.Interaction
 
         private void Update()
         {
-            if (_iscollectable && Input.GetKey(interactKey) && _hasFallen)
+            if (_iscollectable && Input.GetKey(interactKey)&& _hasFallen)
             {
                 collectApple();
+            }
+
+            if (_iscollectable && _hasFallen)
+            {
+                interactable.SetActive(true);
+            }
+            else
+            {
+                interactable.SetActive(false);
             }
         }
-
-        /* private void OnTriggerStay(Collider other)
-        {
-            if (other.CompareTag("Player"))
-            {
-                Debug.Log("Collectable");
-            }
-            
-            if (other.CompareTag("Player") && Input.GetKeyDown(interactKey))
-            {
-                DropApple();
-            }
-            
-            if (other.CompareTag("Player") && _hasFallen)
-            {
-                collectApple();
-            }
-        }*/
+        
 
        private void OnTriggerEnter(Collider other)
        {
