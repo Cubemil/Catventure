@@ -1,4 +1,4 @@
-﻿namespace Gameplay.Systems
+﻿namespace Gameplay.Systems.Managers
 {
     public enum GameState
     {

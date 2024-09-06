@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-namespace Menu
+namespace Gameplay.Systems.Menus
 {
     public class MainMenu : MonoBehaviour
     {
@@ -10,7 +10,7 @@ namespace Menu
         public GameObject playMenu;
         public GameObject optionsMenu;
         public GameObject creditsMenu;
-        public float _mainVolume = 0; //Todo Sound
+        public float mainVolume = 0; //TODO Sound
 
         private void Start()
         {
@@ -18,14 +18,14 @@ namespace Menu
             playMenu.SetActive(false);
             optionsMenu.SetActive(false);
         }
-        
-        void Update()
+
+        private void Update()
         {
             if (!Input.GetKeyDown(KeyCode.Escape)) return;
 
             if (mainMenu.activeSelf)
             {
-                Quit();
+                QuitGame();
             }
             else
             {
@@ -47,7 +47,7 @@ namespace Menu
             mainMenu.SetActive(false);
         }
 
-        public void Quit()
+        public void QuitGame()
         {
             Debug.Log("Quitting...");
             Application.Quit();
@@ -70,7 +70,7 @@ namespace Menu
         public void NewGame()
         {
             Time.timeScale = 1f;
-            SceneManager.LoadScene("Garden");
+            SceneManager.LoadScene("Apartment");
         }
     
         //TODO
@@ -82,7 +82,7 @@ namespace Menu
 
         public void AdjustMainVolume(Slider slider)
         {
-            _mainVolume = slider.value; //Todo Sound
+            mainVolume = slider.value; //Todo Sound
         }
     
     }

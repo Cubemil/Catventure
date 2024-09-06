@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Gameplay.Systems
+namespace Gameplay.Systems.Managers
 {
     public class GameManager : MonoBehaviour
     {

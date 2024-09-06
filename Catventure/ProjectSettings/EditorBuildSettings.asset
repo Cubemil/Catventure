@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Garden.unity
     guid: 47eeeb510d54ee64286b030aa7480a47
+  - enabled: 1
+    path: Assets/Scenes/Apartment.unity
+    guid: 605255c219c5db446aed23436a5b874c
+  - enabled: 1
+    path: Assets/Scenes/ApartmentFreeRoam.unity
+    guid: fb84ff873611a4a45aa204c9210459d4
   m_configObjects: {}

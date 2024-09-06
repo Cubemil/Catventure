@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Menu
+namespace Gameplay.Systems.Menus
 {
     public class SelectorPauseMenu : MonoBehaviour
     {
