@@ -92,7 +92,7 @@ namespace Gameplay.Movement
             _animator.SetBool(IsWalking, isWalking);
             _animator.SetBool(IsRunning, isWalking && Input.GetButton("Run"));
         }
-
+        
         private Vector3 GetCameraRelativeDirection(Vector3 inputDirection)
         {
             var forward = cameraTransform.forward;
