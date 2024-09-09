@@ -33187,11 +33187,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1806307186121150908, guid: 879ac55cab0aed848ad9a23d0c25c933, type: 3}
       propertyPath: runSpeed
-      value: 16
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 1806307186121150908, guid: 879ac55cab0aed848ad9a23d0c25c933, type: 3}
       propertyPath: walkSpeed
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1806307186121150908, guid: 879ac55cab0aed848ad9a23d0c25c933, type: 3}
       propertyPath: cameraTransform
@@ -34891,6 +34891,7 @@ GameObject:
   - component: {fileID: 1446839005}
   - component: {fileID: 1446839004}
   - component: {fileID: 1446839003}
+  - component: {fileID: 1446839006}
   m_Layer: 0
   m_Name: CatNip
   m_TagString: Untagged
@@ -34907,7 +34908,7 @@ Transform:
   m_GameObject: {fileID: 1446839001}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.70710576, z: -0, w: 0.70710784}
-  m_LocalPosition: {x: -0.071, y: 0.1049, z: 7.126}
+  m_LocalPosition: {x: -1.578, y: 0.1049, z: 5.429}
   m_LocalScale: {x: 0.11614, y: 0.009778163, z: 0.11614}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -34984,6 +34985,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1446839001}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1446839006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1446839001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d8588e5035b42bc94fca57a5f58f079, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cat: {fileID: 1839865323}
 --- !u!1001 &1450477962
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44528,6 +44542,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 2509cc5763ca17f4598bf61fd585a93e, type: 3}
   m_PrefabInstance: {fileID: 1837282480}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1839865323 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1100930267295973923, guid: 879ac55cab0aed848ad9a23d0c25c933, type: 3}
+  m_PrefabInstance: {fileID: 1386533942}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1840070695
 PrefabInstance:
