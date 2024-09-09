@@ -1,4 +1,4 @@
-﻿using Gameplay.Interaction;
+﻿using System.Collections;
 using UnityEngine;
 using Gameplay.Systems.Managers;
 using Gameplay.Systems.Quests;
@@ -43,12 +43,16 @@ namespace Gameplay.Characters
         private AppleCollectorQuest _appleCollectorQuest;
         private DialogueManager _dialogueManager;
         private bool _playerInRange;
+        private Transform _playerTransform;
+        private const float RotationSpeed = 5f;
         public TextMeshProUGUI interactText;
+        private Coroutine _rotationCoroutine;
 
         private void Start()
         {
             _appleCollectorQuest = FindObjectOfType<AppleCollectorQuest>();
             _dialogueManager = FindObjectOfType<DialogueManager>();
+            _playerTransform = GameObject.FindWithTag("Player").transform;
             
             interactText.gameObject.SetActive(false);
             interactText.text = "Press 'E' to speak to Garry Gnome";
@@ -80,28 +84,54 @@ namespace Gameplay.Characters
 
         private void InteractWithGnome()
         {
-            if (!_appleCollectorQuest.questStarted)
+            // start coroutine to smoothly turn towards the player
+            if (_rotationCoroutine != null) StopCoroutine(_rotationCoroutine); // stop ongoing rotation
+            _rotationCoroutine = StartCoroutine(LookAtPlayerCoroutine());
+
+            switch (_appleCollectorQuest.questStarted)
             {
-                StartDialogue(initialDialogue);
-                _appleCollectorQuest.StartQuest();
-            }
-            else if (_appleCollectorQuest.questStarted && !_appleCollectorQuest.questCompleted)
-            {
-                if (_appleCollectorQuest.GetAppleCount() >= AppleCollectorQuest.TotalApplesRequired)
+                case false:
                 {
-                    _appleCollectorQuest.RemoveApplesFromInventory();
-                    _appleCollectorQuest.CompleteQuest();
-                    StartDialogue(questCompleteDialogue);
+                    StartDialogue(initialDialogue);
+                    _appleCollectorQuest.StartQuest();
+                    break;
                 }
-                else
+                case true when !_appleCollectorQuest.questCompleted:
                 {
-                    StartDialogue(repeatingDialogueDuringQuest);
+                    if (_appleCollectorQuest.GetAppleCount() >= AppleCollectorQuest.TotalApplesRequired)
+                    {
+                        _appleCollectorQuest.RemoveApplesFromInventory();
+                        _appleCollectorQuest.CompleteQuest();
+                        StartDialogue(questCompleteDialogue);
+                    }
+                    else
+                    {
+                        StartDialogue(repeatingDialogueDuringQuest);
+                    }
+                    break;
+                }
+                default:
+                {
+                    if (_appleCollectorQuest.questCompleted)
+                        StartDialogue(repeatingDialogueAfterQuest);
+                    break;
                 }
             }
-            else if (_appleCollectorQuest.questCompleted)
+        }
+        
+        private IEnumerator LookAtPlayerCoroutine()
+        {
+            var direction = _playerTransform.position - transform.position;
+            direction.y = 0; // gnome only rotates horizontally
+            var targetRotation = Quaternion.LookRotation(direction);
+
+            while (Quaternion.Angle(transform.rotation, targetRotation) > 0.1f)
             {
-                StartDialogue(repeatingDialogueAfterQuest);
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * RotationSpeed);
+                yield return null;
             }
+
+            transform.rotation = targetRotation;
         }
         
         private void StartDialogue(string[] dialogueLines)
