@@ -1,15 +1,14 @@
-﻿using System;
-using TMPro;
-using UnityEditor;
+﻿using TMPro;
 using UnityEngine;
 
 namespace Gameplay.Systems.Managers
 {
     public class DialogueManager : MonoBehaviour
     {
-        public TextMeshProUGUI dialoguePanel;
+        public GameObject dialoguePanel;
+        public TextMeshProUGUI dialogueText;
         public string[] dialogueLines;
-        private int _currentLine = 0;
+        private int _currentLine;
         private bool _dialogueActive;
 
         private void Update()
@@ -24,7 +23,7 @@ namespace Gameplay.Systems.Managers
         {
             dialogueLines = lines;
             _currentLine = 0;
-            dialoguePanel.gameObject.SetActive(true);
+            dialoguePanel.SetActive(true);
             _dialogueActive = true;
             DisplayNextLine();
         }
@@ -33,7 +32,7 @@ namespace Gameplay.Systems.Managers
         {
             if (_currentLine < dialogueLines.Length)
             {
-                dialoguePanel.text = dialogueLines[_currentLine];
+                dialogueText.text = dialogueLines[_currentLine];
                 _currentLine++;
             }
             else
@@ -44,7 +43,7 @@ namespace Gameplay.Systems.Managers
 
         private void EndDialogue()
         {
-            dialoguePanel.gameObject.SetActive(false);
+            dialoguePanel.SetActive(false);
             _dialogueActive = false;
         }
 
@@ -54,6 +53,11 @@ namespace Gameplay.Systems.Managers
             {
                 DisplayNextLine();
             }
+        }
+
+        public bool IsDialogueActive()
+        {
+            return _dialogueActive;
         }
     }
 }

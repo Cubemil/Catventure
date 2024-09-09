@@ -39,8 +39,6 @@ namespace Gameplay.Movement
                     return;
                 }
             }
-            
-            enabled = false;
         }
 
         private void Update()

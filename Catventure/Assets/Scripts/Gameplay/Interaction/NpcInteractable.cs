@@ -14,7 +14,7 @@ namespace Gameplay.Interaction
 
         public void Interact()
         {
-            _animator.SetTrigger(Talk);
+            //_animator.SetTrigger(Talk);
         }
     }
 }

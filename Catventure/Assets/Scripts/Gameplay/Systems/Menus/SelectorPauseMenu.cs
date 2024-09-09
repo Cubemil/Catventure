@@ -10,7 +10,6 @@ namespace Gameplay.Systems.Menus
         public GameObject volumeSelector;  
         public GameObject vBackSelector;  
     
-
         public void SelectResume()
         {
             resumeSelector.SetActive(true);
