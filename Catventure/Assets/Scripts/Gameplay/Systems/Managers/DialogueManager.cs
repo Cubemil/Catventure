@@ -1,55 +1,59 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using TMPro;
+using UnityEditor;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Gameplay.Systems.Managers
 {
-    [System.Serializable]
-    public class Dialogue
-    {
-        public string npcName;
-        public List<string> sentences;
-    }
-    
     public class DialogueManager : MonoBehaviour
     {
-        public Text dialogueText;
-        public GameObject dialoguePanel;
-        private Queue<string> _sentences;
+        public TextMeshProUGUI dialoguePanel;
+        public string[] dialogueLines;
+        private int _currentLine = 0;
+        private bool _dialogueActive;
 
-        private void Start()
+        private void Update()
         {
-            _sentences = new Queue<string>();
-        }
-
-        public void StartDialogue(Dialogue dialogue)
-        {
-            dialoguePanel.SetActive(true);
-            _sentences.Clear();
-
-            foreach (var sentence in dialogue.sentences)
+            if (_dialogueActive && (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0)))
             {
-                _sentences.Enqueue(sentence);                
+                DisplayNextLine();
             }
-
-            DisplayNextSentence();
         }
 
-        private void DisplayNextSentence()
+        public void StartDialogue(string[] lines)
         {
-            if (_sentences.Count == 0)
+            dialogueLines = lines;
+            _currentLine = 0;
+            dialoguePanel.gameObject.SetActive(true);
+            _dialogueActive = true;
+            DisplayNextLine();
+        }
+
+        private void DisplayNextLine()
+        {
+            if (_currentLine < dialogueLines.Length)
+            {
+                dialoguePanel.text = dialogueLines[_currentLine];
+                _currentLine++;
+            }
+            else
             {
                 EndDialogue();
-                return;
             }
-
-            var sentence = _sentences.Dequeue();
-            dialogueText.text = sentence;
         }
 
         private void EndDialogue()
         {
-            dialoguePanel.SetActive(false);
+            dialoguePanel.gameObject.SetActive(false);
+            _dialogueActive = false;
+        }
+
+        public void OnDialoguePanelClick()
+        {
+            if (_dialogueActive)
+            {
+                DisplayNextLine();
+            }
         }
     }
 }

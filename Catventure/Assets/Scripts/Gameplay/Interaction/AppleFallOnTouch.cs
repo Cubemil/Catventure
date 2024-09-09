@@ -1,7 +1,5 @@
-using System;
-using Gameplay.Systems.Inventory;
-using Unity.VisualScripting;
 using UnityEngine;
+using Gameplay.Systems.Inventory;
 
 namespace Gameplay.Interaction
 {
@@ -9,10 +7,11 @@ namespace Gameplay.Interaction
     {
         public KeyCode interactKey = KeyCode.E;
         private Rigidbody _rb;
-        private bool _iscollectable = false;
+        private bool _isCollectable = false;
         private bool _hasFallen = false;
-        public Inventory inv;
+        public Inventory inventory;
         public GameObject interactable;
+        private const int AppleItemID = 3;
         
         private void Start()
         {
@@ -26,27 +25,19 @@ namespace Gameplay.Interaction
 
         private void Update()
         {
-            if (_iscollectable && Input.GetKey(interactKey)&& _hasFallen)
+            if (_isCollectable && Input.GetKey(interactKey)&& _hasFallen)
             {
-                collectApple();
+                CollectApple();
             }
 
-            if (_iscollectable && _hasFallen)
-            {
-                interactable.SetActive(true);
-            }
-            else
-            {
-                interactable.SetActive(false);
-            }
+            interactable.SetActive(_isCollectable && _hasFallen);
         }
         
-
        private void OnTriggerEnter(Collider other)
        {
            if (other.CompareTag("Player"))
            {
-               _iscollectable = true;
+               _isCollectable = true;
            }
        }
 
@@ -54,7 +45,7 @@ namespace Gameplay.Interaction
        {
            if (other.CompareTag("Player"))
            {
-               _iscollectable = false;
+               _isCollectable = false;
            }
        }
 
@@ -79,11 +70,9 @@ namespace Gameplay.Interaction
             }
         }
 
-        //todo
-        private void collectApple()
+        private void CollectApple()
         {
-           Debug.Log("collected");
-           inv.SetItemToSlot(new ItemStack(Items.GetItem(3), 1));
+           inventory.SetItemToSlot(new ItemStack(Items.GetItem(AppleItemID), 1));
            gameObject.SetActive(false);
         }
     }
