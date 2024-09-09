@@ -2,7 +2,7 @@ using Gameplay.Systems.Inventory;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Fishing
+namespace Gameplay.MiniGames.Fishing
 {
     public class FishingScript : MonoBehaviour
     {

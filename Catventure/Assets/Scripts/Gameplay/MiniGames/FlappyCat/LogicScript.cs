@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-namespace FlappyCat
+namespace Gameplay.MiniGames.FlappyCat
 {
     public class LogicScript : MonoBehaviour
     {

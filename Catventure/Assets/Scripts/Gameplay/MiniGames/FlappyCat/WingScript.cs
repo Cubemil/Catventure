@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace FlappyCat
+namespace Gameplay.MiniGames.FlappyCat
 {
     public class WingScript : MonoBehaviour
     {
