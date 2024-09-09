@@ -9,6 +9,7 @@ namespace Gameplay.Interaction
         private void Update()
         {
             if (!Input.GetKeyDown(KeyCode.E)) return;
+            
             // gets all collisions inside sphere with radius of interactRange
             var colliders = Physics.OverlapSphere(transform.position, interactRange);
             foreach (var col in colliders)
@@ -16,7 +17,12 @@ namespace Gameplay.Interaction
                 if (col.TryGetComponent(out NpcInteractable npcInteractable))
                 {
                     npcInteractable.Interact();
-                } 
+                }
+
+                if (col.TryGetComponent(out ItemInteractable itemInteractable))
+                {
+                    itemInteractable.Interact();
+                }
             }
         }
 
