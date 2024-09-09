@@ -1,6 +1,8 @@
-﻿using Gameplay.Systems.Managers;
-using Gameplay.Systems.Quests;
+﻿using Gameplay.Interaction;
 using UnityEngine;
+using Gameplay.Systems.Managers;
+using Gameplay.Systems.Quests;
+using TMPro;
 
 namespace Gameplay.Characters
 {
@@ -12,7 +14,8 @@ namespace Gameplay.Characters
             "What led you here, fur ball?",
             "...",
             "Oh, I see. Well, I can help you, but I'd need a small favor in return.",
-            "Do you see that big apple tree over there? I really need some of those juicy apples, because my stupid grandma needs a birthday cake.",
+            "Do you see that big apple tree over there? I really need some of those juicy apples.",
+            "Why? Well, because my stupid grandma needs a birthday cake.",
             "I'm old and beginning to rust and besides, heights are not really my thing... So we got a deal?"
         };
 
@@ -39,19 +42,40 @@ namespace Gameplay.Characters
 
         private AppleCollectorQuest _appleCollectorQuest;
         private DialogueManager _dialogueManager;
+        private bool _playerInRange;
+        public TextMeshProUGUI interactText;
 
         private void Start()
         {
             _appleCollectorQuest = FindObjectOfType<AppleCollectorQuest>();
             _dialogueManager = FindObjectOfType<DialogueManager>();
+            
+            interactText.gameObject.SetActive(false);
+            interactText.text = "Press 'E' to speak to Garry Gnome";
         }
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (_playerInRange && Input.GetKeyDown(KeyCode.E) && !_dialogueManager.IsDialogueActive())
             {
                 InteractWithGnome();
             }
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (!other.CompareTag($"PlayerInteract")) return;
+            
+            _playerInRange = true;
+            interactText.gameObject.SetActive(true);
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (!other.CompareTag($"PlayerInteract")) return;
+            
+            _playerInRange = false;
+            interactText.gameObject.SetActive(false);
         }
 
         private void InteractWithGnome()
@@ -65,7 +89,9 @@ namespace Gameplay.Characters
             {
                 if (_appleCollectorQuest.GetAppleCount() >= AppleCollectorQuest.TotalApplesRequired)
                 {
-                    CompleteQuest();
+                    _appleCollectorQuest.RemoveApplesFromInventory();
+                    _appleCollectorQuest.CompleteQuest();
+                    StartDialogue(questCompleteDialogue);
                 }
                 else
                 {
@@ -81,12 +107,6 @@ namespace Gameplay.Characters
         private void StartDialogue(string[] dialogueLines)
         {
             _dialogueManager.StartDialogue(dialogueLines);
-        }
-
-        private void CompleteQuest()
-        {
-            StartDialogue(questCompleteDialogue);
-            _appleCollectorQuest.CompleteQuest();
         }
     }
 }

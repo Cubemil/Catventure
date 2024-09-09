@@ -1,5 +1,6 @@
 using UnityEngine;
 using Gameplay.Systems.Inventory;
+using Gameplay.Systems.Quests;
 
 namespace Gameplay.Interaction
 {
@@ -7,8 +8,8 @@ namespace Gameplay.Interaction
     {
         public KeyCode interactKey = KeyCode.E;
         private Rigidbody _rb;
-        private bool _isCollectable = false;
-        private bool _hasFallen = false;
+        private bool _isCollectable;
+        private bool _hasFallen;
         public Inventory inventory;
         public GameObject interactable;
         private const int AppleItemID = 3;
@@ -70,9 +71,17 @@ namespace Gameplay.Interaction
             }
         }
 
+        // ReSharper disable Unity.PerformanceAnalysis
         private void CollectApple()
         {
            inventory.SetItemToSlot(new ItemStack(Items.GetItem(AppleItemID), 1));
+           
+           var appleQuest = FindObjectOfType<AppleCollectorQuest>();
+           if (appleQuest && appleQuest.questStarted && !appleQuest.questCompleted)
+           {
+               appleQuest.UpdateQuestLog();
+           }
+           
            gameObject.SetActive(false);
         }
     }

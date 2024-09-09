@@ -85,7 +85,7 @@ namespace Gameplay.Systems.Inventory
             }
         }
 
-        private bool DeleteItem(int id, int amount)
+        public bool DeleteItem(int id, int amount)
         {
             var totalSlotsAvailable = 0;
             var slotsToUse = new List<int>();
@@ -115,7 +115,6 @@ namespace Gameplay.Systems.Inventory
                 else
                 {
                     itemSlot.itemStack.DeleteValue(remainingAmount);
-                    remainingAmount = 0;
                     break;
                 }
             }

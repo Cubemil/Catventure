@@ -8,8 +8,8 @@ namespace Gameplay.Systems.Quests
         [SerializeField]
         public TextMeshProUGUI questLogText;
         public const int TotalApplesRequired = 5;
-        public bool questStarted = false;
-        public bool questCompleted = false;
+        public bool questStarted;
+        public bool questCompleted;
         public Inventory.Inventory inventory;
         private const int AppleItemId = 3;
 
@@ -25,21 +25,21 @@ namespace Gameplay.Systems.Quests
             questStarted = true;
         }
 
-        private void UpdateQuestLog()
+        public void UpdateQuestLog()
         {
             var applesCollected = GetAppleCount();
             questLogText.text = $"Collect Apples ({applesCollected}/{TotalApplesRequired}) for Garry Gnome";
 
             if (applesCollected >= TotalApplesRequired)
             {
-                questLogText.text = questLogText.text = "All apples collected. Return to Garry Gnome!";
+                questLogText.text = "All apples collected. Return to Garry Gnome!";
             }
         }
 
         public void CompleteQuest()
         {
             questCompleted = true;
-            questLogText.gameObject.SetActive(false); // hide quest log
+            questLogText.gameObject.SetActive(false); // hide quest log once quest is completed
         }
 
         public int GetAppleCount()
@@ -55,6 +55,11 @@ namespace Gameplay.Systems.Quests
             }
 
             return totalApples;
+        }
+
+        public void RemoveApplesFromInventory()
+        {
+            inventory.DeleteItem(AppleItemId, TotalApplesRequired);
         }
     }
 }
