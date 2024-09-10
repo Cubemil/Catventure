@@ -21,6 +21,7 @@ namespace Gameplay.Movement
 
         private static readonly int IsRunning = Animator.StringToHash("isRunning");
         private static readonly int IsWalking = Animator.StringToHash("isWalking");
+        private static readonly int IsJumping = Animator.StringToHash("isJumping");
 
         private void Start()
         {
@@ -30,6 +31,7 @@ namespace Gameplay.Movement
             // Lock only the X and Z rotations
             _rigidBody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
 
+            
             if (!cameraTransform)
             {
                 cameraTransform = Camera.main?.transform;
@@ -80,10 +82,11 @@ namespace Gameplay.Movement
             //_isGrounded = Physics.Raycast(transform.position + Vector3.up * 0.1f, Vector3.down, 0.2f, groundLayer);
             _isGrounded = Physics.CheckSphere(transform.position + Vector3.up * 0.1f, 0.2f, groundLayer);
 
-            if (_isGrounded && Input.GetButtonDown("Jump"))
+            if (_isGrounded && Input.GetButtonDown("Jump") && !_animator.GetCurrentAnimatorStateInfo(0).IsName("CatSleeping"))
             {
                 _rigidBody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            }
+                //_animator.SetBool(IsJumping, true);
+            } 
         }
 
         private void UpdateAnimator()
