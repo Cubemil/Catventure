@@ -6129,7 +6129,7 @@ PrefabInstance:
     - target: {fileID: 113110711999072014, guid: 4895ee41a3f10064ba093f70a2096f00, type: 3}
       propertyPath: cat
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 952741842}
     - target: {fileID: 6855697044758459935, guid: 4895ee41a3f10064ba093f70a2096f00, type: 3}
       propertyPath: m_Name
       value: CatNip
@@ -10874,7 +10874,7 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 0}
+  m_Follow: {fileID: 645533101}
   m_Lens:
     FieldOfView: 40
     OrthographicSize: 8.4
@@ -14646,8 +14646,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1100930267295973923, guid: 879ac55cab0aed848ad9a23d0c25c933, type: 3}
       propertyPath: m_Name
-      value: ThirdPersonCatController (1)
+      value: 'ThirdPersonCatController '
       objectReference: {fileID: 0}
+    - target: {fileID: 4439873623617745312, guid: 879ac55cab0aed848ad9a23d0c25c933, type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 709801948}
     - target: {fileID: 5004455963088498317, guid: 879ac55cab0aed848ad9a23d0c25c933, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.0874116
@@ -23141,6 +23145,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: d4cfcf659200d7548b90a5580c3ab18f, type: 3}
   m_PrefabInstance: {fileID: 952011611}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &952741842 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1100930267295973923, guid: 879ac55cab0aed848ad9a23d0c25c933, type: 3}
+  m_PrefabInstance: {fileID: 645533100}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &956776994
 PrefabInstance:

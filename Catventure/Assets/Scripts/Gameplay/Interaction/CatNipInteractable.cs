@@ -19,8 +19,8 @@ namespace Gameplay.Interaction
         public override void Interact()
         {
             _catAnimator.SetBool(IsEating, true);
-            StartCoroutine(DelayedAnimations(5f));
-            StartCoroutine(DelayedSceneChange(10f)); // Start the coroutine with a 5-second delay
+            StartCoroutine(DelayedAnimations(3f));
+            StartCoroutine(DelayedSceneChange(6f)); // Start the coroutine with a 5-second delay
         }
         
         private IEnumerator DelayedAnimations(float delay)
