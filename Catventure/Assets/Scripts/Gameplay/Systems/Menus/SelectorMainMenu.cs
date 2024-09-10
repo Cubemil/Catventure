@@ -6,7 +6,6 @@ namespace Gameplay.Systems.Menus
     {
         public GameObject playSelector;  
         public GameObject optionsSelector;  
-        public GameObject creditsSelector;  
         public GameObject quitSelector;
         public GameObject newGameSelector;  
         public GameObject continueSelector;  
@@ -19,7 +18,6 @@ namespace Gameplay.Systems.Menus
         {
             playSelector.SetActive(true);
             optionsSelector.SetActive(false);
-            creditsSelector.SetActive(false);
             quitSelector.SetActive(false);
         }
 
@@ -27,7 +25,6 @@ namespace Gameplay.Systems.Menus
         {
             playSelector.SetActive(false);
             optionsSelector.SetActive(true);
-            creditsSelector.SetActive(false);
             quitSelector.SetActive(false);
         }
 
@@ -35,7 +32,6 @@ namespace Gameplay.Systems.Menus
         {
             playSelector.SetActive(false);
             optionsSelector.SetActive(false);
-            creditsSelector.SetActive(true);
             quitSelector.SetActive(false);
         }
     
@@ -43,7 +39,6 @@ namespace Gameplay.Systems.Menus
         {
             playSelector.SetActive(false);
             optionsSelector.SetActive(false);
-            creditsSelector.SetActive(false);
             quitSelector.SetActive(true);
         }
 

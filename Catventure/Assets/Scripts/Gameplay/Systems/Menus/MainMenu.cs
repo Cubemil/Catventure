@@ -63,7 +63,6 @@ namespace Gameplay.Systems.Menus
         {
             mainMenu.SetActive(true);
             playMenu.SetActive(false);
-            creditsMenu.SetActive(false);
             optionsMenu.SetActive(false);
         }
 
