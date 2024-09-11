@@ -1,6 +1,6 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 namespace Gameplay.Systems.Menus
 {
@@ -10,27 +10,17 @@ namespace Gameplay.Systems.Menus
         public GameObject playMenu;
         public GameObject optionsMenu;
         public GameObject creditsMenu;
-        public float mainVolume = 0; //TODO Sound
+        public float mainVolume;
+        public string lastSavedScene;
 
         private void Start()
         {
             mainMenu.SetActive(true);
             playMenu.SetActive(false);
             optionsMenu.SetActive(false);
-        }
-
-        private void Update()
-        {
-            if (!Input.GetKeyDown(KeyCode.Escape)) return;
-
-            if (mainMenu.activeSelf)
-            {
-                QuitGame();
-            }
-            else
-            {
-                Back();
-            }
+            
+            //TODO implement save system:
+            lastSavedScene = "ApartmentCutscene";
         }
 
         public void Play()
@@ -38,7 +28,6 @@ namespace Gameplay.Systems.Menus
             mainMenu.SetActive(false);
             playMenu.SetActive(true);
             optionsMenu.SetActive(false);
-            //SceneManager.LoadScene("Game");
         }
 
         public void Options()
@@ -49,14 +38,7 @@ namespace Gameplay.Systems.Menus
 
         public void QuitGame()
         {
-            Debug.Log("Quitting...");
             Application.Quit();
-        }
-
-        public void Credits()
-        {
-            mainMenu.SetActive(false);
-            creditsMenu.SetActive(true);
         }
     
         public void Back()
@@ -69,19 +51,18 @@ namespace Gameplay.Systems.Menus
         public void NewGame()
         {
             Time.timeScale = 1f;
-            SceneManager.LoadScene("Apartment");
+            SceneManager.LoadScene($"ApartmentCutscene");
         }
     
-        //TODO
         public void ContinueGame()
         {
             Time.timeScale = 1f;
-            SceneManager.LoadScene("Flappy Cat");
+            SceneManager.LoadScene(lastSavedScene);
         }
 
-        public void AdjustMainVolume(Slider slider)
+        public void AdjustMainVolume(Slider volumeSlider)
         {
-            mainVolume = slider.value; //Todo Sound
+            mainVolume = volumeSlider.value;
         }
     
     }

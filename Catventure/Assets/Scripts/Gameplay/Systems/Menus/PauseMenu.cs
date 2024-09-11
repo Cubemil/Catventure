@@ -1,6 +1,6 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 namespace Gameplay.Systems.Menus
 {
@@ -9,21 +9,16 @@ namespace Gameplay.Systems.Menus
         private static bool _gameIsPaused;
         public GameObject pauseMenu;
         public GameObject optionsMenu;
-        public float _mainVolume = 0; //Todo Sound
-    
-        void Update()
+        public float mainVolume;
+
+        private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                if (_gameIsPaused)
-                {
-                    Resume();
-                }
-                else
-                {
-                    Pause();
-                }
-            }
+            if (!Input.GetKeyDown(KeyCode.Escape)) return;
+            
+            if (_gameIsPaused)
+                Resume();
+            else
+                Pause();
         }
 
         private void Pause()
@@ -61,8 +56,7 @@ namespace Gameplay.Systems.Menus
     
         public void AdjustMainVolume(Slider slider)
         {
-            _mainVolume = slider.value; //Todo Sound
+            mainVolume = slider.value;
         }
-
     }
 }

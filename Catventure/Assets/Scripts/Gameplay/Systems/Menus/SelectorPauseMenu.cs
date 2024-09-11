@@ -35,7 +35,6 @@ namespace Gameplay.Systems.Menus
         {
             volumeSelector.SetActive(true);
             vBackSelector.SetActive(false);
-    
         }
 
         public void SelectVBack()
