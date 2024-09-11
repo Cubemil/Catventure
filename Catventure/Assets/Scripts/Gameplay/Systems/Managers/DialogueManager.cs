@@ -1,5 +1,8 @@
 ﻿using TMPro;
 using UnityEngine;
+using System.Linq;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 namespace Gameplay.Systems.Managers
 {
@@ -10,13 +13,24 @@ namespace Gameplay.Systems.Managers
         public string[] dialogueLines;
         private int _currentLine;
         private bool _dialogueActive;
+        
+        // UI-raycasting for clicking through dialogue box
+        private GraphicRaycaster _graphicRaycaster;
+        private EventSystem _eventSystem;
+
+        private void Start()
+        {
+            _graphicRaycaster = GetComponentInParent<GraphicRaycaster>();
+            _eventSystem = EventSystem.current;
+        }
 
         private void Update()
         {
-            if (_dialogueActive && (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0)))
-            {
-                DisplayNextLine();
-            }
+            if (!_dialogueActive) return;
+            if (Input.GetKeyDown(KeyCode.E)) DisplayNextLine();
+
+            if (!Input.GetMouseButtonDown(0)) return;
+            if (IsPointerOverUIElement()) DisplayNextLine();
         }
 
         public void StartDialogue(string[] lines)
@@ -35,10 +49,7 @@ namespace Gameplay.Systems.Managers
                 dialogueText.text = dialogueLines[_currentLine];
                 _currentLine++;
             }
-            else
-            {
-                EndDialogue();
-            }
+            else EndDialogue();
         }
 
         private void EndDialogue()
@@ -47,17 +58,23 @@ namespace Gameplay.Systems.Managers
             _dialogueActive = false;
         }
 
-        public void OnDialoguePanelClick()
-        {
-            if (_dialogueActive)
-            {
-                DisplayNextLine();
-            }
-        }
-
         public bool IsDialogueActive()
         {
             return _dialogueActive;
+        }
+        
+        private bool IsPointerOverUIElement()
+        {
+            var pointerEventData = new PointerEventData(_eventSystem)
+            {
+                position = Input.mousePosition
+            };
+            
+            // raycast for UI-elements
+            var results = new System.Collections.Generic.List<RaycastResult>();
+            _graphicRaycaster.Raycast(pointerEventData, results);
+
+            return results.Any(result => result.gameObject == dialoguePanel);
         }
     }
 }
