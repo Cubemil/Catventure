@@ -8,19 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 2dc536665200f1c40b214da2bc9f8f78
-  - enabled: 0
-    path: Assets/Scenes/Game.unity
-    guid: 0a093910b65ab4847982200f90deb8e4
-  - enabled: 0
-    path: Assets/Scenes/Flappy Cat.unity
-    guid: 285b7abf0f0e39b4584c84104a70b16b
   - enabled: 1
-    path: Assets/Scenes/Garden.unity
-    guid: 47eeeb510d54ee64286b030aa7480a47
+    path: Assets/Scenes/ApartmentCutScene.unity
+    guid: 3e571a1e0f7aee54c9a8265572673135
   - enabled: 1
     path: Assets/Scenes/Apartment.unity
     guid: 605255c219c5db446aed23436a5b874c
-  - enabled: 0
-    path: Assets/Scenes/ApartmentFreeRoam.unity
-    guid: fb84ff873611a4a45aa204c9210459d4
+  - enabled: 1
+    path: Assets/Scenes/Garden.unity
+    guid: 47eeeb510d54ee64286b030aa7480a47
   m_configObjects: {}

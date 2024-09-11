@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -12,7 +13,10 @@ namespace Gameplay.Systems.Menus
         public GameObject creditsMenu;
         public float mainVolume;
         public string lastSavedScene;
-
+        
+        public Animator transition;
+        public float transitionTime = 1f;
+        
         private void Start()
         {
             mainMenu.SetActive(true);
@@ -50,6 +54,7 @@ namespace Gameplay.Systems.Menus
 
         public void NewGame()
         {
+            StartCoroutine(DelayedSceneChange(transitionTime));
             Time.timeScale = 1f;
             SceneManager.LoadScene($"ApartmentCutscene");
         }
@@ -65,5 +70,11 @@ namespace Gameplay.Systems.Menus
             mainVolume = volumeSlider.value;
         }
     
+        private IEnumerator DelayedSceneChange(float delay)
+        {
+            // Trigger the transition animation
+            transition.SetTrigger("Start");
+            yield return new WaitForSeconds(delay); // Wait for the specified delay
+        }
     }
 }
