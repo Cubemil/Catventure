@@ -1,9 +1,10 @@
-﻿using System.Collections;
+﻿using TMPro;
 using UnityEngine;
-using Gameplay.Systems.Managers;
-using Gameplay.Systems.Quests;
-using TMPro;
 using Cinemachine;
+using System.Collections;
+using Gameplay.MiniGames.Fishing;
+using Gameplay.Systems.Quests;
+using Gameplay.Systems.Managers;
 
 namespace Gameplay.Characters
 {
@@ -46,7 +47,8 @@ namespace Gameplay.Characters
 
         private TadpoleCatcherQuest _tadpoleCatcherQuest;
         private DialogueManager _dialogueManager;
-        public TextMeshProUGUI interactText;
+        public TextMeshProUGUI interactTMP;
+        public TextMeshProUGUI fishingPromptTMP;
         private bool _playerInRange;
         
         // camera zooming with Cinemachine
@@ -61,26 +63,44 @@ namespace Gameplay.Characters
         public Transform frogTransform;
         private readonly Vector3 _zoomedOutCamOffset = new Vector3(0, 5, -10);
         private Vector3 _originalCamPos;
+        
+        public GameObject tadpole1;
+        public GameObject tadpole2;
+        public GameObject tadpole3;
+
+        public GameObject fishingUI;
+        public FishingScript fishingScript;
+        private int _caughtTadpoles;
             
         private void Start()
         {
             _tadpoleCatcherQuest = FindObjectOfType<TadpoleCatcherQuest>();
             _dialogueManager = FindObjectOfType<DialogueManager>();
             
-            interactText.gameObject.SetActive(false);
-            interactText.text = "Press 'E' to speak to Froggy";
-
-            // get original orthographic size and position from virtual cam
+            interactTMP.gameObject.SetActive(false);
+            interactTMP.text = "Press 'E' to speak to Froggy";
+            
+            fishingPromptTMP.gameObject.SetActive(false);
+            fishingPromptTMP.text = "Press 'F' to start fishing";
+            
+            // original orthographic size + position of cam
             _originalOrthoSize = virtualCamera.m_Lens.OrthographicSize;
             _originalCamPos = virtualCamera.transform.position;
+            
+            tadpole1.SetActive(false);
+            tadpole2.SetActive(false);
+            tadpole3.SetActive(false);
         }
 
         private void Update()
         {
             if (_playerInRange && Input.GetKeyDown(KeyCode.E) && !_dialogueManager.IsDialogueActive())
-            {
                 InteractWithFrog();
-            }
+
+            if (!_playerInRange || !_tadpoleCatcherQuest.questStarted || _tadpoleCatcherQuest.questCompleted) return;
+            
+            if (Input.GetKeyDown(KeyCode.F))
+                StartFishing();
         }
 
         private void OnTriggerEnter(Collider other)
@@ -88,7 +108,7 @@ namespace Gameplay.Characters
             if (!other.CompareTag($"PlayerInteract")) return;
             
             _playerInRange = true;
-            interactText.gameObject.SetActive(true);
+            interactTMP.gameObject.SetActive(true);
             
             // zoom out
             StartCoroutine(ChangeCameraOrthoSizeAndPosition(ZoomedOutOrthoSize, frogTransform.position + _zoomedOutCamOffset));
@@ -99,7 +119,8 @@ namespace Gameplay.Characters
             if (!other.CompareTag($"PlayerInteract")) return;
             
             _playerInRange = false;
-            interactText.gameObject.SetActive(false);
+            interactTMP.gameObject.SetActive(false);
+            fishingPromptTMP.gameObject.SetActive(false);
 
             // zoom back in
             StartCoroutine(ChangeCameraOrthoSizeAndPosition(_originalOrthoSize, _originalCamPos));
@@ -107,40 +128,79 @@ namespace Gameplay.Characters
 
         private void InteractWithFrog()
         {
+            StartCoroutine(ChangeCameraOrthoSizeAndPosition(_originalOrthoSize, _originalCamPos));
             switch (_tadpoleCatcherQuest.questStarted)
             {
                 case false:
-                {
                     StartDialogue(_initialDialogue);
                     _tadpoleCatcherQuest.StartQuest();
+                    fishingPromptTMP.gameObject.SetActive(true);
                     break;
-                }
                 case true when !_tadpoleCatcherQuest.questCompleted:
-                {
-                    if (_tadpoleCatcherQuest.GetTadpoleCount() >= TadpoleCatcherQuest.TadpolesRequired)
+                    if (_caughtTadpoles >= TadpoleCatcherQuest.TadpolesRequired)
                     {
-                        _tadpoleCatcherQuest.RemoveTadpolesFromInventory();
-                        _tadpoleCatcherQuest.CompleteQuest();
-                        StartDialogue(_questCompleteDialogue);
+                        CompleteFrogQuest();
                     }
                     else
                     {
                         StartDialogue(_repeatingDialogueDuringQuest);
                     }
                     break;
-                }
                 default:
-                {
                     if (_tadpoleCatcherQuest.questCompleted)
+                    {
                         StartDialogue(_repeatingDialogueAfterQuest);
+                    }
                     break;
-                }
             }
         }
         
         private void StartDialogue(string[] dialogueLines)
         {
             _dialogueManager.StartDialogue(dialogueLines);
+            StartCoroutine(ChangeCameraOrthoSizeAndPosition(ZoomedOutOrthoSize, frogTransform.position + _zoomedOutCamOffset));
+        }
+
+        private void StartFishing()
+        {
+            fishingUI.SetActive(true);
+            fishingScript.StartFishing();
+            fishingPromptTMP.gameObject.SetActive(false);
+        }
+        
+        private void CompleteFrogQuest()
+        {
+            _tadpoleCatcherQuest.CompleteQuest();
+            StartDialogue(_questCompleteDialogue);
+        }
+        
+        public void OnTadPoleCaught()
+        {
+            _caughtTadpoles++;
+            _tadpoleCatcherQuest.UpdateQuestLog(_caughtTadpoles);
+
+            switch (_caughtTadpoles)
+            {
+                case 1:
+                    tadpole1.SetActive(true);
+                    break;
+                case 2:
+                    tadpole2.SetActive(true);
+                    break;
+                case 3:
+                    tadpole3.SetActive(true);
+                    break;
+            }
+
+            if (_caughtTadpoles == 3)
+            {
+                fishingUI.SetActive(false);
+                interactTMP.gameObject.SetActive(true);
+            }
+            else
+            {
+                fishingPromptTMP.gameObject.SetActive(true);
+            }
         }
         
         // Coroutine to smoothly change the camera's orthographic size

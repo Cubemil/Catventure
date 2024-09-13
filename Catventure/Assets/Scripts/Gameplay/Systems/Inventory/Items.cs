@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Gameplay.Systems.Inventory
@@ -41,15 +42,7 @@ namespace Gameplay.Systems.Inventory
 
         public static ItemClass GetItem(int id)
         {
-            foreach (var item in _it)
-            {
-                if (item.id == id)
-                {
-                    return new ItemClass(item.itemName, item.description, item.icon, item.stackSize, item.id);
-                }
-            }
-
-            return null;
+            return (from item in _it where item.id == id select new ItemClass(item.itemName, item.description, item.icon, item.stackSize, item.id)).FirstOrDefault();
         }
     }
 }

@@ -1,6 +1,7 @@
-using Gameplay.Systems.Inventory;
 using UnityEngine;
 using UnityEngine.UI;
+using Gameplay.Characters;
+using Gameplay.Systems.Inventory;
 
 namespace Gameplay.MiniGames.Fishing
 {
@@ -17,7 +18,7 @@ namespace Gameplay.MiniGames.Fishing
         public Slider progressBar;
         public float fillSpeed = 0.1f; // 0.1 pro Sekunde
 
-        // Einstellungen für die Sliderbewegung
+        // Einstellungen für die Sliderbewegung 
         public float fallSpeed = 0.3f; // Konstante Geschwindigkeit beim Herunterfallen
         public float raiseSpeed = 0.5f; // Geschwindigkeit beim Hochbewegen
 
@@ -25,15 +26,18 @@ namespace Gameplay.MiniGames.Fishing
         public GameObject fishingUI;
         public Inventory inventory;
 
+        private bool _isFishingActive;
+
         private void Start()
         {
             SetNewTargetPosition();
             progressBar.value = 0f;
+            fishingUI.SetActive(false);
         }
 
         private void Update()
         {
-            if (!fishingUI.activeSelf) return;
+            if (!_isFishingActive) return;
             
             // Bewegung des Fisches
             MoveFish();
@@ -47,16 +51,27 @@ namespace Gameplay.MiniGames.Fishing
             CheckIfWin();
         }
 
+        public void StartFishing()
+        {
+            fishingUI.SetActive(true);
+            progressBar.value = 0f;
+            _isFishingActive = true;
+            SetNewTargetPosition();
+        }
+        
         private void MoveFish()
         {
             // Bewege den Fisch zur Zielposition
-            fishTransform.anchoredPosition = Vector2.MoveTowards(fishTransform.anchoredPosition, new Vector2(_targetX, fishTransform.anchoredPosition.y), moveSpeed * Time.deltaTime);
+            fishTransform.anchoredPosition = 
+                Vector2.MoveTowards(
+                    fishTransform.anchoredPosition, 
+                    new Vector2(_targetX, fishTransform.anchoredPosition.y),
+                    moveSpeed * Time.deltaTime
+                );
 
             // Wenn der Fisch das Ziel erreicht hat, setze eine neue Zielposition
             if (Mathf.Approximately(fishTransform.anchoredPosition.x, _targetX))
-            {
                 SetNewTargetPosition();
-            }
         }
 
         private void SetNewTargetPosition()
@@ -108,14 +123,18 @@ namespace Gameplay.MiniGames.Fishing
             }
         }
 
+        // ReSharper disable Unity.PerformanceAnalysis
         private void CheckIfWin()
         {
-            if (progressBar.value.Equals(1f))
-            {
-                inventory.SetItemToSlot(new ItemStack(Items.GetItem(2),1));
-                fishingUI.SetActive(false);
-                progressBar.value = 0f;
-            }
+            if (!progressBar.value.Equals(1f)) return;
+            //inventory.SetItemToSlot(new ItemStack(Items.GetItem(5),1));
+
+            fishingUI.SetActive(false);
+            _isFishingActive = false;
+            progressBar.value = 0f;
+            
+            // notify FrogNpc that a tadpole was caught
+            FindObjectOfType<FrogNpc>().OnTadPoleCaught();
         }
     }
 }

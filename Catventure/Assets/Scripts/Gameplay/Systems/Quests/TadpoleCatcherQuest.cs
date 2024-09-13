@@ -10,8 +10,6 @@ namespace Gameplay.Systems.Quests
         public const int TadpolesRequired = 3;
         public bool questStarted;
         public bool questCompleted;
-        public Inventory.Inventory inventory;
-        private const int TadpoleItemId = 420;
 
         private void Start()
         {
@@ -21,13 +19,12 @@ namespace Gameplay.Systems.Quests
         public void StartQuest()
         {
             questLogText.gameObject.SetActive(true);
-            UpdateQuestLog();
+            UpdateQuestLog(0);
             questStarted = true;
         }
 
-        public void UpdateQuestLog()
+        public void UpdateQuestLog(int tadpolesCaught)
         {
-            var tadpolesCaught = GetTadpoleCount();
             questLogText.text = $"Catch Tadpoles ({tadpolesCaught}/{TadpolesRequired}) for Froggy";
 
             if (tadpolesCaught >= TadpolesRequired)
@@ -42,24 +39,5 @@ namespace Gameplay.Systems.Quests
             questLogText.gameObject.SetActive(false); // hide quest log once quest is completed
         }
 
-        public int GetTadpoleCount()
-        {
-            var totalTadpoles = 0;
-
-            foreach (var slot in inventory.slots)
-            {
-                if (slot.itemStack?.GetItem() != null && slot.itemStack.GetItem().id == TadpoleItemId)
-                {
-                    totalTadpoles += slot.itemStack.count;
-                }
-            }
-
-            return totalTadpoles;
-        }
-
-        public void RemoveTadpolesFromInventory()
-        {
-            inventory.DeleteItem(TadpoleItemId, TadpolesRequired);
-        }
     }
 }
