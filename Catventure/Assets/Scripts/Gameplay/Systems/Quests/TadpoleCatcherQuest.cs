@@ -28,9 +28,7 @@ namespace Gameplay.Systems.Quests
             questLogText.text = $"Catch Tadpoles ({tadpolesCaught}/{TadpolesRequired}) for Froggy";
 
             if (tadpolesCaught >= TadpolesRequired)
-            {
                 questLogText.text = "All tadpoles caught. Return to Froggy in the pond!";
-            }
         }
 
         public void CompleteQuest()
