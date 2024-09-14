@@ -70,9 +70,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5158470371801089160, guid: 36f966f2a13dc2745962ec8a2487ded9, type: 3}
   m_PrefabInstance: {fileID: 5686431940505706097}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &7147390015028074797 stripped
+--- !u!1 &7958258135131826416 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 3304202734398015324, guid: 36f966f2a13dc2745962ec8a2487ded9, type: 3}
+  m_CorrespondingSourceObject: {fileID: 2349517961391388289, guid: 36f966f2a13dc2745962ec8a2487ded9, type: 3}
   m_PrefabInstance: {fileID: 5686431940505706097}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9211080932545873426
@@ -190,7 +190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactKey: 101
   inventory: {fileID: 0}
-  interactable: {fileID: 7147390015028074797}
+  interactableText: {fileID: 7958258135131826416}
 --- !u!135 &3761754012559917765
 SphereCollider:
   m_ObjectHideFlags: 0
