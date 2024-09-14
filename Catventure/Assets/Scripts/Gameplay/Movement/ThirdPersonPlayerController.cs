@@ -22,6 +22,7 @@ namespace Gameplay.Movement
         private static readonly int IsRunning = Animator.StringToHash("isRunning");
         private static readonly int IsWalking = Animator.StringToHash("isWalking");
         private static readonly int IsJumping = Animator.StringToHash("isJumping");
+        private static readonly int IsHitting = Animator.StringToHash("isHitting");
 
         private void Start()
         {
@@ -49,6 +50,7 @@ namespace Gameplay.Movement
             HandleMovement();
             HandleRotation();
             HandleJump();
+            HandleHit();
             UpdateAnimator();
         }
 
@@ -87,6 +89,17 @@ namespace Gameplay.Movement
                 _rigidBody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
                 //_animator.SetBool(IsJumping, true);
             } 
+        }
+
+        private void HandleHit()
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                _animator.SetBool(IsHitting, true);
+            } else if (!Input.GetMouseButtonDown(0))
+            {
+                _animator.SetBool(IsHitting, false);
+            }
         }
 
         private void UpdateAnimator()
