@@ -7,7 +7,7 @@ namespace Gameplay.Movement
         [SerializeField] private Rigidbody rb;
         [SerializeField] public float speed = 8f;
         [SerializeField] private float walkSpeed = 8f;
-        [SerializeField] private float runSpeed = 16f;
+        [SerializeField] public float runSpeed = 16f;
         [SerializeField] private float rotationSpeed;
         [SerializeField] private float jumpForce = 5.0f;
 
@@ -20,6 +20,7 @@ namespace Gameplay.Movement
         private static readonly int IsRunning = Animator.StringToHash("isRunning");
         private static readonly int IsWalking = Animator.StringToHash("isWalking");
         private static readonly int IsJumping = Animator.StringToHash("isJumping");
+        private static readonly int IsHitting = Animator.StringToHash("isHitting");
 
         private void Start()
         {
@@ -37,6 +38,7 @@ namespace Gameplay.Movement
             // change controller look direction and move player after
             Look();
             Move();
+            HandleHit();
         }
 
         private void GatherInput()
@@ -84,6 +86,17 @@ namespace Gameplay.Movement
             // move player
             var move = transform.forward * (_input.normalized.magnitude * currentSpeed * Time.deltaTime);
             rb.MovePosition(rb.position + move);
+        }
+        
+        private void HandleHit()
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                _animator.SetBool(IsHitting, true);
+            } else if (!Input.GetMouseButtonDown(0))
+            {
+                _animator.SetBool(IsHitting, false);
+            }
         }
 
         private void OnCollisionEnter(Collision other)
