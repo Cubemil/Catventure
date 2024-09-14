@@ -1,53 +1,65 @@
 using UnityEngine;
-using Gameplay.Systems.Inventory;
 using Gameplay.Systems.Quests;
+using Gameplay.Systems.Inventory;
 
 namespace Gameplay.Interaction
 {
     public class AppleFallOnTouch : MonoBehaviour
     {
-        public KeyCode interactKey = KeyCode.E;
-        private Rigidbody _rb;
-        private bool _isCollectable;
+        [SerializeField] public KeyCode interactKey = KeyCode.E;
+
+        // only one apple should be collectable (referenced here)
+        private static AppleFallOnTouch _activeApple; 
+        
         private bool _hasFallen;
-        public Inventory inventory;
-        public GameObject interactable;
+        private bool _isCollectable;
+        private bool _isTouchingSurface;
         private const int AppleItemID = 3;
+        
+        private Rigidbody _rb;
+        public Inventory inventory;
+        public GameObject interactableText;
         
         private void Start()
         {
             _rb = GetComponent<Rigidbody>();
-            interactable.SetActive(false);
+            interactableText.SetActive(false);
 
             // adds rigid body if object doesn't have one
             if (!_rb) _rb = gameObject.AddComponent<Rigidbody>();
-            _rb.isKinematic = true;
+            _rb.isKinematic = true; // no external gravity effects
+
+            _hasFallen = false;
+            _isTouchingSurface = false;
         }
 
         private void Update()
         {
-            if (_isCollectable && Input.GetKey(interactKey)&& _hasFallen)
+            if (_activeApple == this && _isCollectable)
             {
-                CollectApple();
+                interactableText.SetActive(true);
+                if (Input.GetKey(interactKey) && _hasFallen && _isTouchingSurface)
+                    CollectApple();
             }
-
-            interactable.SetActive(_isCollectable && _hasFallen);
+            else
+                interactableText.SetActive(false);
         }
         
        private void OnTriggerEnter(Collider other)
        {
-           if (other.CompareTag("Player"))
-           {
-               _isCollectable = true;
-           }
+           if (!other.CompareTag("Player")) return;
+           
+           _isCollectable = true;
+           SetActiveApple();
        }
 
        private void OnTriggerExit(Collider other)
        {
-           if (other.CompareTag("Player"))
-           {
-               _isCollectable = false;
-           }
+           if (!other.CompareTag("Player")) return;
+           
+           _isCollectable = false;
+           if (_activeApple == this)
+               _activeApple = null;
        }
 
        private void DropApple()
@@ -60,15 +72,20 @@ namespace Gameplay.Interaction
 
         private void OnCollisionEnter(Collision other)
         {
-            if (other.collider.CompareTag("Ground") && !_hasFallen)
+            if (!_hasFallen && !other.collider.CompareTag("Player"))
             {
                 _hasFallen = true;
+                _isTouchingSurface = true;
             }
 
             if (other.collider.CompareTag("Player") && !_hasFallen)
-            {
                 DropApple();
-            }
+        }
+
+        private void OnCollisionExit(Collision other)
+        {
+            if (!other.collider.CompareTag("Player"))
+                _isTouchingSurface = false;
         }
 
         // ReSharper disable Unity.PerformanceAnalysis
@@ -78,11 +95,17 @@ namespace Gameplay.Interaction
            
            var appleQuest = FindObjectOfType<AppleCollectorQuest>();
            if (appleQuest && appleQuest.questStarted && !appleQuest.questCompleted)
-           {
                appleQuest.UpdateQuestLog();
-           }
            
            gameObject.SetActive(false);
+        }
+        
+        private void SetActiveApple()
+        {
+            if (_activeApple && _activeApple != this)
+                _activeApple.interactableText.SetActive(false);
+            
+            _activeApple = this;
         }
     }
 }

@@ -1,31 +1,24 @@
-using System.Collections;
-using Gameplay.Movement;
 using UnityEngine;
-using UnityEngine.Serialization;
+using Gameplay.Movement;
+using System.Collections;
 
 namespace Gameplay.Interaction
 {
     public class SpeedItem : MonoBehaviour
     {
-        public GameObject player;
-        [FormerlySerializedAs("playerController")] public IsometricPlayerController isometricPlayerController;
-        private bool _isSpeedBoostActive = false;
+        public GameObject playerController;
+        public IsometricPlayerController isometricPlayerController;
+        private bool _isSpeedBoostActive;
 
-        void Start()
+        private void Start()
         {
-            // Hole die PlayerController-Komponente vom Player-Objekt
-            if (player != null)
-            {
-                isometricPlayerController = player.GetComponent<IsometricPlayerController>();
-            }
+            if (playerController) isometricPlayerController = playerController.GetComponent<IsometricPlayerController>();
         }
 
-        void OnTriggerEnter(Collider other)
+        private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject == player && !_isSpeedBoostActive)
-            {
+            if (other.gameObject == playerController && !_isSpeedBoostActive)
                 StartCoroutine(SpeedBoost());
-            }
         }
 
         private IEnumerator SpeedBoost()
@@ -33,13 +26,13 @@ namespace Gameplay.Interaction
             _isSpeedBoostActive = true;
             if (isometricPlayerController)
             {
-                isometricPlayerController.speed *= 2; // Geschwindigkeit verdoppeln
-                gameObject.SetActive(false); // Das Objekt deaktivieren
-                yield return new WaitForSeconds(5); // 5 Sekunden warten
-                isometricPlayerController.speed /= 2; // Geschwindigkeit zurücksetzen
+                isometricPlayerController.runSpeed *= 2; // double run speed
+                gameObject.SetActive(false); // deactivate this object
+                yield return new WaitForSeconds(5); // wait 5 secs
+                isometricPlayerController.runSpeed /= 2; // reset run speed
             }
             _isSpeedBoostActive = false;
-            Destroy(gameObject); // Das Objekt endgültig entfernen
+            Destroy(gameObject); // destroy this obj completely
         }
     }
 }

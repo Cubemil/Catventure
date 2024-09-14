@@ -5,18 +5,17 @@ namespace Gameplay.Movement
     public class IsometricPlayerController : MonoBehaviour
     {
         [SerializeField] private Rigidbody rb;
-        [SerializeField] public float speed = 8f;
-        [SerializeField] private float walkSpeed = 8f;
-        [SerializeField] private float runSpeed = 16f;
+        [SerializeField] private float walkSpeed;
+        [SerializeField] public float runSpeed;
         [SerializeField] private float rotationSpeed;
-        [SerializeField] private float jumpForce = 5.0f;
+        [SerializeField] private float jumpForce;
+        [SerializeField] private float groundCheckDistance;
 
         private Vector3 _input;
-        private bool _isOnGround = true;
+        private bool _isOnGround;
         private Animator _animator;
         
-        /*  basically the same as checking for "isRunning/isWalking"
-            but with readonly properties for consistency */
+        // storing animator states in readonly constants
         private static readonly int IsRunning = Animator.StringToHash("isRunning");
         private static readonly int IsWalking = Animator.StringToHash("isWalking");
         private static readonly int IsJumping = Animator.StringToHash("isJumping");
@@ -27,16 +26,20 @@ namespace Gameplay.Movement
             _animator = GetComponent<Animator>();
 
             // lock rotation
-            rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+            rb.constraints = (RigidbodyConstraints)80; //== RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationX;
         }
 
         private void Update()
         {
-            // get horizontal/vertical axis from input => Vec3
+            // get horizontal/vertical axis from input => Vector3
             GatherInput();
+            
             // change controller look direction and move player after
             Look();
             Move();
+            
+            // check if player is on ground with raycasting
+            CheckGroundStatus();
         }
 
         private void GatherInput()
@@ -50,7 +53,7 @@ namespace Gameplay.Movement
         {
             if (_input == Vector3.zero) return;
 
-            // calc rotation with quaternion, vec3.toIso => translates isometric axes to camera viewpoint 
+            // calc rotation with quaternion, Vector3.toIso => translates isometric axes to camera view point 
             var rot = Quaternion.LookRotation(_input.ToIso(), Vector3.up);
             // lock rotation to y-axis only
             rot = Quaternion.Euler(0, rot.eulerAngles.y, 0);
@@ -58,10 +61,11 @@ namespace Gameplay.Movement
             transform.rotation = Quaternion.RotateTowards(transform.rotation, rot, rotationSpeed * Time.deltaTime);
         }
 
-        void Move()
+        private void Move()
         {
             if (!_animator) return;
             _animator.SetBool(IsWalking, _input != Vector3.zero);
+            
             var currentSpeed = walkSpeed;
             
             if (_input != Vector3.zero && Input.GetButton("Run"))
@@ -73,7 +77,7 @@ namespace Gameplay.Movement
             {
                 _animator.SetBool(IsRunning, false);
             }
-            
+
             if (Input.GetButtonDown("Jump") && _isOnGround && !_animator.GetCurrentAnimatorStateInfo(0).IsName("CatSleeping"))
             {
                 rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
@@ -86,22 +90,22 @@ namespace Gameplay.Movement
             rb.MovePosition(rb.position + move);
         }
 
-        private void OnCollisionEnter(Collision other)
+        // ReSharper disable Unity.PerformanceAnalysis
+        private void CheckGroundStatus()
         {
-            if (other.gameObject.CompareTag("Ground"))
+            // bitmask excluding layer NotWalkable
+            var notWalkableLayer = LayerMask.GetMask("NotWalkable");
+            // invert mask to check all layers except NotWalkable
+            var layerMask = ~notWalkableLayer;
+            
+            // raycast checking if there's a surface underneath (except for NotWalkable Layers)
+            if (Physics.Raycast(transform.position, Vector3.down, out var hit, groundCheckDistance, layerMask))
             {
+                Debug.Log("Standing on: " + hit.collider.gameObject.name);
                 _isOnGround = true;
                 _animator.SetBool(IsJumping, false);
             }
+            else _isOnGround = false;
         }
-
-        private void OnCollisionExit(Collision other)
-        {
-            if (other.gameObject.CompareTag("Ground"))
-            {
-                _isOnGround = false;
-            }
-        }
-        
     }
 }
