@@ -31,9 +31,9 @@ namespace Gameplay.Systems.Effects
             {
                 yield return ChangeIntensity(0.3f, 1.7f);
                 yield return ChangeIntensity(1.7f, 0.3f);
+                if (_activeController) _activeController.enabled = true;
             }
 
-            if (_activeController) _activeController.enabled = true;
             yield return ChangeIntensity(0.3f, 0f);
             _chromaticAberration.intensity.value = 0f;
         }
