@@ -1,15 +1,17 @@
 ﻿using TMPro;
 using UnityEngine;
+using System.Linq;
+using Gameplay.Systems.Managers;
 
 namespace Gameplay.Systems.Quests
 {
-    public class AppleCollectorQuest : MonoBehaviour
+    public class AppleCollectorQuest : MonoBehaviour, IQuest
     {
         [SerializeField]
         public TextMeshProUGUI questLogText;
         public const int TotalApplesRequired = 5;
         public bool questStarted;
-        public bool questCompleted;
+        private bool _questCompleted;
         public Inventory.Inventory inventory;
         private const int AppleItemId = 3;
 
@@ -38,28 +40,26 @@ namespace Gameplay.Systems.Quests
 
         public void CompleteQuest()
         {
-            questCompleted = true;
+            _questCompleted = true;
             questLogText.gameObject.SetActive(false); // hide quest log once quest is completed
         }
 
         public int GetAppleCount()
         {
-            var totalApples = 0;
-
-            foreach (var slot in inventory.slots)
-            {
-                if (slot.itemStack?.GetItem() != null && slot.itemStack.GetItem().id == AppleItemId)
-                {
-                    totalApples += slot.itemStack.count;
-                }
-            }
-
-            return totalApples;
+            return inventory.slots.
+                Where(slot => slot.itemStack?
+                    .GetItem() != null && slot.itemStack.GetItem().id == AppleItemId)
+                    .Sum(slot => slot.itemStack.count);
         }
 
         public void RemoveApplesFromInventory()
         {
             inventory.DeleteItem(AppleItemId, TotalApplesRequired);
+        }
+
+        public bool IsQuestCompleted()
+        {
+            return _questCompleted;
         }
     }
 }

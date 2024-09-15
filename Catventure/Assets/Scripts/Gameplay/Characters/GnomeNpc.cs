@@ -1,8 +1,8 @@
-﻿using System.Collections;
+﻿using TMPro;
 using UnityEngine;
-using Gameplay.Systems.Managers;
+using System.Collections;
 using Gameplay.Systems.Quests;
-using TMPro;
+using Gameplay.Systems.Managers;
 
 namespace Gameplay.Characters
 {
@@ -96,7 +96,7 @@ namespace Gameplay.Characters
                     _appleCollectorQuest.StartQuest();
                     break;
                 }
-                case true when !_appleCollectorQuest.questCompleted:
+                case true when !_appleCollectorQuest.IsQuestCompleted():
                 {
                     if (_appleCollectorQuest.GetAppleCount() >= AppleCollectorQuest.TotalApplesRequired)
                     {
@@ -112,7 +112,7 @@ namespace Gameplay.Characters
                 }
                 default:
                 {
-                    if (_appleCollectorQuest.questCompleted)
+                    if (_appleCollectorQuest.IsQuestCompleted())
                         StartDialogue(repeatingDialogueAfterQuest);
                     break;
                 }

@@ -1,7 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
+using Gameplay.Movement;
 using Gameplay.Characters;
-using Gameplay.Systems.Inventory;
+using UnityEngine.Serialization;
 
 namespace Gameplay.MiniGames.Fishing
 {
@@ -24,7 +25,8 @@ namespace Gameplay.MiniGames.Fishing
 
         //Starten und beenden des Minispiels
         public GameObject fishingUI;
-        public Inventory inventory;
+        public GameObject isometricCatController;
+        private IsometricPlayerController _activeController;
 
         private bool _isFishingActive;
 
@@ -33,6 +35,8 @@ namespace Gameplay.MiniGames.Fishing
             SetNewTargetPosition();
             progressBar.value = 0f;
             fishingUI.SetActive(false);
+
+            _activeController = isometricCatController.GetComponent<IsometricPlayerController>();
         }
 
         private void Update()
@@ -51,9 +55,12 @@ namespace Gameplay.MiniGames.Fishing
             CheckIfWin();
         }
 
+        // ReSharper disable Unity.PerformanceAnalysis
         public void StartFishing()
         {
             fishingUI.SetActive(true);
+            if (_activeController) _activeController.enabled = false;
+            
             progressBar.value = 0f;
             _isFishingActive = true;
             SetNewTargetPosition();
@@ -129,6 +136,8 @@ namespace Gameplay.MiniGames.Fishing
             if (!progressBar.value.Equals(1f)) return;
             //inventory.SetItemToSlot(new ItemStack(Items.GetItem(5),1));
 
+            if (_activeController) _activeController.enabled = true;
+            
             fishingUI.SetActive(false);
             _isFishingActive = false;
             progressBar.value = 0f;

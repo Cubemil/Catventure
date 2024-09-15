@@ -1,15 +1,16 @@
 ﻿using TMPro;
 using UnityEngine;
+using Gameplay.Systems.Managers;
 
 namespace Gameplay.Systems.Quests
 {
-    public class TadpoleCatcherQuest : MonoBehaviour
+    public class TadpoleCatcherQuest : MonoBehaviour, IQuest
     {
-        [SerializeField]
-        public TextMeshProUGUI questLogText;
+        [SerializeField] public TextMeshProUGUI questLogText;
+        
         public const int TadpolesRequired = 3;
         public bool questStarted;
-        public bool questCompleted;
+        private bool _questCompleted;
 
         private void Start()
         {
@@ -33,9 +34,13 @@ namespace Gameplay.Systems.Quests
 
         public void CompleteQuest()
         {
-            questCompleted = true;
+            _questCompleted = true;
             questLogText.gameObject.SetActive(false); // hide quest log once quest is completed
         }
 
+        public bool IsQuestCompleted()
+        {
+            return _questCompleted;
+        }
     }
 }
