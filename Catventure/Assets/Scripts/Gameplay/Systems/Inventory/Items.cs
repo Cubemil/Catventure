@@ -26,30 +26,54 @@ namespace Gameplay.Systems.Inventory
     
     public class Items : MonoBehaviour
     {
-        public List<ItemCreate> items = new List<ItemCreate>();
-        private static List<ItemCreate> _it = new List<ItemCreate>();
+        public List<ItemCreate> items = new List<ItemCreate>(); // List to hold items
+        private static List<ItemCreate> _it = new List<ItemCreate>(); // Static list used to store items at runtime
 
         private void OnEnable()
         {
-            _it = items;
+            if (items == null || items.Count == 0)
+            {
+                Debug.LogError("Items list is empty or not assigned in the Inspector.");
+            }
+
+            InitializeItems(); // Called when the script is enabled
         }
 
-        private void Start()
+        private static void InitializeItems()
         {
-            _it = items;
+            if (_it == null || _it.Count == 0)
+            {
+                var itemsComponent = FindObjectOfType<Items>(); // Find the Items component in the scene
+                if (itemsComponent != null)
+                {
+                    _it = itemsComponent.items; // Assign the list from Items component
+                    Debug.Log("Items list initialized with " + _it.Count + " items.");
+                }
+                else
+                {
+                    Debug.LogError("Items component not found in the scene!");
+                }
+            }
         }
 
         public static ItemClass GetItem(int id)
         {
-            return (from item in _it
-                    where item.id == id
-                    select new ItemClass(
-                        item.itemName, 
-                        item.description, 
-                        item.icon, 
-                        item.stackSize, 
-                        item.id))
-                .FirstOrDefault();
+            InitializeItems(); // Ensures _it is always initialized
+            if (_it == null || _it.Count == 0)
+            {
+                Debug.LogError("Items list is not initialized or empty.");
+                return null; // Return null if list is empty
+            }
+
+            var item = _it.FirstOrDefault(item => item != null && item.id == id);
+            if (item == null)
+            {
+                Debug.LogError("Item with ID " + id + " not found.");
+                return null; // Return null if the item is not found
+            }
+
+            return new ItemClass(item.itemName, item.description, item.icon, item.stackSize, item.id); // Return a new instance of ItemClass
         }
     }
+
 }
