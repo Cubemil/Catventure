@@ -6310,6 +6310,10 @@ PrefabInstance:
       value: CatNip
       objectReference: {fileID: 0}
     - target: {fileID: 6855697044758459935, guid: 4895ee41a3f10064ba093f70a2096f00, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855697044758459935, guid: 4895ee41a3f10064ba093f70a2096f00, type: 3}
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
