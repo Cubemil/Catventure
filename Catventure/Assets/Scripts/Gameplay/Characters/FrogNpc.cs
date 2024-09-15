@@ -237,6 +237,5 @@ namespace Gameplay.Characters
             interactBubble.transform.rotation = camera.transform.rotation;
             fishingInteractBubble.transform.rotation = camera.transform.rotation;
         }
-
     }
 }

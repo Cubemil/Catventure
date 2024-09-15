@@ -12,11 +12,11 @@ namespace Gameplay.Systems.Quests
         private void Start()
         {
             questLogText.gameObject.SetActive(false);
-            questLogText.text = $"Start flying behind Britt Bird to go home";
         }
 
         public void StartQuest()
         {
+            questLogText.text = $"Start flying behind Britt Bird to go home";
             questLogText.gameObject.SetActive(true);
             questStarted = true;
         }

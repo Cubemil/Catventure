@@ -50,7 +50,6 @@ namespace Gameplay.Movement
                 HandleHit();
             }
             
-            
             UpdateAnimator();
         }
 
