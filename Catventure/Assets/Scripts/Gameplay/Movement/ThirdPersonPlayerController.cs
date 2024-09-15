@@ -21,9 +21,11 @@ namespace Gameplay.Movement
         private static readonly int IsRunning = Animator.StringToHash("isRunning");
         private static readonly int IsWalking = Animator.StringToHash("isWalking");
         private static readonly int IsHitting = Animator.StringToHash("isHitting");
+        public bool canMove;
 
         private void Start()
         {
+            canMove = true;
             _rigidBody = GetComponent<Rigidbody>();
             _animator = GetComponent<Animator>();
 
@@ -39,11 +41,16 @@ namespace Gameplay.Movement
 
         private void Update()
         {
-            GatherInput();
-            HandleMovement();
-            HandleRotation();
-            HandleJump();
-            HandleHit();
+            if (canMove)
+            {
+                GatherInput();
+                HandleMovement();
+                HandleRotation();
+                HandleJump();
+                HandleHit();
+            }
+            
+            
             UpdateAnimator();
         }
 

@@ -1,10 +1,9 @@
 ﻿using TMPro;
 using UnityEngine;
-using System.Collections;
 using Gameplay.Movement;
+using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.Rendering.PostProcessing;
-using UnityEngine.Serialization;
 
 namespace Gameplay.Interaction
 {
@@ -52,9 +51,8 @@ namespace Gameplay.Interaction
 
         public override void Interact()
         {
+            if (activeController) activeController.canMove = false;
             _catAnimator.SetBool(IsEating, true);
-
-            activeController.enabled = false;
             
             StartCoroutine(DelayedAnimations(3f));
             StartCoroutine(ChromaticAberrationEffect(4f)); // Start Chromatic Aberration pulse
