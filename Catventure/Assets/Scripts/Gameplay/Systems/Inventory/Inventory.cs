@@ -1,7 +1,7 @@
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 namespace Gameplay.Systems.Inventory
 {
@@ -15,6 +15,14 @@ namespace Gameplay.Systems.Inventory
         public Text itemDescriptionTooltip; // text UI-element for item description
     
         private bool _dragSet;
+
+        private void Start()
+        {
+            if (slots == null || slots.Length == 0)
+            {
+                Debug.LogError("No inventory slots assigned!");
+            }
+        }
 
         private void Update()
         {

@@ -11,7 +11,7 @@ namespace Gameplay.Interaction
         private bool _hasFallen;
         
         private Rigidbody _rb;
-        public Inventory inventory;
+        [SerializeField] public Inventory inventory;
         public GameObject interactableText;
         private bool _isCollectable;
 
@@ -26,7 +26,7 @@ namespace Gameplay.Interaction
 
         private void Update()
         {
-            if (_isCollectable && Input.GetKey(interactKey))
+            if (_isCollectable && Input.GetKeyDown(interactKey))
             {
                 CollectApple();
             }
@@ -63,13 +63,21 @@ namespace Gameplay.Interaction
         // ReSharper disable Unity.PerformanceAnalysis
         private void CollectApple()
         {
-           inventory.SetItemToSlot(new ItemStack(Items.GetItem(AppleItemID), 1));
-           var appleQuest = FindObjectOfType<AppleCollectorQuest>();
-           
-           if (appleQuest && appleQuest.questStarted && !appleQuest.IsQuestCompleted())
-               appleQuest.UpdateQuestLog();
-           
-           gameObject.SetActive(false);
+            var appleItem = Items.GetItem(AppleItemID);
+            if (appleItem == null)
+            {
+                Debug.LogError("Apple item not found in the item database.");
+                return; // Exit the method if the apple item isn't found
+            }
+
+            inventory.SetItemToSlot(new ItemStack(appleItem, 1));
+    
+            var appleQuest = FindObjectOfType<AppleCollectorQuest>();
+            if (appleQuest && appleQuest.questStarted && !appleQuest.IsQuestCompleted())
+                appleQuest.UpdateQuestLog();
+    
+            gameObject.SetActive(false);
         }
+
     }
 }

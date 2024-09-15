@@ -18,7 +18,12 @@ namespace Gameplay.Systems.Inventory
         {
             icon = GetComponent<Image>();
             valueText = transform.GetComponentInChildren<Text>();
+            
             _inventory = FindObjectOfType<Inventory>(); // find Inventory-script
+            if (_inventory == null)
+            {
+                Debug.LogError("Inventory not found!");
+            }
         }
 
         public void OnPointerEnter(PointerEventData eventData)
@@ -35,6 +40,12 @@ namespace Gameplay.Systems.Inventory
 
         private void Update()
         {
+            if (itemStack == null && _isSet)
+            {
+                Debug.LogWarning("ItemStack is null in ItemSlot: " + gameObject.name);
+                _isSet = false;
+            }
+            
             if (_isSlot)
             {
                 if (Input.GetButtonDown("Fire1"))
