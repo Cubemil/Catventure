@@ -59,11 +59,11 @@ MonoBehaviour:
   indicator: {fileID: 1998534796313925516}
   keyToPress: 32
   indicatorSpeed: 500
-  ButtonDisplay: {fileID: 3002395560590266038}
+  buttonDisplay: {fileID: 3002395560590266038}
   successFeedback: {fileID: 3833157568917185347}
   failureFeedback: {fileID: 4161788040169709835}
   game: {fileID: 8279873651593595209}
-  inv: {fileID: 0}
+  inventory: {fileID: 0}
 --- !u!1 &1578495103973746698
 GameObject:
   m_ObjectHideFlags: 0
