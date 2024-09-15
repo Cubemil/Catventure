@@ -1,7 +1,7 @@
-using System.Collections;
-using Gameplay.Systems.Inventory;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
+using Gameplay.Systems.Inventory;
 using Random = UnityEngine.Random;
 
 namespace Gameplay.MiniGames
@@ -19,7 +19,7 @@ namespace Gameplay.MiniGames
         public GameObject game;
         public Inventory inventory;
     
-        private bool _isInSuccessZone = false; // Ob sich der Indikator im Erfolgsbereich befindet
+        private bool _isInSuccessZone; // Ob sich der Indikator im Erfolgsbereich befindet
         private int _winCounter;
         private const float TimeSpeed = 0.2f;
         private float _indSpeed;
@@ -31,9 +31,8 @@ namespace Gameplay.MiniGames
 
         private void OnEnable()
         {
-            StartCoroutine(StartQTE());
+            StartCoroutine(StartQte());
             _winCounter = 0;
-            // Verwende UnityEngine.Random, um eine zufällige Rotation zu setzen
             var z = Random.Range(0f, 360f);
             indicator.transform.rotation = Quaternion.Euler(0, 0, z);
         
@@ -46,18 +45,17 @@ namespace Gameplay.MiniGames
             RotateIndicator();
 
             // Überprüft, ob die Taste gedrückt wurde
-            if (Input.GetKeyDown(keyToPress))
+            if (!Input.GetKeyDown(keyToPress)) return;
+            
+            if (_isInSuccessZone)
             {
-                if (_isInSuccessZone)
-                {
-                    Success();
-                }
-                else
-                {
-                    Fail();
-                }
-                NewSuccessZone();
+                Success();
             }
+            else
+            {
+                Fail();
+            }
+            NewSuccessZone();
         }
 
         private void RotateIndicator()
@@ -70,7 +68,7 @@ namespace Gameplay.MiniGames
             _isInSuccessZone = angle < 22f; // Setze einen Winkelbereich als Erfolgsbereich
         }
 
-        private IEnumerator StartQTE()
+        private IEnumerator StartQte()
         {
             Time.timeScale=TimeSpeed;
             _indSpeed = indicatorSpeed / TimeSpeed;
@@ -80,16 +78,12 @@ namespace Gameplay.MiniGames
         private void Success()
         {
             _winCounter++;
-            if (_winCounter == 3)
-            {
-                WinGame();
-            }
-            else
+            if (_winCounter != 3)
             {
                 successFeedback.SetActive(true);
                 StartCoroutine(DeactivateFeedback(successFeedback, 0.05f)); // Coroutine starten
             }
-        
+            else WinGame();
         }
 
         private void Fail()
@@ -102,7 +96,6 @@ namespace Gameplay.MiniGames
             StartCoroutine(DeactivateFeedback(failureFeedback, 0.05f)); // Coroutine starten
         }
 
-
         private void NewSuccessZone()
         {
             var z = Random.Range(0f, 360f);
@@ -114,7 +107,6 @@ namespace Gameplay.MiniGames
             yield return new WaitForSeconds(delay);
             feedbackObject.SetActive(false);
         }
-
 
         private void WinGame()
         {

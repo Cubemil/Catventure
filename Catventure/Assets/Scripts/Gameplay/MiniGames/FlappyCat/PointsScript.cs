@@ -7,20 +7,15 @@ namespace Gameplay.MiniGames.FlappyCat
         public GameObject gameOverScreen;
         public LogicScript logic;
 
-
-        // Start is called before the first frame update
-        void Start()
+        private void Start()
         {
             logic= GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
         }
-    
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.gameObject.layer == 3)
-            {
                 logic.AddScore(1);
-            }
         }
     }
 }

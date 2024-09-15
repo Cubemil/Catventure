@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Garden.unity
     guid: 47eeeb510d54ee64286b030aa7480a47
+  - enabled: 1
+    path: Assets/Scenes/FlappyCat.unity
+    guid: 285b7abf0f0e39b4584c84104a70b16b
+  - enabled: 1
+    path: Assets/Scenes/EndingApartment.unity
+    guid: f039f61e7f1e3674fae0f1b671202a3d
   m_configObjects: {}

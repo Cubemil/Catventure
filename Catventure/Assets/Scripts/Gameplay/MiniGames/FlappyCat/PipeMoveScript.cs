@@ -4,20 +4,14 @@ namespace Gameplay.MiniGames.FlappyCat
 {
     public class PipeMoveScript : MonoBehaviour
     {
-        public float MoveSpeed = 3;
+        public float moveSpeed = 3;
 
-
-        // Update is called once per frame
-        void Update()
+        private void Update()
         {
-            transform.position = transform.position + (Vector3.left * MoveSpeed) * Time.deltaTime;
+            transform.position += Vector3.left * (moveSpeed * Time.deltaTime);
 
-            if (transform.position.x < -15) 
-            {
-                Destroy(gameObject);
-                Debug.Log("PipeDeleted");
-            }
-    
+            if (!(transform.position.x < -15)) return;
+            Destroy(gameObject);
         }
     }
 }

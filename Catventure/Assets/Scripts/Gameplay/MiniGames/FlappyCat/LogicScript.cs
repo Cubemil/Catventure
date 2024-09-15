@@ -1,55 +1,45 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 namespace Gameplay.MiniGames.FlappyCat
 {
     public class LogicScript : MonoBehaviour
     {
-
-        public int playerScore=0;
+        public int playerScore;
         public Text scoreText;
         public GameObject gameOverScreen;
 
         //this does activate the function over the 3 dots in the Skript menu
         [ContextMenu("increase Score")]
+        
         public void AddScore(int addScore)
         {
-            if (!gameOverScreen.activeSelf)
-            {
-                Debug.Log("+1");
-                playerScore ++;
-                scoreText.text=playerScore.ToString(); 
-            }
-
-            if (playerScore > 10)
-            {
-                winGame();
-            }
-        
+            if (playerScore >= 10) WinGame();
+            if (gameOverScreen.activeSelf) return;
+            
+            playerScore ++;
+            scoreText.text=playerScore.ToString();
         }
 
         public void RestartGame()
         {
-            Debug.Log("reset");
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
         public void LeaveGame()
         {
-            Debug.Log("Loading Garden...");
             SceneManager.LoadScene("Garden");
         }
 
         public void GameOver()
         {
-            gameOverScreen.SetActive(true);
+            if (gameOverScreen) gameOverScreen.SetActive(true);
         }
         
-        private void winGame()
+        private static void WinGame()
         {
-            SceneManager.LoadScene("Garden");
+            SceneManager.LoadScene("EndingApartment");
         }
-
     }
 }

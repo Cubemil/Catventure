@@ -5,36 +5,33 @@ namespace Gameplay.MiniGames.FlappyCat
     public class PipeSpawnScript : MonoBehaviour
     {
         public GameObject pipe;
-        public float timerate = 3;
-        private float timer = 0;
-        private float pipeoffset= 3;
-        // Start is called before the first frame update
-        void Start()
+        private const float PipeOffset = 3;
+        
+        public float timeRate = 3;
+        private float _timer;
+
+        private void Start()
         {
-            timer = timerate;
+            _timer = timeRate;
         }
 
-        // Update is called once per frame
-        void Update()
+        private void Update()
         {
-            if (timer<timerate)
+            if (_timer < timeRate)
+                _timer += Time.deltaTime;
+            else
             {
-                timer += Time.deltaTime;
-            }else
-            {
-                spawnPipe();
-                timer = 0;
+                SpawnPipe();
+                _timer = 0;
             }
         }
 
-        //more functions
-        void spawnPipe()
+        private void SpawnPipe()
         {
-            float lowestPoint= transform.position.y - pipeoffset;
-            float highestPoint = transform.position.y + pipeoffset;
+            var lowestPoint= transform.position.y - PipeOffset;
+            var highestPoint = transform.position.y + PipeOffset;
+            
             Instantiate(pipe, new Vector3(transform.position.x, Random.Range(lowestPoint, highestPoint), transform.position.z), transform.rotation);
         }
-
-
     }
 }

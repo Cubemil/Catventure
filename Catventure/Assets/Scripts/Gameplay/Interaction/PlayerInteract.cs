@@ -15,14 +15,10 @@ namespace Gameplay.Interaction
             foreach (var col in colliders)
             {
                 if (col.TryGetComponent(out NpcInteractable npcInteractable))
-                {
                     npcInteractable.Interact();
-                }
 
                 if (col.TryGetComponent(out ItemInteractable itemInteractable))
-                {
                     itemInteractable.Interact();
-                }
             }
         }
 

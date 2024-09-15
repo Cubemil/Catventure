@@ -10,8 +10,8 @@ namespace Gameplay.Interaction
         public Animator animator;
         public TMP_Text textInput;
 
-        private float _sleepTimer = 0f;
-        private int _sleepState = 0; // 0: "Zzzz.", 1: "Zzzz..", 2: "Zzzz..."
+        private float _sleepTimer;
+        private int _sleepState; // 0: "Zzzz.", 1: "Zzzz..", 2: "Zzzz..."
 
         private void Update()
         {

@@ -4,22 +4,18 @@ namespace Gameplay.MiniGames.FlappyCat
 {
     public class WingScript : MonoBehaviour
     {
-
         public Animator wingAnimator;
-        // Start is called before the first frame update
-        void Start()
+        private static readonly int Flap = Animator.StringToHash("Flap");
+
+        private void Start()
         {
             wingAnimator = GetComponent<Animator>();
         }
 
-        // Update is called once per frame
-        void Update()
+        private void Update()
         {
             if (Input.GetKeyDown(KeyCode.Space))
-            {
-                wingAnimator.SetTrigger("Flap");
-            }
-        
+                wingAnimator.SetTrigger(Flap);
         }
     }
 }
