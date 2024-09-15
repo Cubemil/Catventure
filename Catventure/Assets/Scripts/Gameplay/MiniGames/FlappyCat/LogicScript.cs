@@ -21,6 +21,11 @@ namespace Gameplay.MiniGames.FlappyCat
                 playerScore ++;
                 scoreText.text=playerScore.ToString(); 
             }
+
+            if (playerScore > 10)
+            {
+                winGame();
+            }
         
         }
 
@@ -39,6 +44,11 @@ namespace Gameplay.MiniGames.FlappyCat
         public void GameOver()
         {
             gameOverScreen.SetActive(true);
+        }
+        
+        private void winGame()
+        {
+            SceneManager.LoadScene("Garden");
         }
 
     }
