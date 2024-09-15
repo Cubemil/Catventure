@@ -88,7 +88,7 @@ namespace Gameplay.Movement
             {
                 _rigidBody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
                 //_animator.SetBool(IsJumping, true);
-            } 
+            }
         }
 
         private void HandleHit()
