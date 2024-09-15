@@ -11,7 +11,7 @@ namespace Gameplay.Movement
         [SerializeField] public float runSpeed;
         [SerializeField] private float rotationSpeed;
         [SerializeField] private float jumpForce;
-        [SerializeField] private float groundCheckDistance;
+        [SerializeField] private float groundCheckDistance = 1f;
 
         private Vector3 _input;
         private bool _isOnGround;
