@@ -50,6 +50,7 @@ namespace Gameplay.Interaction
         public override void Interact()
         {
             _catAnimator.SetBool(IsEating, true);
+            // freeze players movement here
             StartCoroutine(DelayedAnimations(3f));
             StartCoroutine(ChromaticAberrationEffect(4f)); // Start Chromatic Aberration pulse
             StartCoroutine(DelayedSceneChange(6f)); // Start the coroutine with a 6-second delay
