@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Apartment.unity
     guid: 605255c219c5db446aed23436a5b874c
   - enabled: 1
+    path: Assets/Scenes/GardenCutScene.unity
+    guid: 4fd95bb53411d594482f4fccb18794a9
+  - enabled: 1
     path: Assets/Scenes/Garden.unity
     guid: 47eeeb510d54ee64286b030aa7480a47
   - enabled: 1
