@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,17 +9,14 @@ namespace Gameplay.Systems.Managers
         private Slider volumeSlider;
         
         // Start is called before the first frame update
-        void Start()
+        private void Start()
         {
             if (!PlayerPrefs.HasKey("musicVolume"))
             {
                 PlayerPrefs.SetFloat("musicVolume", 1);
                 Load();
             }
-            else
-            {
-                Load();
-            }
+            else Load();
         }
 
         public void ChangeVolume()

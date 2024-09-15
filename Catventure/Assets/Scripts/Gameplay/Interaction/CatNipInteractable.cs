@@ -1,9 +1,10 @@
-﻿using System;
+﻿using TMPro;
 using UnityEngine;
 using System.Collections;
-using TMPro;
+using Gameplay.Movement;
 using UnityEngine.SceneManagement;
 using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.Serialization;
 
 namespace Gameplay.Interaction
 {
@@ -14,6 +15,8 @@ namespace Gameplay.Interaction
         private static readonly int IsSleeping = Animator.StringToHash("isSleeping");
         private static readonly int IsEating = Animator.StringToHash("isEating");
         public TextMeshProUGUI interactText;
+
+        [SerializeField] private ThirdPersonPlayerController activeController;
 
         // Post-processing references
         public PostProcessVolume postProcessingVolume;
@@ -50,7 +53,9 @@ namespace Gameplay.Interaction
         public override void Interact()
         {
             _catAnimator.SetBool(IsEating, true);
-            // freeze players movement here
+
+            activeController.enabled = false;
+            
             StartCoroutine(DelayedAnimations(3f));
             StartCoroutine(ChromaticAberrationEffect(4f)); // Start Chromatic Aberration pulse
             StartCoroutine(DelayedSceneChange(6f)); // Start the coroutine with a 6-second delay

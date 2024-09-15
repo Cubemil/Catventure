@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using Gameplay.Movement;
 using Gameplay.Characters;
-using UnityEngine.Serialization;
 
 namespace Gameplay.MiniGames.Fishing
 {

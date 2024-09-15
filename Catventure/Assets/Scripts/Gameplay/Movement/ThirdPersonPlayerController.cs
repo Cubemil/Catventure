@@ -7,7 +7,6 @@ namespace Gameplay.Movement
     public class ThirdPersonPlayerController : MonoBehaviour
     {
         [SerializeField] private float walkSpeed = 2.5f;
-        [SerializeField] public float speed = 2.5f;
         [SerializeField] private float runSpeed = 5f;
         [SerializeField] private float rotationSpeed = 720f; // Degrees per second
         [SerializeField] private float jumpForce = 7f;
@@ -21,7 +20,6 @@ namespace Gameplay.Movement
 
         private static readonly int IsRunning = Animator.StringToHash("isRunning");
         private static readonly int IsWalking = Animator.StringToHash("isWalking");
-        private static readonly int IsJumping = Animator.StringToHash("isJumping");
         private static readonly int IsHitting = Animator.StringToHash("isHitting");
 
         private void Start()
@@ -30,18 +28,13 @@ namespace Gameplay.Movement
             _animator = GetComponent<Animator>();
 
             // Lock only the X and Z rotations
-            _rigidBody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+            _rigidBody.constraints = (RigidbodyConstraints)80; // == RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;;
 
+            if (cameraTransform) return;
+            cameraTransform = Camera.main?.transform;
             
-            if (!cameraTransform)
-            {
-                cameraTransform = Camera.main?.transform;
-                if (!cameraTransform)
-                {
-                    Debug.LogError("Camera Transform is not assigned and no Main Camera found in the scene.");
-                    return;
-                }
-            }
+            if (cameraTransform) return;
+            Debug.LogError("Camera Transform is not assigned and no Main Camera found in the scene.");
         }
 
         private void Update()

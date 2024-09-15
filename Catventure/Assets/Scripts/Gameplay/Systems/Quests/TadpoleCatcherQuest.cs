@@ -10,7 +10,7 @@ namespace Gameplay.Systems.Quests
         
         public const int TadpolesRequired = 3;
         public bool questStarted;
-        private bool _questCompleted;
+        public bool questCompleted;
 
         private void Start()
         {
@@ -34,13 +34,13 @@ namespace Gameplay.Systems.Quests
 
         public void CompleteQuest()
         {
-            _questCompleted = true;
+            questCompleted = true;
             questLogText.gameObject.SetActive(false); // hide quest log once quest is completed
         }
 
         public bool IsQuestCompleted()
         {
-            return _questCompleted;
+            return questCompleted;
         }
     }
 }

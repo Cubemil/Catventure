@@ -11,9 +11,7 @@ namespace Gameplay.Systems.Menus
         public string displayString = "E";
         public Text textDisplay;
 
-        private Vector3 _initialParentPosition;  // Anfangsposition des Parent-Objekts
-
-        void Start()
+        private void Start()
         {
             // Kamera-Setup: Überprüfe, ob eine Kamera zugewiesen ist, falls nicht, nutze die Hauptkamera
             if (mainCamera == null)
@@ -41,9 +39,6 @@ namespace Gameplay.Systems.Menus
                 return;
             }
 
-            // Speichere die Anfangsposition des Parent-Objekts
-            _initialParentPosition = parentObject.position;
-
             // Setze die initiale Position des UI-Objekts basierend auf dem Offset
             transform.position = parentObject.position + worldOffset;
         
@@ -51,17 +46,17 @@ namespace Gameplay.Systems.Menus
             textDisplay.text = displayString;
         }
 
-        void Update()
+        private void Update()
         {
             // Aktualisiere die Position des Child-Objekts, basierend auf der aktuellen Position des Parent-Objekts
-            if (parentObject != null)
+            if (parentObject)
             {
                 // Setze die Position relativ zur aktuellen Weltposition des Parent-Objekts mit einem festen Offset
                 transform.position = parentObject.position + worldOffset;
             }
 
             // Rotation immer zur Kamera schauen
-            if (mainCamera != null)
+            if (mainCamera)
             {
                 transform.rotation = Quaternion.LookRotation(mainCamera.transform.forward, Vector3.up);
             }

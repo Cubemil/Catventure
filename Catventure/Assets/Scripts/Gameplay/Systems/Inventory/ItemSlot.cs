@@ -1,13 +1,13 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 namespace Gameplay.Systems.Inventory
 {
     public class ItemSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         [HideInInspector]
-        public ItemStack itemStack = null;
+        public ItemStack itemStack;
         public Sprite defaultImage;
         public Image icon;
         public Text valueText;

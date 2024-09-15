@@ -18,7 +18,7 @@ namespace Gameplay.Systems.Managers
 
             if (!Input.GetKeyDown(KeyCode.E)) return;
             if (_isFinalLine)
-                EndDialogue();   
+                EndDialogue();
             else
                 DisplayNextLine();
         }

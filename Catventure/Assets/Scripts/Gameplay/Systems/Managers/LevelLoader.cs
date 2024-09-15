@@ -1,63 +1,60 @@
 using System.Collections;
-using Gameplay.Systems.Managers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelLoader : MonoBehaviour
+namespace Gameplay.Systems.Managers
 {
-    public Animator transition;
-    public float transitionTime = 1f;
-    private bool isLoading = false;
-
-    void Start()
+    public class LevelLoader : MonoBehaviour
     {
-        // Subscribe to the sceneLoaded event
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
+        public Animator transition;
+        public float transitionTime = 1f;
+        private bool _isLoading;
+        private static readonly int Start1 = Animator.StringToHash("Start");
 
-    void OnDestroy()
-    {
-        // Unsubscribe from the sceneLoaded event
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
-
-    void Update()
-    {
-        // Check if a scene is currently loading
-        if (isLoading)
+        private void Start()
         {
-            return;
+            // Subscribe to the sceneLoaded event
+            SceneManager.sceneLoaded += OnSceneLoaded;
         }
 
-        /* For demonstration purposes, trigger loading of the next scene when pressing the space bar
-        if (Input.GetKeyDown(KeyCode.Space))
+        private void OnDestroy()
         {
-            LoadNextLevel();
-        } */
-    }
-
-    public void LoadNextLevel()
-    {
-        if (isLoading)
-        {
-            return;
+            // Unsubscribe from the sceneLoaded event
+            SceneManager.sceneLoaded -= OnSceneLoaded;
         }
+
+        private void Update()
+        {
+            // Check if a scene is currently loading
+            if (_isLoading)
+            {
+                return;
+            }
+        }
+
+        public void LoadNextLevel()
+        {
+            if (_isLoading)
+            {
+                return;
+            }
         
-        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
-    }
+            StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+        }
 
-    IEnumerator LoadLevel(int levelIndex)
-    {
-        isLoading = true; // Set loading flag
+        private IEnumerator LoadLevel(int levelIndex)
+        {
+            _isLoading = true; // Set loading flag
 
-        transition.SetTrigger("Start"); // Play animation
-        yield return new WaitForSeconds(transitionTime); // Wait for the transition animation to complete
+            transition.SetTrigger(Start1); // Play animation
+            yield return new WaitForSeconds(transitionTime); // Wait for the transition animation to complete
 
-        SceneManager.LoadScene(levelIndex);
-    }
+            SceneManager.LoadScene(levelIndex);
+        }
 
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        isLoading = false; // Scene has finished loading
+        private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+        {
+            _isLoading = false; // Scene has finished loading
+        }
     }
 }
