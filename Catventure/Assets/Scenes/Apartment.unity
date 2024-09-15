@@ -17766,7 +17766,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 709801944}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.043619405, y: 5.893888e-12, z: -1.3509549e-10, w: 0.9990483}
+  m_LocalRotation: {x: 0.043619405, y: 6.185731e-12, z: -1.4179236e-10, w: 0.9990483}
   m_LocalPosition: {x: -244.62025, y: 37.332832, z: -533.0633}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -49484,7 +49484,7 @@ GameObject:
   - component: {fileID: 1982892362}
   - component: {fileID: 1982892365}
   - component: {fileID: 1982892364}
-  - component: {fileID: 1982892363}
+  - component: {fileID: 1982892366}
   m_Layer: 3
   m_Name: PlayerInteract
   m_TagString: PlayerInteract
@@ -49507,29 +49507,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 818003892}
   m_LocalEulerAnglesHint: {x: 70.94, y: 92.047, z: 89.999}
---- !u!136 &1982892363
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1982892361}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1982892364
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -49580,6 +49557,29 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1982892361}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!136 &1982892366
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982892361}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.1
+  m_Height: 2.000001
+  m_Direction: 1
+  m_Center: {x: -0.000011444092, y: 0.000030517578, z: 0}
 --- !u!1 &1987648661
 GameObject:
   m_ObjectHideFlags: 3
