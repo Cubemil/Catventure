@@ -8,7 +8,6 @@ public class LevelLoader : MonoBehaviour
     public Animator transition;
     public float transitionTime = 1f;
     private bool isLoading = false;
-    public SoundManager soundManager;
 
     void Start()
     {

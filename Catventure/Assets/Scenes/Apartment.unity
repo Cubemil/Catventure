@@ -17766,7 +17766,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 709801944}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.043619405, y: 6.185731e-12, z: -1.4179236e-10, w: 0.9990483}
+  m_LocalRotation: {x: 0.043619405, y: 6.2134447e-12, z: -1.4242829e-10, w: 0.9990483}
   m_LocalPosition: {x: -244.62025, y: 37.332832, z: -533.0633}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -20208,6 +20208,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 808951036748318326}
     m_Modifications:
+    - target: {fileID: 1835501892338446893, guid: c6d710ba5f2a0554b91c821cc6ea9495, type: 3}
+      propertyPath: jumpForce
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 1835501892338446893, guid: c6d710ba5f2a0554b91c821cc6ea9495, type: 3}
       propertyPath: walkSpeed
       value: 6
