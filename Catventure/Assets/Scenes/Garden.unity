@@ -3959,10 +3959,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1689891505}
     m_Modifications:
+    - target: {fileID: 3761754012559917765, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
+      propertyPath: m_Radius
+      value: 0.09
+      objectReference: {fileID: 0}
     - target: {fileID: 4595485609575323220, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
       propertyPath: inventory
       value: 
       objectReference: {fileID: 1076440172}
+    - target: {fileID: 4595485609575323220, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
+      propertyPath: interactableText
+      value: 
+      objectReference: {fileID: 1306121786}
+    - target: {fileID: 5484222672979799320, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
+      propertyPath: m_Radius
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 8292600945184373571, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
       propertyPath: m_Name
       value: Apple04
@@ -4212,6 +4224,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4646933745565138, guid: 4983f395b2610de4e9f688a87bbd9af9, type: 3}
   m_PrefabInstance: {fileID: 1375611894}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &207545492 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7147390015028074797, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
+  m_PrefabInstance: {fileID: 857614271}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &210283547
 PrefabInstance:
@@ -4883,6 +4900,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4263922822445036487, guid: 3cdafb3c2f54d434894928d72d282874, type: 3}
   m_PrefabInstance: {fileID: 1019129485}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &233053129 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7147390015028074797, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
+  m_PrefabInstance: {fileID: 351658409}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &238626353
 PrefabInstance:
@@ -8457,10 +8479,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1689891505}
     m_Modifications:
+    - target: {fileID: 3761754012559917765, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
+      propertyPath: m_Radius
+      value: 0.09
+      objectReference: {fileID: 0}
     - target: {fileID: 4595485609575323220, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
       propertyPath: inventory
       value: 
       objectReference: {fileID: 1076440172}
+    - target: {fileID: 4595485609575323220, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
+      propertyPath: interactableText
+      value: 
+      objectReference: {fileID: 233053129}
+    - target: {fileID: 5484222672979799320, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
+      propertyPath: m_Radius
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 8292600945184373571, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
       propertyPath: m_Name
       value: Apple07
@@ -12942,9 +12976,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2693052399131184650, guid: 29b85590b56cd4e94a32a9c7ea4410d9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2113278047}
-    - targetCorrespondingSourceObject: {fileID: 2693052399131184650, guid: 29b85590b56cd4e94a32a9c7ea4410d9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2113278046}
   m_SourcePrefab: {fileID: 100100000, guid: 29b85590b56cd4e94a32a9c7ea4410d9, type: 3}
 --- !u!4 &584795616 stripped
 Transform:
@@ -13796,7 +13827,7 @@ Transform:
   m_GameObject: {fileID: 653289176}
   serializedVersion: 2
   m_LocalRotation: {x: 0.23911765, y: 0.3696438, z: -0.09904577, w: 0.89239913}
-  m_LocalPosition: {x: -86.13702, y: 59.820007, z: -46.137413}
+  m_LocalPosition: {x: -86.13702, y: 59.820007, z: -46.137417}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15177,6 +15208,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4423895146491306, guid: b44415eef131de742a4190453fc4d68e, type: 3}
   m_PrefabInstance: {fileID: 710131200}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &712333885 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7147390015028074797, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
+  m_PrefabInstance: {fileID: 1535564877}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &715098410
 PrefabInstance:
@@ -17510,10 +17546,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1689891505}
     m_Modifications:
+    - target: {fileID: 3761754012559917765, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
+      propertyPath: m_Radius
+      value: 0.09
+      objectReference: {fileID: 0}
     - target: {fileID: 4595485609575323220, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
       propertyPath: inventory
       value: 
       objectReference: {fileID: 1076440172}
+    - target: {fileID: 4595485609575323220, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
+      propertyPath: interactableText
+      value: 
+      objectReference: {fileID: 1121849691}
+    - target: {fileID: 5484222672979799320, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
+      propertyPath: m_Radius
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7147390015028074797, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8292600945184373571, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
       propertyPath: m_Name
       value: Apple03
@@ -18976,10 +19028,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1689891505}
     m_Modifications:
+    - target: {fileID: 3761754012559917765, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
+      propertyPath: m_Radius
+      value: 0.09
+      objectReference: {fileID: 0}
     - target: {fileID: 4595485609575323220, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
       propertyPath: inventory
       value: 
       objectReference: {fileID: 1076440172}
+    - target: {fileID: 4595485609575323220, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
+      propertyPath: interactableText
+      value: 
+      objectReference: {fileID: 207545492}
+    - target: {fileID: 5484222672979799320, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
+      propertyPath: m_Radius
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 8292600945184373571, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
       propertyPath: m_Name
       value: Apple10
@@ -20001,6 +20065,11 @@ Transform:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6434714685965225209, guid: a0702e63e4dd95b448d32c9bea408017, type: 3}
   m_PrefabInstance: {fileID: 1688209558}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &895208513 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7147390015028074797, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
+  m_PrefabInstance: {fileID: 1301328328}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &895530069
 PrefabInstance:
@@ -21081,6 +21150,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4949955557972128, guid: c7821bc923171f24094e69062402d005, type: 3}
   m_PrefabInstance: {fileID: 940530478}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &941196292 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7147390015028074797, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
+  m_PrefabInstance: {fileID: 1393640870}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &941859604 stripped
 GameObject:
@@ -22619,6 +22693,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: d4d6eed92fb93e948b95c2fc4d1f6f8d, type: 3}
+--- !u!1 &1029287367 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7147390015028074797, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
+  m_PrefabInstance: {fileID: 1126866990}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1030402809
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24579,6 +24658,11 @@ Transform:
   - {fileID: 1551896705}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &1121849691 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7147390015028074797, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
+  m_PrefabInstance: {fileID: 817829661}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1124638677
 GameObject:
   m_ObjectHideFlags: 0
@@ -24659,10 +24743,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1689891505}
     m_Modifications:
+    - target: {fileID: 3761754012559917765, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
+      propertyPath: m_Radius
+      value: 0.09
+      objectReference: {fileID: 0}
     - target: {fileID: 4595485609575323220, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
       propertyPath: inventory
       value: 
       objectReference: {fileID: 1076440172}
+    - target: {fileID: 4595485609575323220, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
+      propertyPath: interactableText
+      value: 
+      objectReference: {fileID: 1029287367}
+    - target: {fileID: 5484222672979799320, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
+      propertyPath: m_Radius
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 8292600945184373571, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
       propertyPath: m_Name
       value: Apple05
@@ -25009,10 +25105,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1689891505}
     m_Modifications:
+    - target: {fileID: 3761754012559917765, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
+      propertyPath: m_Radius
+      value: 0.09
+      objectReference: {fileID: 0}
     - target: {fileID: 4595485609575323220, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
       propertyPath: inventory
       value: 
       objectReference: {fileID: 1076440172}
+    - target: {fileID: 4595485609575323220, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
+      propertyPath: interactableText
+      value: 
+      objectReference: {fileID: 1722809647}
+    - target: {fileID: 5484222672979799320, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
+      propertyPath: m_Radius
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 8292600945184373571, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
       propertyPath: m_Name
       value: Apple09
@@ -25394,10 +25502,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1689891505}
     m_Modifications:
+    - target: {fileID: 3761754012559917765, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
+      propertyPath: m_Radius
+      value: 0.09
+      objectReference: {fileID: 0}
     - target: {fileID: 4595485609575323220, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
       propertyPath: inventory
       value: 
       objectReference: {fileID: 1076440172}
+    - target: {fileID: 4595485609575323220, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
+      propertyPath: interactableText
+      value: 
+      objectReference: {fileID: 2090169366}
+    - target: {fileID: 5484222672979799320, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
+      propertyPath: m_Radius
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7147390015028074797, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8292600945184373571, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
       propertyPath: m_Name
       value: Apple02
@@ -28651,10 +28775,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1689891505}
     m_Modifications:
+    - target: {fileID: 3761754012559917765, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
+      propertyPath: m_Radius
+      value: 0.09
+      objectReference: {fileID: 0}
     - target: {fileID: 4595485609575323220, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
       propertyPath: inventory
       value: 
       objectReference: {fileID: 1076440172}
+    - target: {fileID: 4595485609575323220, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
+      propertyPath: interactableText
+      value: 
+      objectReference: {fileID: 895208513}
+    - target: {fileID: 5484222672979799320, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
+      propertyPath: m_Radius
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 8292600945184373571, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
       propertyPath: m_Name
       value: Apple08
@@ -28782,6 +28918,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8783306491909106419, guid: f02116c209ecd9e488fc4d2cd8996133, type: 3}
   m_PrefabInstance: {fileID: 1305204130}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1306121786 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7147390015028074797, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
+  m_PrefabInstance: {fileID: 192694130}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1308464257
 GameObject:
@@ -30607,10 +30748,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1689891505}
     m_Modifications:
+    - target: {fileID: 3761754012559917765, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
+      propertyPath: m_Radius
+      value: 0.09
+      objectReference: {fileID: 0}
     - target: {fileID: 4595485609575323220, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
       propertyPath: inventory
       value: 
       objectReference: {fileID: 1076440172}
+    - target: {fileID: 4595485609575323220, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
+      propertyPath: interactableText
+      value: 
+      objectReference: {fileID: 941196292}
+    - target: {fileID: 5484222672979799320, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
+      propertyPath: m_Radius
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 8292600945184373571, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
       propertyPath: m_Name
       value: Apple11
@@ -31581,6 +31734,11 @@ Transform:
   - {fileID: 998725217}
   m_Father: {fileID: 1551896705}
   m_LocalEulerAnglesHint: {x: 0, y: 161.199, z: 0}
+--- !u!1 &1434873716 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7147390015028074797, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
+  m_PrefabInstance: {fileID: 1444155223}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1439010385 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4844902911259396, guid: 01bdef6597b249b44a9530ab656246fc, type: 3}
@@ -31680,10 +31838,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1689891505}
     m_Modifications:
+    - target: {fileID: 3761754012559917765, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
+      propertyPath: m_Radius
+      value: 0.09
+      objectReference: {fileID: 0}
     - target: {fileID: 4595485609575323220, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
       propertyPath: inventory
       value: 
       objectReference: {fileID: 1076440172}
+    - target: {fileID: 4595485609575323220, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
+      propertyPath: interactableText
+      value: 
+      objectReference: {fileID: 1434873716}
+    - target: {fileID: 5484222672979799320, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
+      propertyPath: m_Radius
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 8292600945184373571, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
       propertyPath: m_Name
       value: Apple06
@@ -33511,10 +33681,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1689891505}
     m_Modifications:
+    - target: {fileID: 3761754012559917765, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
+      propertyPath: m_Radius
+      value: 0.09
+      objectReference: {fileID: 0}
     - target: {fileID: 4595485609575323220, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
       propertyPath: inventory
       value: 
       objectReference: {fileID: 1076440172}
+    - target: {fileID: 4595485609575323220, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
+      propertyPath: interactableText
+      value: 
+      objectReference: {fileID: 712333885}
+    - target: {fileID: 5484222672979799320, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
+      propertyPath: m_Radius
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7147390015028074797, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8292600945184373571, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
       propertyPath: m_Name
       value: Apple01
@@ -36865,6 +37051,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4622981333497442, guid: dd3ee0c97aab8a7498c9292f3482f60b, type: 3}
   m_PrefabInstance: {fileID: 1992259349}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1722809647 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7147390015028074797, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
+  m_PrefabInstance: {fileID: 1142564405}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1726971208 stripped
 Transform:
@@ -46300,6 +46491,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4112504727747986, guid: d82a0024cf3346b4695544dd461fb02b, type: 3}
   m_PrefabInstance: {fileID: 2088512874}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2090169366 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7147390015028074797, guid: cd71e48862ae6264dbb53424a2f74026, type: 3}
+  m_PrefabInstance: {fileID: 1177012458}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2090884491 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4112504727747986, guid: d82a0024cf3346b4695544dd461fb02b, type: 3}
@@ -46785,29 +46981,6 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 442411289029903977, guid: 29b85590b56cd4e94a32a9c7ea4410d9, type: 3}
   m_PrefabInstance: {fileID: 583895873}
   m_PrefabAsset: {fileID: 0}
---- !u!136 &2113278046
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1539617713}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &2113278047
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -1,7 +1,7 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace Gameplay.Systems.Inventory
 {
@@ -22,7 +22,6 @@ namespace Gameplay.Systems.Inventory
             this.stackSize = stackSize;
             this.id = id;
         }
-    
     }
     
     public class Items : MonoBehaviour
@@ -42,7 +41,15 @@ namespace Gameplay.Systems.Inventory
 
         public static ItemClass GetItem(int id)
         {
-            return (from item in _it where item.id == id select new ItemClass(item.itemName, item.description, item.icon, item.stackSize, item.id)).FirstOrDefault();
+            return (from item in _it
+                    where item.id == id
+                    select new ItemClass(
+                        item.itemName, 
+                        item.description, 
+                        item.icon, 
+                        item.stackSize, 
+                        item.id))
+                .FirstOrDefault();
         }
     }
 }
