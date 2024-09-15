@@ -1,8 +1,5 @@
 ﻿using TMPro;
 using UnityEngine;
-using System.Linq;
-using UnityEngine.UI;
-using UnityEngine.EventSystems;
 
 namespace Gameplay.Systems.Managers
 {
@@ -13,68 +10,56 @@ namespace Gameplay.Systems.Managers
         public string[] dialogueLines;
         private int _currentLine;
         private bool _dialogueActive;
+        private bool _isFinalLine;
         
-        // UI-raycasting for clicking through dialogue box
-        private GraphicRaycaster _graphicRaycaster;
-        private EventSystem _eventSystem;
-
-        private void Start()
-        {
-            _graphicRaycaster = GetComponentInParent<GraphicRaycaster>();
-            _eventSystem = EventSystem.current;
-        }
-
         private void Update()
         {
             if (!_dialogueActive) return;
-            if (Input.GetKeyDown(KeyCode.E)) DisplayNextLine();
 
-            if (!Input.GetMouseButtonDown(0)) return;
-            if (IsPointerOverUIElement()) DisplayNextLine();
+            if (!Input.GetKeyDown(KeyCode.E)) return;
+            if (_isFinalLine)
+                EndDialogue();   
+            else
+                DisplayNextLine();
         }
 
         public void StartDialogue(string[] lines)
         {
             dialogueLines = lines;
             _currentLine = 0;
+            _isFinalLine = false;
+            
             dialoguePanel.SetActive(true);
             _dialogueActive = true;
+            
             DisplayNextLine();
         }
 
         private void DisplayNextLine()
         {
-            if (_currentLine < dialogueLines.Length)
+            if (_currentLine < dialogueLines.Length - 1)
             {
                 dialogueText.text = dialogueLines[_currentLine];
                 _currentLine++;
             }
-            else EndDialogue();
+            else
+            {
+                dialogueText.text = dialogueLines[_currentLine];
+                _isFinalLine = true;
+            }
         }
 
         private void EndDialogue()
         {
             dialoguePanel.SetActive(false);
             _dialogueActive = false;
+            _currentLine = 0;
+            _isFinalLine = false;
         }
 
         public bool IsDialogueActive()
         {
             return _dialogueActive;
-        }
-        
-        private bool IsPointerOverUIElement()
-        {
-            var pointerEventData = new PointerEventData(_eventSystem)
-            {
-                position = Input.mousePosition
-            };
-            
-            // raycast for UI-elements
-            var results = new System.Collections.Generic.List<RaycastResult>();
-            _graphicRaycaster.Raycast(pointerEventData, results);
-
-            return results.Any(result => result.gameObject == dialoguePanel);
         }
     }
 }

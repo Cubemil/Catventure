@@ -1,5 +1,4 @@
-﻿using TMPro;
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using Gameplay.Systems.Quests;
 using Gameplay.Systems.Managers;
@@ -8,7 +7,7 @@ namespace Gameplay.Characters
 {
     public class GnomeNpc : MonoBehaviour
     {
-        public string[] initialDialogue =
+        private readonly string[] _initialDialogue =
         {
             "Not another one of those annoying cats.",
             "What led you here, fur ball?",
@@ -19,12 +18,13 @@ namespace Gameplay.Characters
             "I'm old and beginning to rust and besides, heights are not really my thing... So we got a deal?"
         };
 
-        public string[] repeatingDialogueDuringQuest =
+        private readonly string[] _repeatingDialogueDuringQuest =
         {
             "I need 5 apples from that big apple tree over there.",
+            "Try jumping on stuff to see if you can get up the tree."
         };
         
-        public string[] questCompleteDialogue =
+        private readonly string[] _questCompleteDialogue =
         {
             "Ugh, finally. That took you long enough.",
             "...",
@@ -34,7 +34,7 @@ namespace Gameplay.Characters
             "Why don't you go down to the lake over there and see if you find anyone."
         };
 
-        public string[] repeatingDialogueAfterQuest =
+        private readonly string[] _repeatingDialogueAfterQuest =
         {
             "I suggest going to the lake and talking to somebody.",
             "Get out of my face, fur ball"
@@ -45,8 +45,10 @@ namespace Gameplay.Characters
         private bool _playerInRange;
         private Transform _playerTransform;
         private const float RotationSpeed = 5f;
-        public TextMeshProUGUI interactText;
         private Coroutine _rotationCoroutine;
+        
+        public GameObject interactBubble;
+        public new Camera camera;
 
         private void Start()
         {
@@ -54,16 +56,15 @@ namespace Gameplay.Characters
             _dialogueManager = FindObjectOfType<DialogueManager>();
             _playerTransform = GameObject.FindWithTag("Player").transform;
             
-            interactText.gameObject.SetActive(false);
-            interactText.text = "Press 'E' to speak to Garry Gnome";
+            interactBubble.gameObject.SetActive(false);
         }
 
         private void Update()
         {
+            if (_playerInRange) RotateInteractBubble();
+            
             if (_playerInRange && Input.GetKeyDown(KeyCode.E) && !_dialogueManager.IsDialogueActive())
-            {
                 InteractWithGnome();
-            }
         }
 
         private void OnTriggerEnter(Collider other)
@@ -71,7 +72,7 @@ namespace Gameplay.Characters
             if (!other.CompareTag($"PlayerInteract")) return;
             
             _playerInRange = true;
-            interactText.gameObject.SetActive(true);
+            interactBubble.gameObject.SetActive(true);
         }
 
         private void OnTriggerExit(Collider other)
@@ -79,7 +80,7 @@ namespace Gameplay.Characters
             if (!other.CompareTag($"PlayerInteract")) return;
             
             _playerInRange = false;
-            interactText.gameObject.SetActive(false);
+            interactBubble.gameObject.SetActive(false);
         }
 
         private void InteractWithGnome()
@@ -92,7 +93,7 @@ namespace Gameplay.Characters
             {
                 case false:
                 {
-                    StartDialogue(initialDialogue);
+                    StartDialogue(_initialDialogue);
                     _appleCollectorQuest.StartQuest();
                     break;
                 }
@@ -102,18 +103,18 @@ namespace Gameplay.Characters
                     {
                         _appleCollectorQuest.RemoveApplesFromInventory();
                         _appleCollectorQuest.CompleteQuest();
-                        StartDialogue(questCompleteDialogue);
+                        StartDialogue(_questCompleteDialogue);
                     }
                     else
                     {
-                        StartDialogue(repeatingDialogueDuringQuest);
+                        StartDialogue(_repeatingDialogueDuringQuest);
                     }
                     break;
                 }
                 default:
                 {
                     if (_appleCollectorQuest.IsQuestCompleted())
-                        StartDialogue(repeatingDialogueAfterQuest);
+                        StartDialogue(_repeatingDialogueAfterQuest);
                     break;
                 }
             }
@@ -137,6 +138,15 @@ namespace Gameplay.Characters
         private void StartDialogue(string[] dialogueLines)
         {
             _dialogueManager.StartDialogue(dialogueLines);
+        }
+        
+        // ReSharper disable Unity.PerformanceAnalysis
+        private void RotateInteractBubble()
+        {
+            if (!camera || !interactBubble.transform) return;
+            
+            // match rotation
+            interactBubble.transform.rotation = camera.transform.rotation;
         }
     }
 }

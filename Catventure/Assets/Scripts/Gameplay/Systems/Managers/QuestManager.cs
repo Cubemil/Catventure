@@ -18,6 +18,8 @@ namespace Gameplay.Systems.Managers
 
             _questQueue.Enqueue(appleCollectorQuest);
             _questQueue.Enqueue(tadpoleCatcherQuest);
+            
+            StartNextQuest();
         }
 
         private void Update()
@@ -41,6 +43,11 @@ namespace Gameplay.Systems.Managers
             _currentQuest.CompleteQuest();
             _currentQuest = null;
             StartNextQuest();
+        }
+        
+        public bool CanStartTadpoleQuest()
+        {
+            return appleCollectorQuest.IsQuestCompleted();
         }
     }
 

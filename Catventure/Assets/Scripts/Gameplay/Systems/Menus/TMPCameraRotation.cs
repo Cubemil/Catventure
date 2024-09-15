@@ -9,17 +9,21 @@ namespace Gameplay.Systems.Menus
 
         private void Update()
         {
-            RotateCamera();
+            if (!gameObject.activeSelf)
+            {
+                RotateCamera();
+            }
         }
 
+        // ReSharper disable Unity.PerformanceAnalysis
         private void RotateCamera()
         {
             // Check if camera and objectToRotate are assigned
-            if (camera && objectToRotate)
-            {
-                // Option 2: Instant match rotation (if smoothness is not required)
-                objectToRotate.rotation = camera.transform.rotation;
-            }
+            if (!camera || !objectToRotate) return;
+            
+            // match rotation
+            Debug.Log("rotating tmp");
+            objectToRotate.rotation = camera.transform.rotation;
         }
     }
 }
