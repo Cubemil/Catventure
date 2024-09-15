@@ -2,6 +2,8 @@ using UnityEngine;
 
 namespace Gameplay.Movement
 {
+    //TODO order of move operations in update
+    //TODO jump animation
     public class IsometricPlayerController : MonoBehaviour
     {
         [SerializeField] private Rigidbody rb;
@@ -35,13 +37,13 @@ namespace Gameplay.Movement
             // get horizontal/vertical axis from input => Vector3
             GatherInput();
             
+            // check if player is on ground with raycasting
+            CheckGroundStatus();
+            
             // change controller look direction and move player after
             Look();
             Move();
             HandleHit();
-            
-            // check if player is on ground with raycasting
-            CheckGroundStatus();
         }
 
         private void GatherInput()
@@ -101,13 +103,17 @@ namespace Gameplay.Movement
             var layerMask = ~notWalkableLayer;
             
             // raycast checking if there's a surface underneath (except for NotWalkable Layers)
-            if (Physics.Raycast(transform.position, Vector3.down, out var hit, groundCheckDistance, layerMask))
+            if (Physics.Raycast(transform.position, Vector3.down, groundCheckDistance, layerMask))
             {
                 //Debug.Log("Standing on: " + hit.collider.gameObject.name);
                 _isOnGround = true;
                 _animator.SetBool(IsJumping, false);
             }
-            else _isOnGround = false;
+            else
+            {
+                _isOnGround = false;
+                _animator.SetBool(IsJumping, true);
+            }
         }
         
         private void HandleHit()

@@ -1,6 +1,8 @@
 using UnityEngine;
+using Gameplay.Movement;
 using System.Collections;
 using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.Serialization;
 
 namespace Gameplay.Systems.Effects
 {
@@ -8,10 +10,15 @@ namespace Gameplay.Systems.Effects
     {
         public PostProcessVolume postProcessingVolume;
         private ChromaticAberration _chromaticAberration;
-
+        public GameObject isometricCatController;
+        private IsometricPlayerController _activeController;
+        
         private void Start()
         {
             _chromaticAberration = postProcessingVolume.profile.GetSetting<ChromaticAberration>();
+
+            _activeController = isometricCatController.GetComponent<IsometricPlayerController>();
+            if (_activeController) _activeController.enabled = false;
 
             if (_chromaticAberration)
                 StartCoroutine(AnimateChromaticAberration());
@@ -21,7 +28,7 @@ namespace Gameplay.Systems.Effects
         
         private IEnumerator AnimateChromaticAberration()
         {
-            for (var i = 0; i < 4; i++)
+            for (var i = 0; i < 3; i++)
             {
                 yield return ChangeIntensity(0.3f, 1.7f);
                 yield return ChangeIntensity(1.7f, 0.3f);
@@ -29,6 +36,7 @@ namespace Gameplay.Systems.Effects
 
             yield return ChangeIntensity(0.3f, 0f);
             _chromaticAberration.intensity.value = 0f;
+            if (_activeController) _activeController.enabled = true;
         }
 
         private IEnumerator ChangeIntensity(float from, float to)
