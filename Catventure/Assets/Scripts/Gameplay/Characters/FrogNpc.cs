@@ -2,9 +2,9 @@
 using UnityEngine;
 using Cinemachine;
 using System.Collections;
-using Gameplay.MiniGames.Fishing;
 using Gameplay.Systems.Quests;
 using Gameplay.Systems.Managers;
+using Gameplay.MiniGames.Fishing;
 
 namespace Gameplay.Characters
 {
@@ -97,7 +97,7 @@ namespace Gameplay.Characters
             if (_playerInRange && Input.GetKeyDown(KeyCode.E) && !_dialogueManager.IsDialogueActive())
                 InteractWithFrog();
 
-            if (!_playerInRange || !_tadpoleCatcherQuest.questStarted || _tadpoleCatcherQuest.questCompleted) return;
+            if (!_playerInRange || !_tadpoleCatcherQuest.questStarted || _tadpoleCatcherQuest.IsQuestCompleted()) return;
             
             if (Input.GetKeyDown(KeyCode.F))
                 StartFishing();
@@ -136,7 +136,7 @@ namespace Gameplay.Characters
                     _tadpoleCatcherQuest.StartQuest();
                     fishingPromptTMP.gameObject.SetActive(true);
                     break;
-                case true when !_tadpoleCatcherQuest.questCompleted:
+                case true when !_tadpoleCatcherQuest.IsQuestCompleted():
                     if (_caughtTadpoles >= TadpoleCatcherQuest.TadpolesRequired)
                     {
                         CompleteFrogQuest();
@@ -147,7 +147,7 @@ namespace Gameplay.Characters
                     }
                     break;
                 default:
-                    if (_tadpoleCatcherQuest.questCompleted)
+                    if (_tadpoleCatcherQuest.IsQuestCompleted())
                     {
                         StartDialogue(_repeatingDialogueAfterQuest);
                     }

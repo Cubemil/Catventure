@@ -1,59 +1,53 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
+using Gameplay.Systems.Quests;
+using System.Collections.Generic;
 
 namespace Gameplay.Systems.Managers
 {
-    public class Quest
+    public class QuestManager : MonoBehaviour
     {
-        public readonly string QuestName;
-        public bool IsCompleted;
+        [SerializeField] private AppleCollectorQuest appleCollectorQuest;
+        [SerializeField] private TadpoleCatcherQuest tadpoleCatcherQuest;
 
-        public Quest(string questName)
-        {
-            QuestName = questName;
-            IsCompleted = false;
-        }
-    }
-    
-    public sealed class QuestManager : MonoBehaviour
-    {
-        private readonly List<Quest> _quests = new();
+        private Queue<IQuest> _questQueue;
+        private IQuest _currentQuest;
 
         private void Start()
         {
-            _quests.Add(new Quest("Explore Apartment"));
-            _quests.Add(new Quest("Collect Apples"));
-            _quests.Add(new Quest("Catch Frogs"));
-            _quests.Add(new Quest("Maze Escape"));
-            _quests.Add(new Quest("Catch Fish"));
-            _quests.Add(new Quest("Flappy Cat"));
+            _questQueue = new Queue<IQuest>();
+
+            _questQueue.Enqueue(appleCollectorQuest);
+            _questQueue.Enqueue(tadpoleCatcherQuest);
         }
 
-        public void CompleteQuest(string questName)
+        private void Update()
         {
-            var quest = _quests.Find(q => q.QuestName == questName);
-            if (quest != null)
+            if (_currentQuest != null && _currentQuest.IsQuestCompleted())
             {
-                quest.IsCompleted = true;
-                TriggerNextQuest(questName);
+                CompleteCurrentQuest();
             }
         }
 
-        private void TriggerNextQuest(string questName)
+        private void StartNextQuest()
         {
-            switch (questName)
-            {
-                case "Explore Apartment":
-                    SceneManager.LoadScene("ApartmentFreeRoam");
-                    break;
-                case "Collect Apples":
-                    SceneManager.LoadScene("Garden");
-                    break;
-                default:
-                    throw new InvalidEnumArgumentException();
-            }
+            if (_questQueue.Count <= 0) return;
+            
+            _currentQuest = _questQueue.Dequeue();
+            _currentQuest.StartQuest();
         }
+
+        private void CompleteCurrentQuest()
+        {
+            _currentQuest.CompleteQuest();
+            _currentQuest = null;
+            StartNextQuest();
+        }
+    }
+
+    public interface IQuest
+    {
+        void StartQuest();
+        void CompleteQuest();
+        bool IsQuestCompleted();
     }
 }

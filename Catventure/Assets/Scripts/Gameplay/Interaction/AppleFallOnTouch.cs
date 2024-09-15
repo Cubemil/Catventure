@@ -66,7 +66,7 @@ namespace Gameplay.Interaction
            inventory.SetItemToSlot(new ItemStack(Items.GetItem(AppleItemID), 1));
            var appleQuest = FindObjectOfType<AppleCollectorQuest>();
            
-           if (appleQuest && appleQuest.questStarted && !appleQuest.questCompleted)
+           if (appleQuest && appleQuest.questStarted && !appleQuest.IsQuestCompleted())
                appleQuest.UpdateQuestLog();
            
            gameObject.SetActive(false);
