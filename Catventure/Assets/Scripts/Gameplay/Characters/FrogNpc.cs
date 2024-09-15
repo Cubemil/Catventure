@@ -1,5 +1,4 @@
-﻿using TMPro;
-using UnityEngine;
+﻿using UnityEngine;
 using Cinemachine;
 using System.Collections;
 using Gameplay.Systems.Quests;
@@ -10,6 +9,12 @@ namespace Gameplay.Characters
 {
     public class FrogNpc : MonoBehaviour
     {
+        private readonly string[] _questNotAvailableDialogue =
+        {
+            "Hello Cloud, welcome to the lake.",
+            "I think you should talk to Garry Gnome, he really needs someone's help right now."
+        };
+        
         private readonly string[] _initialDialogue =
         {
             "Oh, hello there! It's not every day a cat wanders by here.",
@@ -45,10 +50,10 @@ namespace Gameplay.Characters
             "If you're still looking for answers, I really think the village square is your best bet."
         };
 
+        private AppleCollectorQuest _appleCollectorQuest;
         private TadpoleCatcherQuest _tadpoleCatcherQuest;
         private DialogueManager _dialogueManager;
-        public TextMeshProUGUI interactTMP;
-        public TextMeshProUGUI fishingPromptTMP;
+        public GameObject fishingInteractBubble;
         private bool _playerInRange;
         
         // camera zooming with Cinemachine
@@ -59,11 +64,6 @@ namespace Gameplay.Characters
         private const float ZoomedOutOrthoSize = 20f;
         private const float TransitionSpeed = 2f;
         
-        // camera movement towards frog
-        public Transform frogTransform;
-        private readonly Vector3 _zoomedOutCamOffset = new Vector3(0, 5, -10);
-        private Vector3 _originalCamPos;
-        
         public GameObject tadpole1;
         public GameObject tadpole2;
         public GameObject tadpole3;
@@ -71,21 +71,21 @@ namespace Gameplay.Characters
         public GameObject fishingUI;
         public FishingScript fishingScript;
         private int _caughtTadpoles;
+        
+        public GameObject interactBubble;
+        public new Camera camera;
             
         private void Start()
         {
+            _appleCollectorQuest = FindObjectOfType<AppleCollectorQuest>();
             _tadpoleCatcherQuest = FindObjectOfType<TadpoleCatcherQuest>();
             _dialogueManager = FindObjectOfType<DialogueManager>();
             
-            interactTMP.gameObject.SetActive(false);
-            interactTMP.text = "Press 'E' to speak to Froggy";
+            interactBubble.gameObject.SetActive(false);
+            fishingInteractBubble.gameObject.SetActive(false);
             
-            fishingPromptTMP.gameObject.SetActive(false);
-            fishingPromptTMP.text = "Press 'F' to start fishing";
-            
-            // original orthographic size + position of cam
+            // original orthographic size
             _originalOrthoSize = virtualCamera.m_Lens.OrthographicSize;
-            _originalCamPos = virtualCamera.transform.position;
             
             tadpole1.SetActive(false);
             tadpole2.SetActive(false);
@@ -94,6 +94,8 @@ namespace Gameplay.Characters
 
         private void Update()
         {
+            if (_playerInRange) RotateInteractBubbles();
+            
             if (_playerInRange && Input.GetKeyDown(KeyCode.E) && !_dialogueManager.IsDialogueActive())
                 InteractWithFrog();
 
@@ -108,10 +110,10 @@ namespace Gameplay.Characters
             if (!other.CompareTag($"PlayerInteract")) return;
             
             _playerInRange = true;
-            interactTMP.gameObject.SetActive(true);
+            interactBubble.gameObject.SetActive(true);
             
             // zoom out
-            StartCoroutine(ChangeCameraOrthoSizeAndPosition(ZoomedOutOrthoSize, frogTransform.position + _zoomedOutCamOffset));
+            StartCoroutine(ChangeCameraOrthoSize(ZoomedOutOrthoSize));
         }
 
         private void OnTriggerExit(Collider other)
@@ -119,22 +121,30 @@ namespace Gameplay.Characters
             if (!other.CompareTag($"PlayerInteract")) return;
             
             _playerInRange = false;
-            interactTMP.gameObject.SetActive(false);
-            fishingPromptTMP.gameObject.SetActive(false);
+            interactBubble.gameObject.SetActive(false);
+            fishingInteractBubble.gameObject.SetActive(false);
 
             // zoom back in
-            StartCoroutine(ChangeCameraOrthoSizeAndPosition(_originalOrthoSize, _originalCamPos));
+            StartCoroutine(ChangeCameraOrthoSize(_originalOrthoSize));
         }
 
         private void InteractWithFrog()
         {
-            StartCoroutine(ChangeCameraOrthoSizeAndPosition(_originalOrthoSize, _originalCamPos));
+            // zoom in only halfway
+            StartCoroutine(ChangeCameraOrthoSize(_originalOrthoSize * 1.5f));
+            
+            if (!_appleCollectorQuest.IsQuestCompleted())
+            {
+                StartDialogue(_questNotAvailableDialogue);
+                return;
+            }
+            
             switch (_tadpoleCatcherQuest.questStarted)
             {
                 case false:
                     StartDialogue(_initialDialogue);
                     _tadpoleCatcherQuest.StartQuest();
-                    fishingPromptTMP.gameObject.SetActive(true);
+                    fishingInteractBubble.gameObject.SetActive(true);
                     break;
                 case true when !_tadpoleCatcherQuest.IsQuestCompleted():
                     if (_caughtTadpoles >= TadpoleCatcherQuest.TadpolesRequired)
@@ -158,14 +168,13 @@ namespace Gameplay.Characters
         private void StartDialogue(string[] dialogueLines)
         {
             _dialogueManager.StartDialogue(dialogueLines);
-            StartCoroutine(ChangeCameraOrthoSizeAndPosition(ZoomedOutOrthoSize, frogTransform.position + _zoomedOutCamOffset));
         }
 
         private void StartFishing()
         {
             fishingUI.SetActive(true);
             fishingScript.StartFishing();
-            fishingPromptTMP.gameObject.SetActive(false);
+            fishingInteractBubble.gameObject.SetActive(false);
         }
         
         private void CompleteFrogQuest()
@@ -195,35 +204,38 @@ namespace Gameplay.Characters
             if (_caughtTadpoles == 3)
             {
                 fishingUI.SetActive(false);
-                interactTMP.gameObject.SetActive(true);
+                interactBubble.gameObject.SetActive(true);
             }
             else
             {
-                fishingPromptTMP.gameObject.SetActive(true);
+                fishingInteractBubble.gameObject.SetActive(true);
             }
         }
-        
-        // Coroutine to smoothly change the camera's orthographic size
-        private IEnumerator ChangeCameraOrthoSizeAndPosition(float targetOrthoSize, Vector3 targetPos)
+
+        // Coroutine to smoothly change the camera's orthographic size 
+        private IEnumerator ChangeCameraOrthoSize(float targetOrthoSize)
         {
             var startSize = virtualCamera.m_Lens.OrthographicSize;
-            var startPos = virtualCamera.transform.position;
             var progress = 0f;
 
-            while (Mathf.Abs(virtualCamera.m_Lens.OrthographicSize - targetOrthoSize) > 0.1f ||
-                   (virtualCamera.transform.position - targetPos).sqrMagnitude > 0.1f)
+            while (Mathf.Abs(virtualCamera.m_Lens.OrthographicSize - targetOrthoSize) > 0.1f)
             {
                 progress += Time.deltaTime * TransitionSpeed;
-                
                 virtualCamera.m_Lens.OrthographicSize = Mathf.Lerp(startSize, targetOrthoSize, progress);
-
-                virtualCamera.transform.position = Vector3.Lerp(startPos, targetPos, progress);
-                
                 yield return null;
             }
 
-            virtualCamera.m_Lens.OrthographicSize = targetOrthoSize; // Ensures the final value is set
-            virtualCamera.transform.position = targetPos;
+            virtualCamera.m_Lens.OrthographicSize = targetOrthoSize;
+        }
+        
+        // ReSharper disable Unity.PerformanceAnalysis
+        private void RotateInteractBubbles()
+        {
+            if (!camera || !interactBubble.transform || !fishingInteractBubble.transform) return;
+            
+            // match rotation
+            interactBubble.transform.rotation = camera.transform.rotation;
+            fishingInteractBubble.transform.rotation = camera.transform.rotation;
         }
 
     }
