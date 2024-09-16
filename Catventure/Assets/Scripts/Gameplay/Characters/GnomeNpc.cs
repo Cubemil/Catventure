@@ -2,6 +2,7 @@
 using System.Collections;
 using Gameplay.Systems.Quests;
 using Gameplay.Systems.Managers;
+using UnityEngine.Serialization;
 
 namespace Gameplay.Characters
 {
@@ -46,7 +47,8 @@ namespace Gameplay.Characters
         private Transform _playerTransform;
         private const float RotationSpeed = 5f;
         private Coroutine _rotationCoroutine;
-        
+
+        [SerializeField] public Sprite speechBubbleSprite;
         public GameObject interactBubble;
         public new Camera camera;
 
@@ -137,7 +139,7 @@ namespace Gameplay.Characters
         
         private void StartDialogue(string[] dialogueLines)
         {
-            _dialogueManager.StartDialogue(dialogueLines);
+            _dialogueManager.StartDialogue(dialogueLines, speechBubbleSprite);
         }
         
         // ReSharper disable Unity.PerformanceAnalysis

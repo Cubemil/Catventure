@@ -4,6 +4,7 @@ using System.Collections;
 using Gameplay.Systems.Quests;
 using Gameplay.Systems.Managers;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 namespace Gameplay.Characters
 {
@@ -49,6 +50,8 @@ namespace Gameplay.Characters
 
         private bool _hasFlyingStarted;
         private const string FlappyCatSceneName = "FlappyCat";
+
+        [SerializeField] private Sprite speechBubbleSprite;
         
         private void Start()
         {
@@ -122,7 +125,7 @@ namespace Gameplay.Characters
         
         private void StartDialogue(string[] dialogueLines)
         {
-            _dialogueManager.StartDialogue(dialogueLines);
+            _dialogueManager.StartDialogue(dialogueLines, speechBubbleSprite);
         }
 
         private void StartFlying()

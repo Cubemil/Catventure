@@ -71,7 +71,8 @@ namespace Gameplay.Characters
         public GameObject fishingUI;
         public FishingScript fishingScript;
         private int _caughtTadpoles;
-        
+
+        [SerializeField] private Sprite speechBubbleSprite;
         public GameObject interactBubble;
         public new Camera camera;
             
@@ -167,7 +168,7 @@ namespace Gameplay.Characters
         
         private void StartDialogue(string[] dialogueLines)
         {
-            _dialogueManager.StartDialogue(dialogueLines);
+            _dialogueManager.StartDialogue(dialogueLines, speechBubbleSprite);
         }
 
         private void StartFishing()

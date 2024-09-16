@@ -15,7 +15,7 @@ namespace Gameplay.MiniGames.FlappyCat
         
         public void AddScore(int addScore)
         {
-            if (playerScore >= 10) WinGame();
+            if (playerScore >= 9) WinGame();
             if (gameOverScreen.activeSelf) return;
             
             playerScore ++;

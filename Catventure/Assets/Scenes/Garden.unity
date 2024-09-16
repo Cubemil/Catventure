@@ -1615,6 +1615,7 @@ MonoBehaviour:
   tadpole3: {fileID: 1813294847}
   fishingUI: {fileID: 1445145074}
   fishingScript: {fileID: 2106545338}
+  speechBubbleSprite: {fileID: 21300000, guid: b56efa558bc407246a916679cdc24e2a, type: 3}
   interactBubble: {fileID: 127307401}
   camera: {fileID: 653289179}
 --- !u!136 &49324489
@@ -1674,7 +1675,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 331.1, y: -77.8}
+  m_AnchoredPosition: {x: 301.6, y: -54.7}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &52853280
@@ -6976,6 +6977,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialoguePanel: {fileID: 444536641}
   dialogueText: {fileID: 2110584138}
+  backgroundImage: {fileID: 1136855993}
   dialogueLines: []
 --- !u!4 &283901868 stripped
 Transform:
@@ -11376,7 +11378,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 118}
-  m_SizeDelta: {x: 700, y: 200}
+  m_SizeDelta: {x: 722.1, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &444536644
 CanvasRenderer:
@@ -21858,12 +21860,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5391550071056358016, guid: ac95f9d60a757d043847b3cb2aeb3fca, type: 3}
       propertyPath: fallSpeed
-      value: 2
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5391550071056358016, guid: ac95f9d60a757d043847b3cb2aeb3fca, type: 3}
+      propertyPath: fillSpeed
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 5391550071056358016, guid: ac95f9d60a757d043847b3cb2aeb3fca, type: 3}
       propertyPath: inventory
       value: 
       objectReference: {fileID: 1076440172}
+    - target: {fileID: 5391550071056358016, guid: ac95f9d60a757d043847b3cb2aeb3fca, type: 3}
+      propertyPath: moveSpeed
+      value: 130
+      objectReference: {fileID: 0}
     - target: {fileID: 5391550071056358016, guid: ac95f9d60a757d043847b3cb2aeb3fca, type: 3}
       propertyPath: raiseSpeed
       value: 2.5
@@ -27823,14 +27833,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 7366fc20d8e0fef4fab4fdfa170cb689, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -31969,8 +31979,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 434.4, y: -66}
-  m_SizeDelta: {x: 840, y: 100}
+  m_AnchoredPosition: {x: 514.8, y: -66}
+  m_SizeDelta: {x: 990.2, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1308464259
 MonoBehaviour:
@@ -42182,6 +42192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c0a497fde94db9b4a6638f6d618445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speechBubbleSprite: {fileID: 21300000, guid: 7366fc20d8e0fef4fab4fdfa170cb689, type: 3}
   interactBubble: {fileID: 1188315168}
   camera: {fileID: 653289179}
 --- !u!1001 &1763689082
@@ -46467,6 +46478,7 @@ MonoBehaviour:
   speakInteractBubble: {fileID: 1135185922}
   flappyBirdInteractBubble: {fileID: 1287628567}
   camera: {fileID: 653289179}
+  speechBubbleSprite: {fileID: 21300000, guid: a68439c19f376904aab26906da7b3473, type: 3}
 --- !u!136 &1931554022
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -51950,8 +51962,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 100.000015}
-  m_SizeDelta: {x: 700, y: 200}
+  m_AnchoredPosition: {x: 0, y: 49.7}
+  m_SizeDelta: {x: 527.1, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2110584138
 MonoBehaviour:

@@ -1,5 +1,6 @@
 ﻿using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Gameplay.Systems.Managers
 {
@@ -7,6 +8,7 @@ namespace Gameplay.Systems.Managers
     {
         public GameObject dialoguePanel;
         public TextMeshProUGUI dialogueText;
+        public GameObject backgroundImage;
         public string[] dialogueLines;
         private int _currentLine;
         private bool _dialogueActive;
@@ -23,7 +25,8 @@ namespace Gameplay.Systems.Managers
                 DisplayNextLine();
         }
 
-        public void StartDialogue(string[] lines)
+        // ReSharper disable Unity.PerformanceAnalysis
+        public void StartDialogue(string[] lines, Sprite image)
         {
             dialogueLines = lines;
             _currentLine = 0;
@@ -31,6 +34,8 @@ namespace Gameplay.Systems.Managers
             
             dialoguePanel.SetActive(true);
             _dialogueActive = true;
+
+            backgroundImage.GetComponent<Image>().sprite = image;
             
             DisplayNextLine();
         }
