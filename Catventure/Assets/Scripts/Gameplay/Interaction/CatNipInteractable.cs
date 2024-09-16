@@ -102,7 +102,7 @@ namespace Gameplay.Interaction
                 yield return ChangeVignetteIntensity(0.3f, 1.0f); // Smoothly increase vignette to max
 
             yield return new WaitForSeconds(1.5f); // Wait for vignette effect
-            SceneManager.LoadScene("Garden"); // Change scene
+            SceneManager.LoadScene("GardenCutScene"); // Change scene
         }
 
         private IEnumerator ChangeVignetteIntensity(float from, float to)
